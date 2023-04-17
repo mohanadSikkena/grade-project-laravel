@@ -165,3 +165,7 @@ Route::get('/criticals/{id}/edit' , [CriticalsController::class , 'edit'])->name
 Route::put('/criticals/{id}/update' , [CriticalsController::class , 'update'])->name('criticals.update');
 Route::delete('/criticals/{id}/delete' , [CriticalsController::class , 'delete'])->name('criticals.delete');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
