@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{Asset('bootstrap.css.map')}}">
     <link rel="stylesheet" href="{{Asset('tableStyle.css')}}">
     <title>Failure Work Order</title>
 </head>
@@ -16,7 +17,7 @@
                 <button class="btn btn-outline-success" type="submit">Search</button>
               </form>
           </div>
-          <h1>Work Order</h1>
+          <h1>Failure Work Order</h1>
         <div class="table">
             <table>
                 <thead>
@@ -24,9 +25,8 @@
                     <th>Assign To</th>
                     <th>Asset</th>
                     <th>M/C Name</th>
-                    <th>Requirements </th>
-                    <th>Received Date</th>
                     <th>Description</th>
+                    <th>Requirements </th>
                   </tr>
                 <thead>
                 <tbody>
@@ -35,7 +35,7 @@
                     <td>50mt</td>
                     <td>9mm</td>
                     <td>1/2"</td>
-                   
+
                     <td>CES-9000</td>
                     <td >
                         <div class="block-item-text">
@@ -48,12 +48,12 @@
                         </div>
                         </td>
                   </tr>
-                     <tr> 
+                     <tr>
                       <td>CES-9000</td>
                       <td>50mt</td>
                       <td>9mm</td>
                       <td>1/2"</td>
-                     
+
                       <td>CES-9000</td>
                       <td >
                         <div class="block-item-text">
@@ -72,7 +72,7 @@
                       <td>50mt</td>
                       <td>9mm</td>
                       <td>1/2"</td>
-                     
+
                       <td>CES-9000</td>
                       <td >
                         <div class="block-item-text">
@@ -91,7 +91,7 @@
                       <td>50mt</td>
                       <td>9mm</td>
                       <td>1/2"</td>
-                     
+
                       <td>CES-9000</td>
                       <td >
                         <div class="block-item-text">
@@ -127,7 +127,7 @@
                     <td>50mt</td>
                     <td>9mm</td>
                     <td>1/2"</td>
-                   
+
                     <td>CES-9000</td>
                    <td >
                     <div class="block-item-text">
@@ -141,12 +141,12 @@
                     </td>
 
                   </tr>
-                  
+
                 </tbody>
             </table>
-                
+
         </div>
     </section>
-  
+
 </body>
 </html>

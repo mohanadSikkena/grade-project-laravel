@@ -34,7 +34,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('employees')->onUpdate('CASCADE')->onDelete('RESTRICT');
             $table->foreign('department_id')->references('id')->on('departments')->onUpdate('CASCADE')->onDelete('RESTRICT');
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('critcality_id')->references('id')->on('critcals')->onUpdate('CASCADE')->onDelete('RESTRICT');
+            $table->foreign('critcality_id')->references('id')->on('criticals')->onUpdate('CASCADE')->onDelete('RESTRICT');
             $table->foreign('machine_code_id')->references('id')->on('machines_code')->onUpdate('CASCADE')->onDelete('RESTRICT');
             });
     }

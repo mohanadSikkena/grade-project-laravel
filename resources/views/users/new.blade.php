@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{Asset('bootstrap.css.map')}}">
     <link rel="stylesheet" href="{{Asset('formStyle.css')}}">
     <title>New User</title>
 </head>
@@ -14,23 +15,23 @@
         <form action="" method="post">
             <div class=" mb-3">
                 <label for="floatingPassword">Name</label>
-                <input type="text" class="form-control">              
+                <input type="text" class="form-control">
               </div>
               <div class=" mb-3">
                 <label for="floatingPassword">Address</label>
-                <input type="text" class="form-control">              
+                <input type="text" class="form-control">
               </div>
               <div class=" mb-3">
                 <label for="floatingPassword">Phone Number</label>
-                <input type="text" class="form-control">              
+                <input type="text" class="form-control">
               </div>
               <div class=" mb-3">
                 <label for="floatingPassword">House Number</label>
-                <input type="text" class="form-control">              
+                <input type="text" class="form-control">
               </div>
               <div class=" mb-3">
                 <label for="floatingPassword">Hourly Salary</label>
-                <input type="text" class="form-control">              
+                <input type="text" class="form-control">
               </div>
                <div class="row">
                 <div class="col">
@@ -57,6 +58,6 @@
     </div>
    </div>
   </div>
-    
+
 </body>
 </html>

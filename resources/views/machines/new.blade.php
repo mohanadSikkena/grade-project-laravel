@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{Asset('bootstrap.css.map')}}">
+
     <link rel="stylesheet" href="{{Asset('formStyle.css')}}">
     <title>New Machine</title>
 </head>
@@ -63,19 +65,19 @@
                               @endforeach
                             </div>
                         </div>
-        
+
                 <div class=" mb-3">
                 <label for="floatingInput">Contractor</label>
-                <input type="text" class="form-control">              
+                <input type="text" class="form-control">
               </div>
               <div class=" mb-3">
                 <label for="floatingPassword">Asset Status</label>
-                <input type="text" class="form-control">              
+                <input type="text" class="form-control">
               </div>
               <div class=" mb-3">
                 <label for="floatingInput">Supplier</label>
-                <input type="text" class="form-control">              
-              </div> 
+                <input type="text" class="form-control">
+              </div>
                   <div class="row">
                     <div class="col">
                       <label for="">Critcality Id</label>
@@ -97,19 +99,19 @@
                         <label for="">Serial Number</label>
                         <input type="text" class="form-control">
                       </div>
-                  </div> 
-                 
+                  </div>
+
               <div class=" mb-3">
                 <label for="floatingPassword">Contract Expiry Date</label>
-                <input type="date" class="form-control">              
+                <input type="date" class="form-control">
               </div>
-              
-              
+
+
                 <div class="">
                   <label for="floatingTextarea6">Note To Technection</label>
                   <textarea class="form-control" placeholder="" id="floatingTextarea2" style="height: 100px"></textarea>
                 </div>
-               
+
               <div class="">
                 <label for="floatingTextarea6">Description</label>
                 <textarea class="form-control" placeholder="" id="floatingTextarea2" style="height: 100px"></textarea>
@@ -122,6 +124,6 @@
     </div>
    </div>
   </div>
-    
+
 </body>
 </html>
