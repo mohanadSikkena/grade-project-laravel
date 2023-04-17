@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Machine;
+use App\Models\Matrial;
 use App\Models\SparePart;
-use App\Modelss\Employee;
+use App\Modelss\User;
 
 class Location extends Model
 {
@@ -15,8 +16,11 @@ class Location extends Model
     public function machine(){
         return $this->hasMany(Machine::class);
     }
-    public function employee(){
-        return $this->hasMany(Employee::class);
+    public function matrial(){
+        return $this->hasMany(Matrial::class);
+    }
+    public function user(){
+        return $this->hasMany(User::class);
     }
     public function sparePart(){
         return $this->hasMany(sparepart::class);

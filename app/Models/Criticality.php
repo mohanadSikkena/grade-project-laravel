@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Machine;
 use App\Models\Matrial;
 
-class Criticaly extends Model
+class Criticality extends Model
 {
     use HasFactory;
     public function machine(){

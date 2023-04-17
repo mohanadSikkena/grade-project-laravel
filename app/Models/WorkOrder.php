@@ -8,15 +8,15 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\WorkStatus;
 use App\Models\WorkTrade;
 use App\Models\WorkType;
-use App\Models\Employee;
+use App\Models\User;
 use App\Models\Machine;
 use App\Models\WorkPriority;
 
 class WorkOrder extends Model
 {
     use HasFactory;
-    public function employee(){
-        return $this->belongsTo(Employee::class);
+    public function user(){
+        return $this->belongsTo(User::class);
     }
     public function workStatus(){
         return $this->belongsTo(WorkStatus::class);

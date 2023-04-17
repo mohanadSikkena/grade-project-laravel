@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\Location;
 use App\Models\Category;
-use App\Models\Criticaly;
+use App\Models\Criticality;
 use App\Models\SparePart;
 
 class Matrial extends Model
@@ -19,8 +19,8 @@ class Matrial extends Model
     public function category(){
         return $this->belongsTo(Category::class);
     }
-    public function criticaly(){
-        return $this->belongsTo(Criticaly::class);
+    public function criticality(){
+        return $this->belongsTo(Criticality::class);
     }
     public function sparePart(){
         return $this->belongsTo(SparePart::class);

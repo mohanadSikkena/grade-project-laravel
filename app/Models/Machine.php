@@ -12,9 +12,9 @@ use App\Models\WorkRequest;
 use App\Models\Department;
 use App\Models\Location;
 use App\Models\Category;
-use App\Models\Criticaly;
+use App\Models\Criticality;
 use App\Models\MachineCode;
-use App\Models\Employee;
+use App\Models\User;
 
 class Machine extends Model
 {
@@ -34,13 +34,13 @@ class Machine extends Model
     public function category(){
         return $this->belongsTo(Category::class);
     }
-    public function criticaly(){
-        return $this->belongsTo(Criticaly::class);
+    public function Criticality(){
+        return $this->belongsTo(Criticality::class);
     }
     public function machineCode(){
         return $this->belongsTo(MachineCode::class);
     }
-    public function employee(){
-        return $this->belongsToMany(Employee::class);
+    public function user(){
+        return $this->belongsToMany(User::class);
     }
 }

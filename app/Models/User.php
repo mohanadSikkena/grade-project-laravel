@@ -7,6 +7,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongToMany;
+use App\Models\WorkOrder;
+use App\Models\WorkRequest;
+use App\Models\Machine;
+use App\Models\Department;
+use App\Models\Location;
 
 class User extends Authenticatable
 {
@@ -41,4 +50,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function workOrder(){
+        return $this->hasMany(WorkOrder::class);
+    }
+    public function workRequest(){
+        return $this->hasMany(WorkRequest::class);
+    }
+    public function machine(){
+        return $this->belongsToMany(Machine::class);
+    }
+    public function department(){
+        return $this->belongsTo(Department::class);
+    }
+    public function location(){
+        return $this->belongsTo(Location::class);
+    }
+
 }
