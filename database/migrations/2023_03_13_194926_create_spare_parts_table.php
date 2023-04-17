@@ -16,10 +16,10 @@ return new class extends Migration
             $table->string('name', 50);
             $table->foreignId('location_id');
             $table->foreignId('priority_id');
-            $table->foreignId('quantity');
+            $table->integer('quantity');
             $table->timestamps();
             $table->foreign('location_id')->references('id')->on('locations')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('priority_id')->references('id')->on('work_priority')->onUpdate('CASCADE')->onDelete('RESTRICT');
+            $table->foreign('priority_id')->references('id')->on('work_priorities')->onUpdate('CASCADE')->onDelete('RESTRICT');
         });
     }
 

@@ -29,9 +29,10 @@ return new class extends Migration
             $table->string('notes_to_technection', 255);
             $table->date('contract_expiry_date');
             $table->foreignId('machine_code_id');
+            $table->string('requirements', 255);
             $table->timestamps();
             $table->foreign('location_id')->references('id')->on('locations')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('user_id')->references('id')->on('employees')->onUpdate('CASCADE')->onDelete('RESTRICT');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('RESTRICT');
             $table->foreign('department_id')->references('id')->on('departments')->onUpdate('CASCADE')->onDelete('RESTRICT');
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('CASCADE')->onDelete('RESTRICT');
             $table->foreign('critcality_id')->references('id')->on('criticals')->onUpdate('CASCADE')->onDelete('RESTRICT');
