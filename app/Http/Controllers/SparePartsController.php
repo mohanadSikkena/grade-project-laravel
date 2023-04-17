@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\SparePart;
+use App\Models\Location;
+use App\Models\Matrial;
 
 class SparePartsController extends Controller
 {
@@ -13,7 +15,9 @@ class SparePartsController extends Controller
     }
 
     public function create () {
-        return view ('spareparts.create') ;
+        $materials = Matrial :: all ();
+        $locations = Location :: all() ;
+        return view ('spareparts.create' . compact('materials , locations')) ;
     }
 
     public function store () {

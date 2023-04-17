@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PlannedWorkOrder;
+use App\Models\WorkStatus;
+use App\Models\WorkTrade;
+use App\Models\WorkType;
+use App\Models\User;
+use App\Models\Machine;
+use App\Models\WorkPriority;
 
 
 class WorkOrdersController extends Controller
@@ -14,7 +20,14 @@ class WorkOrdersController extends Controller
     }
 
     public function create () {
-        return view ('planeed_workorders.create') ;
+        $workstatuses = WorkStatus :: all ();
+        $worktrades = WorkTrade :: all ();
+        $worktypes = WorkType :: all ();
+        $users = User :: all ();
+        $machines = Machine :: all ();
+        $workPriority = WorkPriority :: all ();
+
+        return view ('planeed_workorders.create' , compact('workstatuses,worktrades,worktypes,users,machines,workPriority')) ;
     }
 
     public function store () {

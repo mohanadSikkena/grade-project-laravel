@@ -17,28 +17,28 @@
         <form action="" method="post">
             <div class="col">
                 <label for="">Assign To</label>
+                @foreach ($users AS $user)
                 <select class="form-select" aria-label="Default select example">
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option value="{{$user->id}}">{{$user->name}}</option>
                 </select>
+                @endforeach
                 </div>
             <div class="row">
                 <div class="col">
                     <label for="">Asset</label>
+                    @foreach ($assets AS $asset)
                     <select class="form-select" aria-label="Default select example">
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="{{$asset->id}}">{{$asset->name}}</option>
                     </select>
+                    @endforeach
                 </div>
                 <div class="col">
                     <label for="">M/C Name</label>
+                    @foreach (AS)
                     <select class="form-select" aria-label="Default select example">
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="{{$->id}}">{{$->name}}</option>
                     </select>
+                    @endforeach
                 </div>
 
             </div>
@@ -46,27 +46,27 @@
                 <div class="row">
                     <div class="col">
                         <label for="">Work Status</label>
+                        @foreach ($workStatuses AS $workStatus)
                         <select class="form-select" aria-label="Default select example">
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="{{$workStatus->id}}">{{$workStatus->name}}</option>
                         </select>
+                        @endforeach
                     </div>
                     <div class="col">
                         <label for="">Work type </label>
+                        @foreach ($workTypes AS $workType)
                         <select class="form-select" aria-label="Default select example">
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="{{$workType->id}}">{{$workType->name}}</option>
                         </select>
+                        @endforeach
                     </div>
                     <div class="col">
                         <label for="">Work Priority</label>
+                        @foreach ($workPrioritys AS $workPriority)
                         <select class="form-select" aria-label="Default select example">
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="{{$workPriority->id}}">{{$workPriority->name}}</option>
                         </select>
+                        @endforeach
                     </div>
                 </div>
                 <div class=" mb-3">

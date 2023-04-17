@@ -5,92 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{Asset('bootstrap.css.map')}}">
-    <link rel="stylesheet" href="{{Asset('tableStyle.css')}}">
-    <title>Matarials</title>
+    <link rel="stylesheet" href="{{Asset('formStyle.css')}}">
+    <title>Edit Matrial</title>
 </head>
 <body>
-    <section>
-        <div class="form-design" >
-            <a href="../form/Matrials.html">  <button  class="button">Add</button> </a> </td>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="button" type="submit">Search</button>
-              </form>
-          </div>
-          <h1>matrials</h1>
-        <div class="table">
-            <table>
-                <thead>
-                  <tr>
-                    <th>name</th>
-                    <th>Quantity</th>
-                    <th>Spare Parts</th>
-                    <th>Crticality</th>
-                    <th>Location </th>
-                    <th>Catigory </th>
-                  </tr>
-                <thead>
-                <tbody>
-                  <tr>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>9mm</td>
-                    <td>1/2"</td>
-                    <td>Kangal / Coil</td>
-                    <td>CES-9000</td>
-
-                  </tr>
-                     <tr>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>9mm</td>
-                      <td>1/2"</td>
-                      <td>Kangal / Coil</td>
-                      <td>CES-9000</td>
-
-                  </tr>
-                     <tr>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>9mm</td>
-                      <td>1/2"</td>
-                      <td>Kangal / Coil</td>
-                      <td>CES-9000</td>
 
 
-                  </tr>
-                     <tr>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>9mm</td>
-                      <td>1/2"</td>
-                      <td>Kangal / Coil</td>
-                      <td>CES-9000</td>
+   <div class="contain">
+    <div class="all">
+      <div class="header">Matrials </div>
+        <form action="{{matrials.update}}" method="post">
+            <div class=" mb-3">
+                <label for="floatingPassword">Name</label>
+                <input type="text" class="form-control" value="{{$materials->name}}">
+              </div>
+              <div class=" mb-3">
+                <label for="floatingPassword">Quantity</label>
+                <input type="text" class="form-control" value="{{$materials->quantity}}">
+              </div>
+                <div class="col">
+                    <label for="">Spare Parts Id</label>
+                    @foreach ($spareParts AS $sparePart)
+                    <select class="form-select" aria-label="Default select example">
+                        <option {{$sparePart->id == $materials->spare_part_id ? 'selected' : ''}} value="{{$sparePart->id}}">{{$sparePart->name}}</option>
+                    </select>
+                    @endforeach
+                </div>
+                <div class="col">
+                    <label for="">Crticality Id</label>
+                    @foreach ($criticals As $critical)
+                    <select class="form-select" aria-label="Default select example">
+                        <option {{ $critical->id == $materials->critical_id ? 'selected' : '' }} value="{{$critical->id}}">{{$critical->name}}</option>
+                    </select>
+                    @endforeach
+                </div>
+                <div class="col">
+                    <label for="">Location Id</label>
+                    @foreach ($locations AS $location)
+                    <select class="form-select" aria-label="Default select example">
+                        <option  {{ $location->id == $materials->location_id ? 'selected' : '' }} value="{{$location->id}}">{{$location->name}}</option>
+                    </select>
+                    @endforeach
+                </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">Catigory Id</label>
+                    @foreach ($categories AS $category)
+                    <select class="form-select" aria-label="Default select example">
+                        <option {{ $category->id == $materials->category_id ? 'selected' : '' }} value="{{$category->id}}">{{$category->name}}</option>
+                    </select>
+                    @endforeach
+                </div>
 
-                  </tr>
-                  <tr>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>9mm</td>
-                    <td>1/2"</td>
-                    <td>Kangal / Coil</td>
 
-                  </tr>
-                  <tr>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>9mm</td>
-                    <td>1/2"</td>
-                    <td>Kangal / Coil</td>
-                    <td>CES-9000</td>
 
-                  </tr>
+                <div class="button">
+                  <button class="submit" type="submit">Submit</button>
+                </div>
 
-                </tbody>
-            </table>
-
-        </div>
-    </section>
+        </form>
+    </div>
+   </div>
+  </div>
 
 </body>
 </html>

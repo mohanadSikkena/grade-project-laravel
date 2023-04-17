@@ -25,85 +25,26 @@
                     <th>Actions</th>
                     <th>Id</th>
                     <th>Assets</th>
-                    <th>Requester  </th>
+                    <th>Requester</th>
                     <th>Description</th>
 
                   </tr>
                 <thead>
                 <tbody>
+                  @foreach ( $workRequests AS $workRequest)
                   <tr>
                     <td>
                       <a class="btn btn-outline-success" href="">Report</a>
                       <a class="btn btn-outline-primary" href="">Edit</a>
                       <a class="btn btn-outline-danger" href="#">Delete</a>
                     </td>
-                    <td>CES-9000</td>
-                    <td>CES-9000</td>
-                    <td>CES-9000</td>
+                    <td>{{$workRequest->id}}</td>
+                    <td>{{$workRequest->asset->name}}</td>
+                    <td>{{$workRequest->user->name}}</td>
+                    <td>{{$workRequest->description}}</td>
                     <td>
                       <div class="ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis officia eos ducimus asperiores error porro, voluptatem inventore quasi, blanditiis eligendi a quaerat aspernatur, accusamus numquam! Exercitationem tempora quo reprehenderit magni.</div>
                     </td>
-                    </tr>
-                     <tr>
-                      <td>
-                        <a class="btn btn-outline-success"  href="">Report</a>
-                        <a class="btn btn-outline-primary" href="">Edit</a>
-                        <a class="btn btn-outline-danger" href="#">Delete</a>
-                      </td>
-                      <td>CES-9000</td>
-                      <td>Kangal / Coil</td>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-
-                  </tr>
-                     <tr>
-                      <td>
-                        <a class="btn btn-outline-success" href="">Report</a>
-                        <a class="btn btn-outline-primary" href="">Edit</a>
-                        <a class="btn btn-outline-danger" href="#">Delete</a>
-                      </td>
-                      <td>1/2"</td>
-                      <td>Kangal / Coil</td>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-
-                  </tr>
-                     <tr>
-                      <td>
-                        <a class="btn btn-outline-success" href="">Report</a>
-                        <a class="btn btn-outline-primary" href="">Edit</a>
-                        <a class="btn btn-outline-danger" href="#">Delete</a>
-                      </td>
-                      <td>CES-9000</td>
-                      <td>Kangal / Coil</td>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-
-                  </tr>
-                  <tr>
-                    <td>
-                      <a class="btn btn-outline-success" href="">Report</a>
-                      <a class="btn btn-outline-primary" href="">Edit</a>
-                      <a class="btn btn-outline-danger" href="#">Delete</a>
-                    </td>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a class="btn btn-outline-success" href="">Report</a>
-                      <a class="btn btn-outline-primary" href="">Edit</a>
-                      <a class="btn btn-outline-danger" href="#">Delete</a>
-                    </td>
-                    <td>CES-9000</td>
-                    <td>Kangal / Coil</td>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-
-                  </tr>
-
                 </tbody>
             </table>
 

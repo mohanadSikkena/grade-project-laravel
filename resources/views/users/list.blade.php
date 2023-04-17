@@ -33,65 +33,18 @@
                   </tr>
                 <thead>
                 <tbody>
+                  @foreach ($users AS $user)
                   <tr>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>9mm</td>
-                    <td>1/2"</td>
-                    <td>Kangal / Coil</td>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
+                    <td>{{$user->name}}</td>
+                    <td>{{$user->address}}</td>
+                    <td>{{$user->phone_number}}</td>
+                    <td>{{$user->house_number}}</td>
+                    <td>{{$user->hourly_salary}}</td>
+                    <td>{{$user->department->name}}</td>
+                    <td>{{$user->loactaion->name}}</td>
 
                   </tr>
-                     <tr>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>9mm</td>
-                      <td>1/2"</td>
-                      <td>Kangal / Coil</td>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-
-                  </tr>
-                     <tr>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>9mm</td>
-                      <td>1/2"</td>
-                      <td>Kangal / Coil</td>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-
-                  </tr>
-                     <tr>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>9mm</td>
-                      <td>1/2"</td>
-                      <td>Kangal / Coil</td>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                   </tr>
-                  <tr>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>9mm</td>
-                    <td>1/2"</td>
-                    <td>Kangal / Coil</td>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                  </tr>
-                  <tr>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>9mm</td>
-                    <td>1/2"</td>
-                    <td>Kangal / Coil</td>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-
-                  </tr>
-
+                  @endforeach
                 </tbody>
             </table>
 

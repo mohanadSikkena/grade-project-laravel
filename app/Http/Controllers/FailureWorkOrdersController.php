@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\FailureWorkOrder;
+use App\Models\User;
+use App\Models\Machine;
 
 
 class WorkOrdersController extends Controller
@@ -14,7 +16,9 @@ class WorkOrdersController extends Controller
     }
 
     public function create () {
-        return view ('failure_workorders.create') ;
+        $users = User :: all ();
+        $machines = Machine :: all();
+        return view ('failure_workorders.create' . compact('users , machines')) ;
     }
 
     public function store () {

@@ -4,6 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Machine;
+use App\Models\WorkOrder;
+use App\Models\WorkRequest;
+use App\Models\Department;
+use App\Models\Location;
+use App\Models\Category;
+use App\Models\Criticaly;
+use App\Models\MachineCode;
+use App\Models\User;
 
 class MachinesController extends Controller
 {
@@ -13,7 +21,17 @@ class MachinesController extends Controller
     }
 
     public function create () {
-        return view('machines.new');
+        $pworkOredrs = WorkOrder :: all();
+        $fworkOredrs = WorkOrder :: all();
+        $workRequests = WorkRequest :: all();
+        $departments = Department :: all();
+        $categories = Category :: all();
+        $machinecodes = MachineCode :: all();
+        $criticals = Criticaly :: all();
+        $users = User :: all();
+        $locations = Location :: all();
+
+        return view('machines.new' , compact('pworkOredrs,fworkOredrs,workRequests,departments,categories,machinecodes,criticals,users ,locations'));
     }
 
     public function store () {

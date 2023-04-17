@@ -24,19 +24,17 @@
                   <tr>
                     <th>Assign To</th>
                     <th>Asset</th>
-                    <th>M/C Name</th>
                     <th>Description</th>
                     <th>Requirements </th>
                   </tr>
                 <thead>
                 <tbody>
+                  @foreach ($fworkOrders AS $fworkOrder)
                   <tr>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>9mm</td>
-                    <td>1/2"</td>
-
-                    <td>CES-9000</td>
+                    <td>{{$fworkOrder->user->name}}</td>
+                    <td>{{$fworkOrder->asset->name}}</td>
+                    <td>{{$fworkOrder->description}}</td>
+                    <td>{{$fworkOrder->requirements}}</td>
                     <td >
                         <div class="block-item-text">
                         <input type="checkbox" hidden class="read-more-state" id="read-more">
@@ -48,99 +46,7 @@
                         </div>
                         </td>
                   </tr>
-                     <tr>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>9mm</td>
-                      <td>1/2"</td>
-
-                      <td>CES-9000</td>
-                      <td >
-                        <div class="block-item-text">
-                        <input type="checkbox" hidden class="read-more-state" id="read-more">
-                        <div class="read-more-wrap">
-                        <p class="read-more-target">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum voluptatibus maiores ad perferendis officia, expedita rem. Accusamus, tempore provident deserunt itaque vero sunt voluptates fugiat animi iste ex? Eos, voluptatibus.</p>
-                        </div>
-                        <label for="read-more" class="read-more-trigger_closed">Read More</label>
-                        <label for="read-more" class="read-more-trigger_opened">Read Less</label>
-                        </div>
-                        </td>
-
-                  </tr>
-                     <tr>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>9mm</td>
-                      <td>1/2"</td>
-
-                      <td>CES-9000</td>
-                      <td >
-                        <div class="block-item-text">
-                        <input type="checkbox" hidden class="read-more-state" id="read-more">
-                        <div class="read-more-wrap">
-                        <p class="read-more-target">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum voluptatibus maiores ad perferendis officia, expedita rem. Accusamus, tempore provident deserunt itaque vero sunt voluptates fugiat animi iste ex? Eos, voluptatibus.</p>
-                        </div>
-                        <label for="read-more" class="read-more-trigger_closed">Read More</label>
-                        <label for="read-more" class="read-more-trigger_opened">Read Less</label>
-                        </div>
-                        </td>
-
-                  </tr>
-                     <tr>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>9mm</td>
-                      <td>1/2"</td>
-
-                      <td>CES-9000</td>
-                      <td >
-                        <div class="block-item-text">
-                        <input type="checkbox" hidden class="read-more-state" id="read-more">
-                        <div class="read-more-wrap">
-                        <p class="read-more-target">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum voluptatibus maiores ad perferendis officia, expedita rem. Accusamus, tempore provident deserunt itaque vero sunt voluptates fugiat animi iste ex? Eos, voluptatibus.</p>
-                        </div>
-                        <label for="read-more" class="read-more-trigger_closed">Read More</label>
-                        <label for="read-more" class="read-more-trigger_opened">Read Less</label>
-                        </div>
-                        </td>
-
-                  </tr>
-                  <tr>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>9mm</td>
-                    <td>1/2"</td>
-                    <td>1/2"</td>
-                    <td >
-                        <div class="block-item-text">
-                        <input type="checkbox" hidden class="read-more-state" id="read-more">
-                        <div class="read-more-wrap">
-                        <p class="read-more-target">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum voluptatibus maiores ad perferendis officia, expedita rem. Accusamus, tempore provident deserunt itaque vero sunt voluptates fugiat animi iste ex? Eos, voluptatibus.</p>
-                        </div>
-                        <label for="read-more" class="read-more-trigger_closed">Read More</label>
-                        <label for="read-more" class="read-more-trigger_opened">Read Less</label>
-                        </div>
-                        </td>
-                  </tr>
-                  <tr>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>9mm</td>
-                    <td>1/2"</td>
-
-                    <td>CES-9000</td>
-                   <td >
-                    <div class="block-item-text">
-                    <input type="checkbox" hidden class="read-more-state" id="read-more">
-                    <div class="read-more-wrap">
-                    <p class="read-more-target">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum voluptatibus maiores ad perferendis officia, expedita rem. Accusamus, tempore provident deserunt itaque vero sunt voluptates fugiat animi iste ex? Eos, voluptatibus.</p>
-                    </div>
-                    <label for="read-more" class="read-more-trigger_closed">Read More</label>
-                    <label for="read-more" class="read-more-trigger_opened">Read Less</label>
-                    </div>
-                    </td>
-
-                  </tr>
+                  @endforeach
 
                 </tbody>
             </table>

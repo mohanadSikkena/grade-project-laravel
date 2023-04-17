@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Matrial;
+use App\Models\Location;
+use App\Models\Category;
+use App\Models\Criticaly;
+use App\Models\SparePart;
 
 class MatrialsController extends Controller
 {
@@ -13,7 +17,11 @@ class MatrialsController extends Controller
     }
 
     public function create () {
-        return view ('matrials.create') ;
+        $locations = Location :: all();
+        $categories = Category :: all();
+        $Criticals = Criticaly :: all();
+        $spareParts = SparePart :: all ();
+        return view ('matrials.create' , compact('locations,categories,Criticals,spareParts')) ;
     }
 
     public function store () {
