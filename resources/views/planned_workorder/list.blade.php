@@ -35,101 +35,23 @@
                   </tr>
                 <thead>
                 <tbody>
+                  @foreach ($pworkOrders AS $pworkOrder )
                   <tr>
                     <td>
                       <a class="btn btn-outline-success" href="">Report</a>
                       <a class="btn btn-outline-primary" href="">Edit</a>
                       <a class="btn btn-outline-danger" href="#">Delete</a>
                     </td>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>9mm</td>
-                    <td>1/2"</td>
-                    <td>Kangal / Coil</td>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>50mt</td>
-
+                    <td>{{$pworkOrder->user->name}}</td>
+                    <td>{{$pworkOrder->asset->name}}</td>
+                    <td>{{$pworkOrder->user->name}}</td>
+                    <td>{{$pworkOrder->workstatus->name}}</td>
+                    <td>{{$pworkOrder->worktype->name}}</td>
+                    <td>{{$pworkOrder->workpriority->name}}</td>
+                    <td>{{$pworkOrder->requirements}}</td>
+                    <td>{{$pworkOrder->created_at}}</td>
                   </tr>
-                     <tr>
-                      <td>
-                        <a class="btn btn-outline-success" href="">Report</a>
-                        <a class="btn btn-outline-primary" href="">Edit</a>
-                        <a class="btn btn-outline-danger" href="#">Delete</a>
-                      </td>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>9mm</td>
-                      <td>1/2"</td>
-                      <td>Kangal / Coil</td>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>50mt</td>
-
-                  </tr>
-                     <tr>
-                      <td>
-                        <a class="btn btn-outline-success" href="">Report</a>
-                        <a class="btn btn-outline-primary" href="">Edit</a>
-                        <a class="btn btn-outline-danger" href="#">Delete</a>
-                      </td>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>9mm</td>
-                      <td>1/2"</td>
-                      <td>Kangal / Coil</td>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>50mt</td>
-
-                  </tr>
-                     <tr>
-                      <td>
-                        <a class="btn btn-outline-success" href="">Report</a>
-                        <a class="btn btn-outline-primary" href="">Edit</a>
-                        <a class="btn btn-outline-danger" href="#">Delete</a>
-                      </td>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>9mm</td>
-                      <td>1/2"</td>
-                      <td>Kangal / Coil</td>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>50mt</td>
-
-                  </tr>
-                  <tr>
-                    <td>
-                      <a class="btn btn-outline-success" href="">Report</a>
-                      <a class="btn btn-outline-primary" href="">Edit</a>
-                      <a class="btn btn-outline-danger" href="#">Delete</a>
-                    </td>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>9mm</td>
-                    <td>1/2"</td>
-                    <td>Kangal / Coil</td>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a class="btn btn-outline-success" href="">Report</a>
-                      <a class="btn btn-outline-primary" href="">Edit</a>
-                      <a class="btn btn-outline-danger" href="#">Delete</a>
-                    </td>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>9mm</td>
-                    <td>1/2"</td>
-                    <td>Kangal / Coil</td>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>50mt</td>
-
-                  </tr>
-
+                  @endforeach
                 </tbody>
             </table>
 

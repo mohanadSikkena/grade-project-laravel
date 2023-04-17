@@ -14,31 +14,31 @@
    <div class="contain">
     <div class="all">
       <div class="header">Failure Work Order</div>
-        <form action="" method="post">
+        <form action="{{failure_workorder.save}}" method="post">
             <div class="col">
                 <label for="">Assign To</label>
+                @foreach ($users AS $user)
                 <select class="form-select" aria-label="Default select example">
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option value="{{$user->id}}">{{$user->name}}</option>
                 </select>
+                @endforeach
                 </div>
             <div class="row">
                 <div class="col">
                     <label for="">Asset</label>
+                    @foreach ($assets AS $asset)
                     <select class="form-select" aria-label="Default select example">
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="{{$asset->id}}">{{$asset->name}}</option>
                     </select>
+                    @endforeach
                 </div>
                 <div class="col">
                     <label for="">M/C Name</label>
+                    @foreach (AS)
                     <select class="form-select" aria-label="Default select example">
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="{{$->id}}">{{$->name}}</option>
                     </select>
+                    @endforeach
                 </div>
 
             </div>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\WorkRequest;
+use App\Models\Machine;
+use App\Models\User;
 
 class WorkRequestsController extends Controller
 {
@@ -13,6 +15,8 @@ class WorkRequestsController extends Controller
     }
 
     public function create () {
+        $machines = Machine :: all () ; 
+        $users = User :: all () ;
         return view ('workrequests.create') ;
     }
 

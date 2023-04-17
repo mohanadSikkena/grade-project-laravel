@@ -5,136 +5,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{Asset('bootstrap.css.map')}}">
-    <link rel="stylesheet" href="{{Asset('tableStyle.css')}}">
-    <title>Plaaned Work Order</title>
+    <link rel="stylesheet" href="{{Asset('formStyle.css')}}">
+    <title> Planned Work Order</title>
 </head>
 <body>
-    <section>
-        <div class="form-design" >
-            <a href="../form/WorkOrderPlanneed.html">  <button  class="button">Add</button> </a> </td>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="button" type="submit">Search</button>
-              </form>
-          </div>
-          <h1>Planned Work Order</h1>
-        <div class="table">
-            <table>
-                <thead>
-                  <tr>
-                    <th>Actions</th>
-                    <th>Assign To</th>
-                    <th>Asset</th>
-                    <th>M/C Name</th>
-                    <th>Work Status</th>
-                    <th>Work Type</th>
-                    <th>Work Priority</th>
-                    <th>Requirements </th>
-                    <th>Received Date</th>
 
-                  </tr>
-                <thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <a class="btn btn-outline-success" href="">Report</a>
-                      <a class="btn btn-outline-primary" href="">Edit</a>
-                      <a class="btn btn-outline-danger" href="#">Delete</a>
-                    </td>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>9mm</td>
-                    <td>1/2"</td>
-                    <td>Kangal / Coil</td>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>50mt</td>
 
-                  </tr>
-                     <tr>
-                      <td>
-                        <a class="btn btn-outline-success" href="">Report</a>
-                        <a class="btn btn-outline-primary" href="">Edit</a>
-                        <a class="btn btn-outline-danger" href="#">Delete</a>
-                      </td>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>9mm</td>
-                      <td>1/2"</td>
-                      <td>Kangal / Coil</td>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>50mt</td>
+   <div class="contain">
+    <div class="all">
+      <div class="header">Planned Work Order</div>
+        <form action="" method="post">
+            <div class="col">
+                <label for="">Assign To</label>
+                @foreach ($users AS $user)
+                <select class="form-select" aria-label="Default select example">
+                    <option {{$user->id == $pworkOrder->user_id ? 'selected' : ''}}  value="{{$user->id}}">{{$user->name}}</option>
+                </select>
+                @endforeach
+                </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">Asset</label>
+                    @foreach ($assets AS $asset)
+                    <select class="form-select" aria-label="Default select example">
+                        <option {{$asset->id == $pworkOrder->asset_id ? 'selected' : ''}} value="{{$asset->id}}">{{$asset->name}}</option>
+                    </select>
+                    @endforeach
+                </div>
+                <div class="col">
+                    <label for="">M/C Name</label>
+                    @foreach (AS)
+                    <select class="form-select" aria-label="Default select example">
+                        <option {{$->id == $pworkOrder-> ? 'selected' : ''}} value="{{$->id}}">{{$->name}}</option>
+                    </select>
+                    @endforeach
+                </div>
 
-                  </tr>
-                     <tr>
-                      <td>
-                        <a class="btn btn-outline-success" href="">Report</a>
-                        <a class="btn btn-outline-primary" href="">Edit</a>
-                        <a class="btn btn-outline-danger" href="#">Delete</a>
-                      </td>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>9mm</td>
-                      <td>1/2"</td>
-                      <td>Kangal / Coil</td>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>50mt</td>
+            </div>
 
-                  </tr>
-                     <tr>
-                      <td>
-                        <a class="btn btn-outline-success" href="">Report</a>
-                        <a class="btn btn-outline-primary" href="">Edit</a>
-                        <a class="btn btn-outline-danger" href="#">Delete</a>
-                      </td>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>9mm</td>
-                      <td>1/2"</td>
-                      <td>Kangal / Coil</td>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>50mt</td>
-
-                  </tr>
-                  <tr>
-                    <td>
-                      <a class="btn btn-outline-success" href="">Report</a>
-                      <a class="btn btn-outline-primary" href="">Edit</a>
-                      <a class="btn btn-outline-danger" href="#">Delete</a>
-                    </td>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>9mm</td>
-                    <td>1/2"</td>
-                    <td>Kangal / Coil</td>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a class="btn btn-outline-success" href="">Report</a>
-                      <a class="btn btn-outline-primary" href="">Edit</a>
-                      <a class="btn btn-outline-danger" href="#">Delete</a>
-                    </td>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>9mm</td>
-                    <td>1/2"</td>
-                    <td>Kangal / Coil</td>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>50mt</td>
-
-                  </tr>
-
-                </tbody>
-            </table>
-
-        </div>
-    </section>
+                <div class="row">
+                    <div class="col">
+                        <label for="">Work Status</label>
+                        @foreach ($workStatuses AS $workStatus)
+                        <select class="form-select" aria-label="Default select example">
+                            <option {{$workStatus->id == $pworkOrder->workstatus_id ? 'selected' : ''}} value="{{$workStatus->id}}">{{$workStatus->name}}</option>
+                        </select>
+                        @endforeach
+                    </div>
+                    <div class="col">
+                        <label for="">Work type </label>
+                        @foreach ($workTypes AS $workType)
+                        <select class="form-select" aria-label="Default select example">
+                            <option {{$workType->id == $pworkOrder->worktype_id ? 'selected' : ''}} value="{{$workType->id}}">{{$workType->name}}</option>
+                        </select>
+                        @endforeach
+                    </div>
+                    <div class="col">
+                        <label for="">Work Priority</label>
+                        @foreach ($workPrioritys AS $workPriority)
+                        <select class="form-select" aria-label="Default select example">
+                            <option {{$workPriority->id == $pworkOrder->workpriority_id ? 'selected' : ''}} value="{{$workPriority->id}}">{{$workPriority->name}}</option>
+                        </select>
+                        @endforeach
+                    </div>
+                </div>
+                <div class=" mb-3">
+                    <label for="floatingPassword">Requirements</label>
+                    <input type="taxt" class="form-control" value="{{$pworkOrder->requirements}}">
+                  </div>
+                <div class=" mb-3">
+                    <label for="floatingPassword"> Received Date</label>
+                    <input type="datetime-local" class="form-control" value="{{$pworkOrder->received_date}}">
+                </div>
+              <div class="button">
+                <button class="submit" type="submit">Submit</button>
+              </div>
+            </div>
+        </form>
+    </div>
+   </div>
+  </div>
 
 </body>
 </html>

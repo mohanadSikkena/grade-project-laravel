@@ -31,61 +31,16 @@
                   </tr>
                 <thead>
                 <tbody>
+                  @foreach ($materials as $material)
                   <tr>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>9mm</td>
-                    <td>1/2"</td>
-                    <td>Kangal / Coil</td>
-                    <td>CES-9000</td>
-
+                    <td>{{$material->name}}</td>
+                    <td>{{$material->quantity}}</td>
+                    <td>{{$material->sparepart->name}}</td>
+                    <td>{{$material->critical->name}}</td>
+                    <td>{{$material->location->name}}</td>
+                    <td>{{$material->category->name}}</td>
                   </tr>
-                     <tr>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>9mm</td>
-                      <td>1/2"</td>
-                      <td>Kangal / Coil</td>
-                      <td>CES-9000</td>
-
-                  </tr>
-                     <tr>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>9mm</td>
-                      <td>1/2"</td>
-                      <td>Kangal / Coil</td>
-                      <td>CES-9000</td>
-
-
-                  </tr>
-                     <tr>
-                      <td>CES-9000</td>
-                      <td>50mt</td>
-                      <td>9mm</td>
-                      <td>1/2"</td>
-                      <td>Kangal / Coil</td>
-                      <td>CES-9000</td>
-
-                  </tr>
-                  <tr>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>9mm</td>
-                    <td>1/2"</td>
-                    <td>Kangal / Coil</td>
-
-                  </tr>
-                  <tr>
-                    <td>CES-9000</td>
-                    <td>50mt</td>
-                    <td>9mm</td>
-                    <td>1/2"</td>
-                    <td>Kangal / Coil</td>
-                    <td>CES-9000</td>
-
-                  </tr>
-
+                  @endforeach
                 </tbody>
             </table>
 
