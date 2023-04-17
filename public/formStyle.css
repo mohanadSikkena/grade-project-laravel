@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+body {
+  text-transform:capitalize;
+	font-family: "DM Sans", sans-serif;
+	line-height: 1.5;
+  background-image: radial-gradient(circle, #ffffff, #bfbec8, #808195, #444964, #051937);
+  background-attachment:fixed;
+  background-size: cover;
+
+	padding: 0 2rem;
+}
+.header{
+  width: 100%;
+    border-bottom: 2px solid #00456A;
+    margin: auto;
+     /* width: 100%; */
+    background-color: #00456A;
+    color: white;
+    font-size: 30px;
+   
+    font-weight: 300;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px ;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    /* margin-top: 25px; */
+    /* margin-bottom: 15px; */
+  }
+.contain{
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+}
+  .all{
+    /* overflow-y: auto;
+    overflow-x:hidden; */
+    display: flex;
+    justify-items: center;
+    flex-flow: column;
+    width: 70%; 
+    margin-top: 50px;
+    padding: 20px;
+    /* display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;  */
+}
+form{
+  /* margin: auto; */
+  background-color: #E7EFFF;
+  padding: 20px;
+  margin-bottom: 50px;
+  box-sizing: border-box;
+  /* width: 70%; */
+  border: 3px solid #00456A;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 30%);
+  border-bottom-right-radius: 10px ;
+  border-bottom-left-radius: 10px;
+  
+}
+.flex{
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+form div{
+  border-radius: 10px !important;
+  padding: 5px;
+}
+.flex div{
+  width: 40%;
+}
+.button{
+  display: flex;
+  justify-content: right; 
+}
+.submit {
+  background-color: #00456A;
+  border-radius: 50px;
+  border: 0;
+  box-sizing: border-box;
+  color: white;
+  font-weight: bold;
+  border: 5px solid #00456A;
+  cursor: pointer;
+  font-size: auto;
+  height: 50px;
+  margin-top: 38px;
+  outline: 0;
+  text-align: center;
+  width: 20%;
+}
+
+.submit:active  {
+  background-color: #051937;
+}
+  /* scroll */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px transparent;
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: grey;
+  }
+  
+  
+

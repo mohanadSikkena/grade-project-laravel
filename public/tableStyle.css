@@ -1,0 +1,196 @@
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    box-sizing: border-box;
+    width: 1400px;
+ }
+ .form-design{
+    padding: 15px;
+    width: 1400px;
+    size: 50px;
+    display: flex;
+    justify-content: end;
+  }
+  .form-design .button{
+    margin-right: 20px !important;
+  }
+  h1{
+    font-size: 30px;
+    text-transform:capitalize;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 15px;
+ }
+.table{
+    border-radius: 15px;
+    background-color: transparent;
+    height: 600px;
+    max-width: 1400px;
+    width: 1500px;
+    overflow:auto ;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: auto;
+    max-width: 1400px;
+    width: 1500px;
+    margin: 0 auto;
+    position: relative;
+    font-size: 20px;
+
+  }
+  table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+} 
+  /* table * {
+    position: relative;
+  } */
+  table td{
+  white-space: nowrap;
+  text-overflow: ellipsis !important; 
+  overflow:hidden !important;}
+  
+  table td, table th {
+    padding:0 10px 0 10px ;
+    text-align: left;
+    max-width: 150px;
+    max-height: 50px;
+    padding-left: 8px;
+    font-size: 20px;
+   
+    
+
+  }
+ thead {
+    position: sticky; /* make the table heads sticky */
+        top: 0px; /* table head will be placed from the top of the table and sticks to it */
+  }
+  table thead tr {
+    width: 50px;
+    height: 60px;
+    background: #00456A !important;
+    color: white;
+    font-size: 16px;
+  }
+  table tbody tr {
+    height: 48px;
+    border-bottom: 1px solid #E3F1D5;
+  }
+  table tbody tr:last-child {
+    border: 0;
+  }
+
+  /* table td.l, table th.l {
+    text-align: right;
+  }
+  table td.c, table th.c {
+    text-align: center;
+  }
+  table td.r, table th.r {
+    text-align: center;
+  } */
+  @media screen and (max-width: 35.5em) {
+    table {
+      display: block;
+    }
+    table > *, table tr, table td, table th {
+      display: block;
+    }
+    table thead {
+      display: none;
+    }
+    table tbody tr {
+      height: auto;
+      padding: 8px 0;
+    }
+    table tbody tr td {
+      padding-left: 45%;
+      margin-bottom: 12px;
+    }
+    table tbody tr td:last-child {
+      margin-bottom: 0;
+    }
+    table tbody tr td:before {
+      position: absolute;
+      font-weight: 700;
+      width: 40%;
+      left: 10px;
+      top: 0;
+    }
+    table tbody tr td:nth-child(1):before {
+      content: "Code";
+    }
+    table tbody tr td:nth-child(2):before {
+      content: "Stock";
+    }
+    table tbody tr td:nth-child(3):before {
+      content: "Cap";
+    }
+    table tbody tr td:nth-child(4):before {
+      content: "Inch";
+    }
+    table tbody tr td:nth-child(5):before {
+      content: "Box Type";
+    }
+  }
+  body {
+    background-image: radial-gradient(circle, #ffffff, #bfbec8, #808195, #444964, #051937);
+    font: 400 14px 'Calibri', 'Arial';
+    text-transform: capitalize;
+    padding: 00px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    /* blockquote {
+        color: white;
+        text-align: center;
+    } */
+    .button{
+        border: 0;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 16px;
+        color: white;
+        background-color: #638F9C;
+        border-color: #638F9C;
+     
+     }
+     #color:hover{
+      background-color:#00456A !important;
+     }
+     .btn:hover{
+      background-color: #00456A;
+      border-color: #00456A;
+     }
+       .button:hover{
+        background-color: #638F9C;
+        border-color: #638F9C;
+       } 
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px transparent;
+    border-radius: 15px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: darkgrey;
+    border-radius: 15px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: darkgrey;
+  }
+ 

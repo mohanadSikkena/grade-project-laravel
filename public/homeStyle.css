@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+:root{
+  --backgroud:radial-gradient(circle, #ffffff, #bfbec8, #808195, #444964, #051937);
+}
+body {
+	font-family: "DM Sans", sans-serif;
+	line-height: 1.5;
+  background-image:var(--backgroud);
+	padding: 0 ;  
+  
+}
+
+.row{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    padding-top: 80px;
+}
+.row a{
+  width: 400px;
+}
+.home-button:hover{
+  background-color:#007789 ;
+  color: white;
+}
+.home-button{
+  opacity: 0.8;
+    /* border-collapse:collapse; */
+    margin: 30px 10px;
+    /* color: white; */
+    border: 0;
+    background-color: white;
+    border-radius: 10px;
+    /* border: 2px solid black; */
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    height: 100px;
+    width: 350px;
+    font-size: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.mls {
+    margin-bottom: .25em;
+  }
+.fs1 {
+    margin-bottom: px;
+    font-size: 32px;
+  }
+  
+h3{ 
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    margin-top: 50px;
+    font-weight: 600;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 45px;
+    letter-spacing: 1px;
+    
+    line-height: 1.1;
+    /* font-family: ; */
+}
