@@ -8,44 +8,44 @@ use App\Models\WorkStatus;
 class WorkStatusController extends Controller
 {
     public function index () {
-        $workstatus = WorkStatus :: all() ;
-        return view ('workstatus.list' , compact ('workstatus')) ;
+        $workStatuses = WorkStatus :: all() ;
+        return view ('workStatuses.list' , compact ('workStatuses')) ;
     }
 
     public function create () {
-        return view ('workstatus.create') ;
+        return view ('workStatuses.create') ;
     }
 
     public function store () {
-        $workstatus = new WorkStatus ;
-        $workstatus->name = request('name') ;
-        $workstatus->save() ;
-        return redirect()->route('workstatus.list') ;
+        $workStatus = new WorkStatus ;
+        $workStatus->name = request('name') ;
+        $workStatus->save() ;
+        return redirect()->route('workStatuses.list') ;
          
     }
 
     public function edit ($id) {
-        $workstatus = WorkStatus :: find('$id') ;
-        return view ('workstatus.edit' , compact('workstatus')) ; 
+        $workStatus = WorkStatus :: find('$id') ;
+        return view ('workStatuses.edit' , compact('workStatus')) ; 
     }
 
     public function update ($id) {
-        $workstatus = WorkStatus :: find('$id') ;
-        $workstatus->name = request('name') ;
-        $workstatus->save() ; 
-        return redirect()->route('workstatus.list') ;
+        $workStatus = WorkStatus :: find('$id') ;
+        $workStatus->name = request('name') ;
+        $workStatus->save() ; 
+        return redirect()->route('workStatuses.list') ;
 
     }
 
     public function delete ($id) {
-        $workstatus = WorkStatus :: find('$id') ;
-        $workstatus->delete() ;
-        return redirect()->route('workstatus.list') ;
+        $workStatus = WorkStatus :: find('$id') ;
+        $workStatus->delete() ;
+        return redirect()->route('workStatuses.list') ;
 
     }
 
     public function show ($id) {
-        $workstatus = WorkStatus :: find('$id') ; 
-        return view ('workstatus.list' , comapct('workstatus')) ;
+        $workStatus = WorkStatus :: find('$id') ; 
+        return view ('workStatuses.list' , comapct('workStatus')) ;
     }
 }

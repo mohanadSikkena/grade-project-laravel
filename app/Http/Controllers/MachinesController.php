@@ -26,7 +26,7 @@ class MachinesController extends Controller
         $workRequests = WorkRequest :: all();
         $departments = Department :: all();
         $categories = Category :: all();
-        $machinecodes = MachineCode :: all();
+        $machineCodes = MachineCode :: all();
         $criticals = Criticaly :: all();
         $users = User :: all();
         $locations = Location :: all();

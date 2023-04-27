@@ -26,21 +26,13 @@
             <div class="row">
                 <div class="col">
                     <label for="">Asset</label>
-                    @foreach ($assets AS $asset)
+                    @foreach ($machines AS $machine)
                     <select class="form-select" aria-label="Default select example">
-                        <option value="{{$asset->id}}">{{$asset->name}}</option>
+                        <option value="{{$machine->id}}">{{$machine->name}}</option>
                     </select>
                     @endforeach
                 </div>
-                <div class="col">
-                    <label for="">M/C Name</label>
-                    @foreach (AS)
-                    <select class="form-select" aria-label="Default select example">
-                        <option value="{{$->id}}">{{$->name}}</option>
-                    </select>
-                    @endforeach
-                </div>
-
+                
             </div>
 
              <div class="">

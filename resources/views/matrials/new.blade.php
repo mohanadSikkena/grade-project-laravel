@@ -14,7 +14,7 @@
    <div class="contain">
     <div class="all">
       <div class="header">Matrials </div>
-        <form action="{{matrials.save}}" method="post">
+        <form action="{{materials.save}}" method="post">
             <div class=" mb-3">
                 <label for="floatingPassword">Name</label>
                 <input type="text" class="form-control">

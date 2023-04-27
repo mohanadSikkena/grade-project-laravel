@@ -47,13 +47,13 @@
                     <td>{{$machine->name}}</td>
                     <td>{{$machine->machine_model}}</td>
                     <td>{{$machine->manfacturer}}</td>
-                    <td>{{$machine->user_id}}</td>
-                    <td>{{$machine->department_id}}</td>
-                    <td>{{$machine->category_id}}</td>
+                    <td>{{$machine->user->name}}</td>
+                    <td>{{$machine->department->name}}</td>
+                    <td>{{$machine->category->name}}</td>
                     <td>{{$machine->location->location_description}}</td>
                     <td>{{$machine->contractor}}</td>
                     <td>{{$machine->supplier}}</td>
-                    <td>{{$machine->critcality_id}}</td>
+                    <td>{{$machine->critical->name}}</td>
                     <td>{{$machine->machine_code_id}}</td>
                     <td>{{$machine->serial_number}}</td>
                     <td>{{$machine->contract_expiry_date}}</td>

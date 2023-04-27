@@ -13,8 +13,8 @@
 
    <div class="contain">
     <div class="all">
-      <div class="header">Matrials </div>
-        <form action="{{matrials.update}}" method="post">
+      <div class="header">Materials </div>
+        <form action="{{materials.update}}" method="post">
             <div class=" mb-3">
                 <label for="floatingPassword">Name</label>
                 <input type="text" class="form-control" value="{{$materials->name}}">
@@ -32,7 +32,7 @@
                     @endforeach
                 </div>
                 <div class="col">
-                    <label for="">Crticality Id</label>
+                    <label for="">Criticals Id</label>
                     @foreach ($criticals As $critical)
                     <select class="form-select" aria-label="Default select example">
                         <option {{ $critical->id == $materials->critical_id ? 'selected' : '' }} value="{{$critical->id}}">{{$critical->name}}</option>

@@ -15,51 +15,51 @@ use App\Models\WorkPriority;
 class WorkOrdersController extends Controller
 {
     public function index () {
-        $workorders = WorkOrder :: all() ;
-        return view ('planeed_workorders.list' , compact ('workorders')) ;
+        $pworkOrders = WorkOrder :: all() ;
+        return view ('planeed_workorders.list' , compact ('pworkOrders')) ;
     }
 
     public function create () {
-        $workstatuses = WorkStatus :: all ();
-        $worktrades = WorkTrade :: all ();
-        $worktypes = WorkType :: all ();
+        $workStatuses = WorkStatus :: all ();
+        $workTrades = WorkTrade :: all ();
+        $workTypes = WorkType :: all ();
         $users = User :: all ();
         $machines = Machine :: all ();
-        $workPriority = WorkPriority :: all ();
+        $workPriorities = WorkPriority :: all ();
 
-        return view ('planeed_workorders.create' , compact('workstatuses,worktrades,worktypes,users,machines,workPriority')) ;
+        return view ('planeed_workorders.create' , compact('workStatuses,workTrades,workTypes,users,machines,workPriorities')) ;
     }
 
     public function store () {
-        $workorder = new WorkOrder ;
-        $workorder->name = request('name') ;
-        $workorder->save() ;
+        $pworkOrder = new WorkOrder ;
+        $pworkOrder->name = request('name') ;
+        $pworkOrder->save() ;
         return redirect()->route('planeed_workorders.list') ;
          
     }
 
     public function edit ($id) {
-        $workorder = WorkOrder :: find('$id') ;
-        return view ('planeed_workorders.edit' , compact('workorder')) ; 
+        $pworkOrder = WorkOrder :: find('$id') ;
+        return view ('planeed_workorders.edit' , compact('workpworkOrderorder')) ; 
     }
 
     public function update ($id) {
-        $workorder = WorkOrder :: find('$id') ;
-        $workorder->name = request('name') ;
-        $workorder->save() ; 
+        $pworkOrder = WorkOrder :: find('$id') ;
+        $pworkOrder->name = request('name') ;
+        $pworkOrder->save() ; 
         return redirect()->route('planeed_workorders.list') ;
 
     }
 
     public function delete ($id) {
-        $workorder = WorkOrder :: find('$id') ;
-        $workorder->delete() ;
+        $pworkOrder = WorkOrder :: find('$id') ;
+        $pworkOrder->delete() ;
         return redirect()->route('planeed_workorders.list') ;
 
     }
 
     public function show ($id) {
-        $workorder = WorkOrder :: find('$id') ; 
-        return view ('planeed_workorders.list' , comapct('workorder')) ;
+        $pworkOrder = WorkOrder :: find('$id') ; 
+        return view ('planeed_workorders.list' , comapct('pworkOrder')) ;
     }
 }

@@ -10,46 +10,46 @@ use App\Models\Matrial;
 class SparePartsController extends Controller
 {
     public function index () {
-        $spareparts = SparePart :: all() ;
-        return view ('spareparts.list' , compact ('spareparts')) ;
+        $spareParts = SparePart :: all() ;
+        return view ('spareParts.list' , compact ('spareParts')) ;
     }
 
     public function create () {
         $materials = Matrial :: all ();
         $locations = Location :: all() ;
-        return view ('spareparts.create' . compact('materials , locations')) ;
+        return view ('spareParts.create' . compact('materials , locations')) ;
     }
 
     public function store () {
-        $sparepart = new SparePart ;
-        $sparepart->name = request('name') ;
-        $sparepart->save() ;
-        return redirect()->route('spareparts.list') ;
+        $sparePart = new SparePart ;
+        $sparePart->name = request('name') ;
+        $sparePart->save() ;
+        return redirect()->route('spareParts.list') ;
          
     }
 
     public function edit ($id) {
-        $sparepart = SparePart :: find('$id') ;
-        return view ('spareparts.edit' , compact('sparepart')) ; 
+        $sparePart = SparePart :: find('$id') ;
+        return view ('spareParts.edit' , compact('sparePart')) ; 
     }
 
     public function update ($id) {
-        $sparepart = SparePart :: find('$id') ;
-        $sparepart->name = request('name') ;
-        $sparepart->save() ; 
-        return redirect()->route('spareparts.list') ;
+        $sparePart = SparePart :: find('$id') ;
+        $sparePart->name = request('name') ;
+        $sparePart->save() ; 
+        return redirect()->route('spareParts.list') ;
 
     }
 
     public function delete ($id) {
-        $sparepart = SparePart :: find('$id') ;
-        $sparepart->delete() ;
-        return redirect()->route('spareparts.list') ;
+        $sparePart = SparePart :: find('$id') ;
+        $sparePart->delete() ;
+        return redirect()->route('spareParts.list') ;
 
     }
 
     public function show ($id) {
-        $sparepart = SparePart :: find('$id') ; 
-        return view ('spareparts.list' , comapct('sparepart')) ;
+        $sparePart = SparePart :: find('$id') ; 
+        return view ('spareParts.list' , comapct('sparePart')) ;
     }
 }

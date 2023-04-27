@@ -8,8 +8,8 @@ use App\Models\WorkTrade;
 class WorkTradesController extends Controller
 {
     public function index () {
-        $worktrades = WorkTrade :: all() ;
-        return view ('worktrades.list' , compact ('worktrades')) ;
+        $workTrades = WorkTrade :: all() ;
+        return view ('workTrades.list' , compact ('workTrades')) ;
     }
 
     public function create () {
@@ -17,35 +17,35 @@ class WorkTradesController extends Controller
     }
 
     public function store () {
-        $worktrade = new WorkTrade ;
-        $worktrade->name = request('name') ;
-        $worktrade->save() ;
-        return redirect()->route('worktrades.list') ;
+        $workTrade = new WorkTrade ;
+        $workTrade->name = request('name') ;
+        $workTrade->save() ;
+        return redirect()->route('workTrades.list') ;
          
     }
 
     public function edit ($id) {
-        $worktrade = WorkTrade :: find('$id') ;
-        return view ('worktrades.edit' , compact('worktrade')) ; 
+        $workTrade = WorkTrade :: find('$id') ;
+        return view ('workTrades.edit' , compact('workTrade')) ; 
     }
 
     public function update ($id) {
-        $worktrade = WorkTrade :: find('$id') ;
-        $worktrade->name = request('name') ;
-        $worktrade->save() ; 
-        return redirect()->route('worktrades.list') ;
+        $workTrade = WorkTrade :: find('$id') ;
+        $workTrade->name = request('name') ;
+        $workTrade->save() ; 
+        return redirect()->route('workTrades.list') ;
 
     }
 
     public function delete ($id) {
-        $worktrade = WorkTrade :: find('$id') ;
-        $worktrade->delete() ;
-        return redirect()->route('worktrades.list') ;
+        $workTrade = WorkTrade :: find('$id') ;
+        $workTrade->delete() ;
+        return redirect()->route('workTrades.list') ;
 
     }
 
     public function show ($id) {
-        $worktrade = WorkTrade :: find('$id') ; 
-        return view ('worktrades.list' , comapct('worktrade')) ;
+        $workTrade = WorkTrade :: find('$id') ; 
+        return view ('workTrades.list' , comapct('workTrade')) ;
     }
 }

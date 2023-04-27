@@ -8,44 +8,44 @@ use App\Models\WorkType;
 class WorkTypesController extends Controller
 {
     public function index () {
-        $worktypes = WorkType :: all() ;
-        return view ('worktypes.list' , compact ('worktypes')) ;
+        $workTypes = WorkType :: all() ;
+        return view ('workTypes.list' , compact ('workTypes')) ;
     }
 
     public function create () {
-        return view ('worktypes.create') ;
+        return view ('workTypes.create') ;
     }
 
     public function store () {
-        $worktype = new WorkType ;
-        $worktype->name = request('name') ;
-        $worktype->save() ;
-        return redirect()->route('worktypes.list') ;
+        $workType = new WorkType ;
+        $workType->name = request('name') ;
+        $workType->save() ;
+        return redirect()->route('workTypes.list') ;
          
     }
 
     public function edit ($id) {
-        $worktype = WorkType :: find('$id') ;
-        return view ('worktypes.edit' , compact('worktype')) ; 
+        $workType = WorkType :: find('$id') ;
+        return view ('workTypes.edit' , compact('workType')) ; 
     }
 
     public function update ($id) {
-        $worktype = WorkType :: find('$id') ;
-        $worktype->name = request('name') ;
-        $worktype->save() ; 
-        return redirect()->route('worktypes.list') ;
+        $workType = WorkType :: find('$id') ;
+        $workType->name = request('name') ;
+        $workType->save() ; 
+        return redirect()->route('workTypes.list') ;
 
     }
 
     public function delete ($id) {
-        $worktypes = WorkType :: find('$id') ;
-        $worktype->delete() ;
-        return redirect()->route('worktypes.list') ;
+        $workType = WorkType :: find('$id') ;
+        $workType->delete() ;
+        return redirect()->route('workTypes.list') ;
 
     }
 
     public function show ($id) {
-        $worktype = WorkType :: find('$id') ; 
-        return view ('worktypes.list' , comapct('worktype')) ;
+        $workType = WorkType :: find('$id') ; 
+        return view ('workTypes.list' , comapct('workType')) ;
     }
 }
