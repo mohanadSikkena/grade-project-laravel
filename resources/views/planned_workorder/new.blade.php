@@ -32,14 +32,6 @@
                     </select>
                     @endforeach
                 </div>
-                <div class="col">
-                    <label for="">M/C Name</label>
-                    @foreach (AS)
-                    <select class="form-select" aria-label="Default select example">
-                        <option value="{{$->id}}">{{$->name}}</option>
-                    </select>
-                    @endforeach
-                </div>
 
             </div>
 
