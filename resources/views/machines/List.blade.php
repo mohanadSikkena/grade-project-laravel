@@ -44,21 +44,21 @@
                 <tbody>
                   @foreach ($machines as $machine)
                   <tr>
-                    <td>{{$machine->name}}</td>
-                    <td>{{$machine->machine_model}}</td>
-                    <td>{{$machine->manfacturer}}</td>
-                    <td>{{$machine->user_id}}</td>
-                    <td>{{$machine->department_id}}</td>
-                    <td>{{$machine->category_id}}</td>
-                    <td>{{$machine->location->location_description}}</td>
-                    <td>{{$machine->contractor}}</td>
-                    <td>{{$machine->supplier}}</td>
-                    <td>{{$machine->critcality_id}}</td>
-                    <td>{{$machine->machine_code_id}}</td>
-                    <td>{{$machine->serial_number}}</td>
-                    <td>{{$machine->contract_expiry_date}}</td>
-                    <td>{{$machine->notes_to_technection}}</td>
-                    <td>{{$machine->description}}</td>
+                    <td>{{$machines->name}}</td>
+                    <td>{{$machines->machine_model}}</td>
+                    <td>{{$machines->manfacturer}}</td>
+                    <td>{{$machines->user_id}}</td>
+                    <td>{{$machines->department_id}}</td>
+                    <td>{{$machines->category_id}}</td>
+                    <td>{{$machines->location->location_description}}</td>
+                    <td>{{$machines->contractor}}</td>
+                    <td>{{$machines->supplier}}</td>
+                    <td>{{$machines->critcality_id}}</td>
+                    <td>{{$machines->machine_code_id}}</td>
+                    <td>{{$machines->serial_number}}</td>
+                    <td>{{$machines->contract_expiry_date}}</td>
+                    <td>{{$machines->notes_to_technection}}</td>
+                    <td>{{$machines->description}}</td>
                     <td>
 
                     </td>
