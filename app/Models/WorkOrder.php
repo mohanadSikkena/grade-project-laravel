@@ -15,8 +15,11 @@ use App\Models\WorkPriority;
 class WorkOrder extends Model
 {
     use HasFactory;
-    public function user(){
-        return $this->belongsTo(User::class);
+    public function requester(){
+        return $this->belongsTo(User::class ,'requster_id' , 'id');
+    }
+    public function assigendTo(){
+        return $this->belongsTo(User::class , 'assign_to' ,'id');
     }
     public function workStatus(){
         return $this->belongsTo(WorkStatus::class);

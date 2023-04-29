@@ -23,28 +23,19 @@
                 <thead>
                   <tr>
                     <th>Assign To</th>
-                    <th>Asset</th>
-                    <th>Description</th>
+                    <th>Machine</th>
+                    <th>Failure Cause</th>
                     <th>Requirements </th>
                   </tr>
                 <thead>
                 <tbody>
                   @foreach ($fworkOrders AS $fworkOrder)
                   <tr>
-                    <td>{{$fworkOrder->user->name}}</td>
-                    <td>{{$fworkOrder->asset->name}}</td>
-                    <td>{{$fworkOrder->description}}</td>
+                    <td>{{$fworkOrder->assigendTo->name}}</td>
+                    <td>{{$fworkOrder->machine->name}}</td>
+                    <td>{{$fworkOrder->failure_cause}}</td>
                     <td>{{$fworkOrder->requirements}}</td>
-                    <td >
-                        <div class="block-item-text">
-                        <input type="checkbox" hidden class="read-more-state" id="read-more">
-                        <div class="read-more-wrap">
-                        <p class="read-more-target">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum voluptatibus maiores ad perferendis officia, expedita rem. Accusamus, tempore provident deserunt itaque vero sunt voluptates fugiat animi iste ex? Eos, voluptatibus.</p>
-                        </div>
-                        <label for="read-more" class="read-more-trigger_closed">Read More</label>
-                        <label for="read-more" class="read-more-trigger_opened">Read Less</label>
-                        </div>
-                        </td>
+                    
                   </tr>
                   @endforeach
 

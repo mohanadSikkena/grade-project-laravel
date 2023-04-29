@@ -15,7 +15,7 @@ use App\HTTP\Controllers\LocationsController;
 use App\HTTP\Controllers\DepartmentsController;
 use App\HTTP\Controllers\CategoriesController;
 use App\HTTP\Controllers\CriticalsController;
-
+use App\HTTP\Controllers\UsersController;
 
 
 /*
@@ -52,86 +52,86 @@ Route::put('/machines/{id}/update' , [MachinesController::class , 'update'])->na
 Route::delete('/machines/{id}/delete' , [MachinesController::class , 'delete'])->name('machines.delete')->middleWare("auth");
 
 /* Matrials Routes */
-Route::get('/matrials' , [MatrialsController::class , 'index'])->name('matrials.list')->middleWare("auth");
-Route::post('/matrials/save' , [MatrialsController::class , 'store'])->name('matrials.save')->middleWare("auth");
-Route::get('/matrials/new' , [MatrialsController::class , 'create'])->name('matrials.new')->middleWare("auth");
-Route::get('/matrials/{id}/show' , [MatrialsController::class , 'show'])->name('matrials.show')->middleWare("auth");
-Route::get('/matrials/{id}/edit' , [MatrialsController::class , 'edit'])->name('matrials.edit')->middleWare("auth");
-Route::put('/matrials/{id}/update' , [MatrialsController::class , 'update'])->name('matrials.update')->middleWare("auth");
-Route::delete('/matrials/{id}/delete' , [MatrialsController::class , 'delete'])->name('matrials.delete')->middleWare("auth");
+Route::get('/materials' , [MatrialsController::class , 'index'])->name('materials.list')->middleWare("auth");
+Route::post('/materials/save' , [MatrialsController::class , 'store'])->name('materials.save')->middleWare("auth");
+Route::get('/materials/new' , [MatrialsController::class , 'create'])->name('materials.new')->middleWare("auth");
+Route::get('/materials/{id}/show' , [MatrialsController::class , 'show'])->name('materials.show')->middleWare("auth");
+Route::get('/materials/{id}/edit' , [MatrialsController::class , 'edit'])->name('materials.edit')->middleWare("auth");
+Route::put('/materials/{id}/update' , [MatrialsController::class , 'update'])->name('materials.update')->middleWare("auth");
+Route::delete('/materials/{id}/delete' , [MatrialsController::class , 'delete'])->name('materials.delete')->middleWare("auth");
 
 /* Machine Codes Routes */
-Route::get('/machinecodes' , [MachineCodesController::class , 'index'])->name('machinecodes.list')->middleWare("auth");
-Route::post('/machinecodes/save' , [MachineCodesController::class , 'store'])->name('machinecodes.save')->middleWare("auth");
-Route::get('/machinecodes/new' , [MachineCodesController::class , 'create'])->name('machinecodes.new')->middleWare("auth");
-Route::get('/machinecodes/{id}/show' , [MachineCodesController::class , 'show'])->name('machinecodes.show')->middleWare("auth");
-Route::get('/machinecodes/{id}/edit' , [MachineCodesController::class , 'edit'])->name('machinecodes.edit')->middleWare("auth");
-Route::put('/machinecodes/{id}/update' , [MachineCodesController::class , 'update'])->name('machinecodes.update')->middleWare("auth");
-Route::delete('/machinecodes/{id}/delete' , [MachineCodesController::class , 'delete'])->name('machinecodes.delete')->middleWare("auth");
+Route::get('/machineCodes' , [MachineCodesController::class , 'index'])->name('machineCodes.list')->middleWare("auth");
+Route::post('/machineCodes/save' , [MachineCodesController::class , 'store'])->name('machineCodes.save')->middleWare("auth");
+Route::get('/machineCodes/new' , [MachineCodesController::class , 'create'])->name('machineCodes.new')->middleWare("auth");
+Route::get('/machineCodes/{id}/show' , [MachineCodesController::class , 'show'])->name('machineCodes.show')->middleWare("auth");
+Route::get('/machineCodes/{id}/edit' , [MachineCodesController::class , 'edit'])->name('machineCodes.edit')->middleWare("auth");
+Route::put('/machineCodes/{id}/update' , [MachineCodesController::class , 'update'])->name('machineCodes.update')->middleWare("auth");
+Route::delete('/machineCodes/{id}/delete' , [MachineCodesController::class , 'delete'])->name('machineCodes.delete')->middleWare("auth");
 
 /* Spare Parts Routes */
-Route::get('/spareparts' , [SparePartsController::class , 'index'])->name('spareparts.list')->middleWare("auth");
-Route::post('/spareparts/save' , [SparePartsController::class , 'store'])->name('spareparts.save')->middleWare("auth");
-Route::get('/spareparts/new' , [SparePartsController::class , 'create'])->name('spareparts.new')->middleWare("auth");
-Route::get('/spareparts/{id}/show' , [SparePartsController::class , 'show'])->name('spareparts.show')->middleWare("auth");
-Route::get('/spareparts/{id}/edit' , [SparePartsController::class , 'edit'])->name('spareparts.edit')->middleWare("auth");
-Route::put('/spareparts/{id}/update' , [SparePartsController::class , 'update'])->name('spareparts.update')->middleWare("auth");
-Route::delete('/spareparts/{id}/delete' , [SparePartsController::class , 'delete'])->name('spareparts.delete')->middleWare("auth");
+Route::get('/spareParts' , [SparePartsController::class , 'index'])->name('spareParts.list')->middleWare("auth");
+Route::post('/spareParts/save' , [SparePartsController::class , 'store'])->name('spareParts.save')->middleWare("auth");
+Route::get('/spareParts/new' , [SparePartsController::class , 'create'])->name('spareParts.new')->middleWare("auth");
+Route::get('/spareParts/{id}/show' , [SparePartsController::class , 'show'])->name('spareParts.show')->middleWare("auth");
+Route::get('/spareParts/{id}/edit' , [SparePartsController::class , 'edit'])->name('spareParts.edit')->middleWare("auth");
+Route::put('/spareParts/{id}/update' , [SparePartsController::class , 'update'])->name('spareParts.update')->middleWare("auth");
+Route::delete('/spareParts/{id}/delete' , [SparePartsController::class , 'delete'])->name('spareParts.delete')->middleWare("auth");
 
 /*planeed Work Orders Routes */
-Route::get('/planeed_workorders' , [PlaneedWorkOrdersController::class , 'index'])->name('planeed_workorders.list')->middleWare("auth");
-Route::post('/planeed_workorders/save' , [PlaneedWorkOrdersController::class , 'store'])->name('planeed_workorders.save')->middleWare("auth");
-Route::get('/planeed_workorders/new' , [PlaneedWorkOrdersController::class , 'create'])->name('planeed_workorders.new')->middleWare("auth");
-Route::get('/planeed_workorders/{id}/show' , [PlaneedWorkOrdersController::class , 'show'])->name('planeed_workorders.show')->middleWare("auth");
-Route::get('/planeed_workorders/{id}/edit' , [PlaneedWorkOrdersController::class , 'edit'])->name('planeed_workorders.edit')->middleWare("auth");
-Route::put('/planeed_workorders/{id}/update' , [PlaneedWorkOrdersController::class , 'update'])->name('planeed_workorders.update')->middleWare("auth");
-Route::delete('/planeed_workorders/{id}/delete' , [PlaneedWorkOrdersController::class , 'delete'])->name('planeed_workorders.delete')->middleWare("auth");
+Route::get('/planned_workorder' , [PlannedWorkOrdersController::class , 'index'])->name('planned_workorder.list')->middleWare("auth");
+Route::post('/planned_workorder/save' , [PlannedWorkOrdersController::class , 'store'])->name('planned_workorder.save')->middleWare("auth");
+Route::get('/planned_workorder/new' , [PlannedWorkOrdersController::class , 'create'])->name('planned_workorder.new')->middleWare("auth");
+Route::get('/planned_workorder/{id}/show' , [PlannedWorkOrdersController::class , 'show'])->name('planned_workorder.show')->middleWare("auth");
+Route::get('/planned_workorder/{id}/edit' , [PlannedWorkOrdersController::class , 'edit'])->name('planned_workorder.edit')->middleWare("auth");
+Route::put('/planned_workorder/{id}/update' , [PlannedWorkOrdersController::class , 'update'])->name('planned_workorder.update')->middleWare("auth");
+Route::delete('/planned_workorder/{id}/delete' , [PlannedWorkOrdersController::class , 'delete'])->name('planned_workorder.delete')->middleWare("auth");
 
 /*failure Work Orders Routes */
-Route::get('/failure_workorders' , [FailureWorkOrdersController::class , 'index'])->name('failure_workorders.list')->middleWare("auth");
-Route::post('/failure_workorders/save' , [FailureWorkOrdersController::class , 'store'])->name('failure_workorders.save')->middleWare("auth");
-Route::get('/failure_workorders/new' , [FailureWorkOrdersController::class , 'create'])->name('failure_workorders.new')->middleWare("auth");
-Route::get('/failure_workorders/{id}/show' , [FailureWorkOrdersController::class , 'show'])->name('failure_workorders.show')->middleWare("auth");
-Route::get('/failure_workorders/{id}/edit' , [FailureWorkOrdersController::class , 'edit'])->name('failure_workorders.edit')->middleWare("auth");
-Route::put('/failure_workorders/{id}/update' , [FailureWorkOrdersController::class , 'update'])->name('failure_workorders.update')->middleWare("auth");
-Route::delete('/failure_workorders/{id}/delete' , [FailureWorkOrdersController::class , 'delete'])->name('failure_workorders.delete')->middleWare("auth");
+Route::get('/failure_workorder' , [FailureWorkOrdersController::class , 'index'])->name('failure_workorder.list');
+Route::post('/failure_workorder/save' , [FailureWorkOrdersController::class , 'store'])->name('failure_workorder.save')->middleWare("auth");
+Route::get('/failure_workorder/new' , [FailureWorkOrdersController::class , 'create'])->name('failure_workorder.new')->middleWare("auth");
+Route::get('/failure_workorder/{id}/show' , [FailureWorkOrdersController::class , 'show'])->name('failure_workorder.show')->middleWare("auth");
+Route::get('/failure_workorder/{id}/edit' , [FailureWorkOrdersController::class , 'edit'])->name('failure_workorder.edit')->middleWare("auth");
+Route::put('/failure_workorder/{id}/update' , [FailureWorkOrdersController::class , 'update'])->name('failure_workorder.update')->middleWare("auth");
+Route::delete('/failure_workorder/{id}/delete' , [FailureWorkOrdersController::class , 'delete'])->name('failure_workorder.delete')->middleWare("auth");
 
 
 /* Work Requests Routes */
-Route::get('/workrequests' , [WorkRequestsController::class , 'index'])->name('workrequests.list')->middleWare("auth");
-Route::post('/workrequests/save' , [WorkRequestsController::class , 'store'])->name('workrequests.save')->middleWare("auth");
-Route::get('/workrequests/new' , [WorkRequestsController::class , 'create'])->name('workrequests.new')->middleWare("auth");
-Route::get('/workrequests/{id}/show' , [WorkRequestsController::class , 'show'])->name('workrequests.show')->middleWare("auth");
-Route::get('/workrequests/{id}/edit' , [WorkRequestsController::class , 'edit'])->name('workrequests.edit')->middleWare("auth");
-Route::put('/workrequests/{id}/update' , [WorkRequestsController::class , 'update'])->name('workrequests.update')->middleWare("auth");
-Route::delete('/workrequests/{id}/delete' , [WorkRequestsController::class , 'delete'])->name('workrequests.delete')->middleWare("auth");
+Route::get('/workRequests' , [WorkRequestsController::class , 'index'])->name('workRequests.list')->middleWare("auth");
+Route::post('/workRequests/save' , [WorkRequestsController::class , 'store'])->name('workRequests.save')->middleWare("auth");
+Route::get('/workRequests/new' , [WorkRequestsController::class , 'create'])->name('workRequests.new')->middleWare("auth");
+Route::get('/workRequests/{id}/show' , [WorkRequestsController::class , 'show'])->name('workRequests.show')->middleWare("auth");
+Route::get('/workRequests/{id}/edit' , [WorkRequestsController::class , 'edit'])->name('workRequests.edit')->middleWare("auth");
+Route::put('/workRequests/{id}/update' , [WorkRequestsController::class , 'update'])->name('workRequests.update')->middleWare("auth");
+Route::delete('/workRequests/{id}/delete' , [WorkRequestsController::class , 'delete'])->name('workRequests.delete')->middleWare("auth");
 
 /* Work Status Routes */
-Route::get('/workstatus' , [WorkStatusController::class , 'index'])->name('workstatus.list')->middleWare("auth");
-Route::post('/workstatus/save' , [WorkStatusController::class , 'store'])->name('workstatus.save')->middleWare("auth");
-Route::get('/workstatus/new' , [WorkStatusController::class , 'create'])->name('workstatus.new')->middleWare("auth");
-Route::get('/workstatus/{id}/show' , [WorkStatusController::class , 'show'])->name('workstatus.show')->middleWare("auth");
-Route::get('/workstatus/{id}/edit' , [WorkStatusController::class , 'edit'])->name('workstatus.edit')->middleWare("auth");
-Route::put('/workstatus/{id}/update' , [WorkStatusController::class , 'update'])->name('workstatus.update')->middleWare("auth");
-Route::delete('/workstatus/{id}/delete' , [WorkStatusController::class , 'delete'])->name('workstatus.delete')->middleWare("auth");
+Route::get('/workStatuses' , [WorkStatusController::class , 'index'])->name('workStatuses.list')->middleWare("auth");
+Route::post('/workStatuses/save' , [WorkStatusController::class , 'store'])->name('workStatuses.save')->middleWare("auth");
+Route::get('/workStatuses/new' , [WorkStatusController::class , 'create'])->name('workStatuses.new')->middleWare("auth");
+Route::get('/workStatuses/{id}/show' , [WorkStatusController::class , 'show'])->name('workStatuses.show')->middleWare("auth");
+Route::get('/workStatuses/{id}/edit' , [WorkStatusController::class , 'edit'])->name('workStatuses.edit')->middleWare("auth");
+Route::put('/workStatuses/{id}/update' , [WorkStatusController::class , 'update'])->name('workStatuses.update')->middleWare("auth");
+Route::delete('/workStatuses/{id}/delete' , [WorkStatusController::class , 'delete'])->name('workStatuses.delete')->middleWare("auth");
 
 /* Work Trades Routes */
-Route::get('/worktrades' , [WorkTradesController::class , 'index'])->name('worktrades.list')->middleWare("auth");
-Route::post('/worktrades/save' , [WorkTradesController::class , 'store'])->name('worktrades.save')->middleWare("auth");
-Route::get('/worktrades/new' , [WorkTradesController::class , 'create'])->name('worktrades.new')->middleWare("auth");
-Route::get('/worktrades/{id}/show' , [WorkTradesController::class , 'show'])->name('worktrades.show')->middleWare("auth");
-Route::get('/worktrades/{id}/edit' , [WorkTradesController::class , 'edit'])->name('worktrades.edit')->middleWare("auth");
-Route::put('/worktrades/{id}/update' , [WorkTradesController::class , 'update'])->name('worktrades.update')->middleWare("auth");
-Route::delete('/worktrades/{id}/delete' , [WorkTradesController::class , 'delete'])->name('worktrades.delete')->middleWare("auth");
+Route::get('/workTrades' , [WorkTradesController::class , 'index'])->name('workTrades.list')->middleWare("auth");
+Route::post('/workTrades/save' , [WorkTradesController::class , 'store'])->name('workTrades.save')->middleWare("auth");
+Route::get('/workTrades/new' , [WorkTradesController::class , 'create'])->name('workTrades.new')->middleWare("auth");
+Route::get('/workTrades/{id}/show' , [WorkTradesController::class , 'show'])->name('workTrades.show')->middleWare("auth");
+Route::get('/workTrades/{id}/edit' , [WorkTradesController::class , 'edit'])->name('workTrades.edit')->middleWare("auth");
+Route::put('/workTrades/{id}/update' , [WorkTradesController::class , 'update'])->name('workTrades.update')->middleWare("auth");
+Route::delete('/workTrades/{id}/delete' , [WorkTradesController::class , 'delete'])->name('workTrades.delete')->middleWare("auth");
 
 /* Work Types Routes */
-Route::get('/worktypes' , [WorkTypesController::class , 'index'])->name('worktypes.list')->middleWare("auth");
-Route::post('/worktypes/save' , [WorkTypesController::class , 'store'])->name('worktypes.save')->middleWare("auth");
-Route::get('/worktypes/new' , [WorkTypesController::class , 'create'])->name('worktypes.new')->middleWare("auth");
-Route::get('/worktypes/{id}/show' , [WorkTypesController::class , 'show'])->name('worktypes.show')->middleWare("auth");
-Route::get('/worktypes/{id}/edit' , [WorkTypesController::class , 'edit'])->name('worktypes.edit')->middleWare("auth");
-Route::put('/worktypes/{id}/update' , [WorkTypesController::class , 'update'])->name('worktypes.update')->middleWare("auth");
-Route::delete('/worktypes/{id}/delete' , [WorkTypesController::class , 'delete'])->name('worktypes.delete')->middleWare("auth");
+Route::get('/workTypes' , [WorkTypesController::class , 'index'])->name('workTypes.list')->middleWare("auth");
+Route::post('/workTypes/save' , [WorkTypesController::class , 'store'])->name('workTypes.save')->middleWare("auth");
+Route::get('/workTypes/new' , [WorkTypesController::class , 'create'])->name('workTypes.new')->middleWare("auth");
+Route::get('/workTypes/{id}/show' , [WorkTypesController::class , 'show'])->name('workTypes.show')->middleWare("auth");
+Route::get('/workTypes/{id}/edit' , [WorkTypesController::class , 'edit'])->name('workTypes.edit')->middleWare("auth");
+Route::put('/workTypes/{id}/update' , [WorkTypesController::class , 'update'])->name('workTypes.update')->middleWare("auth");
+Route::delete('/workTypes/{id}/delete' , [WorkTypesController::class , 'delete'])->name('workTypes.delete')->middleWare("auth");
 
 /* Locations Routes */
 Route::get('/locations' , [LocationsController::class , 'index'])->name('locations.list')->middleWare("auth");
@@ -168,5 +168,14 @@ Route::get('/criticals/{id}/show' , [CriticalsController::class , 'show'])->name
 Route::get('/criticals/{id}/edit' , [CriticalsController::class , 'edit'])->name('criticals.edit')->middleWare("auth");
 Route::put('/criticals/{id}/update' , [CriticalsController::class , 'update'])->name('criticals.update')->middleWare("auth");
 Route::delete('/criticals/{id}/delete' , [CriticalsController::class , 'delete'])->name('criticals.delete')->middleWare("auth");
+
+/* Users Routes */
+Route::get('/users' , [UsersController::class , 'index'])->name('users.list')->middleWare("auth");
+Route::post('/users/save' , [UsersController::class , 'store'])->name('users.save')->middleWare("auth");
+Route::get('/users/new' , [UsersController::class , 'create'])->name('users.new')->middleWare("auth");
+Route::get('/users/{id}/show' , [UsersController::class , 'show'])->name('users.show')->middleWare("auth");
+Route::get('/users/{id}/edit' , [UsersController::class , 'edit'])->name('users.edit')->middleWare("auth");
+Route::put('/users/{id}/update' , [UsersController::class , 'update'])->name('users.update')->middleWare("auth");
+Route::delete('/users/{id}/delete' , [UsersController::class , 'delete'])->name('users.delete')->middleWare("auth");
 
 

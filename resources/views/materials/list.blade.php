@@ -36,8 +36,8 @@
                     <td>{{$material->name}}</td>
                     <td>{{$material->quantity}}</td>
                     <td>{{$material->sparepart->name}}</td>
-                    <td>{{$material->critical->name}}</td>
-                    <td>{{$material->location->name}}</td>
+                    <td>{{$material->criticality->name}}</td>
+                    <td>{{$material->location->location_description}}</td>
                     <td>{{$material->category->name}}</td>
                   </tr>
                   @endforeach

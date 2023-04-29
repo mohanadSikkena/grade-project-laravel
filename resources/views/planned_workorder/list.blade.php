@@ -25,7 +25,6 @@
                     <th>Actions</th>
                     <th>Assign To</th>
                     <th>Asset</th>
-                    <th>M/C Name</th>
                     <th>Work Status</th>
                     <th>Work Type</th>
                     <th>Work Priority</th>
@@ -42,12 +41,11 @@
                       <a class="btn btn-outline-primary" href="">Edit</a>
                       <a class="btn btn-outline-danger" href="#">Delete</a>
                     </td>
-                    <td>{{$pworkOrder->user->name}}</td>
-                    <td>{{$pworkOrder->asset->name}}</td>
-                    <td>{{$pworkOrder->user->name}}</td>
-                    <td>{{$pworkOrder->workstatus->name}}</td>
-                    <td>{{$pworkOrder->worktype->name}}</td>
-                    <td>{{$pworkOrder->workpriority->name}}</td>
+                    <td>{{$pworkOrder->assigendTo->name}}</td>
+                    <td>{{$pworkOrder->machine->name}}</td>
+                    <td>{{$pworkOrder->workStatus->name}}</td>
+                    <td>{{$pworkOrder->workType->name}}</td>
+                    <td>{{$pworkOrder->workPriority->name}}</td>
                     <td>{{$pworkOrder->requirements}}</td>
                     <td>{{$pworkOrder->created_at}}</td>
                   </tr>

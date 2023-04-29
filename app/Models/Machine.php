@@ -41,6 +41,6 @@ class Machine extends Model
         return $this->belongsTo(MachineCode::class);
     }
     public function user(){
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
     }
 }

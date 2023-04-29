@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\FailureWorkOrder;
+use App\Models\WorkOrder;
 use App\Models\User;
 use App\Models\Machine;
 
 
-class WorkOrdersController extends Controller
+class FailureWorkOrdersController extends Controller
 {
     public function index () {
-        $fWorkorder = WorkOrder :: all() ;
-        return view ('failure_workorder.list' , compact ('workorders')) ;
+        $fworkOrders = WorkOrder :: all() ;
+        return view ('failure_workorder.list' , compact ('fworkOrders')) ;
     }
 
     public function create () {
@@ -22,35 +22,35 @@ class WorkOrdersController extends Controller
     }
 
     public function store () {
-        $fWorkorder = new WorkOrder ;
-        $fWorkorder->name = request('name') ;
-        $fWorkorder->save() ;
+        $fworkOrder = new WorkOrder ;
+        $fworkOrder->name = request('name') ;
+        $fworkOrder->save() ;
         return redirect()->route('failure_workorder.list') ;
          
     }
 
     public function edit ($id) {
-        $fWorkorder = WorkOrder :: find('$id') ;
-        return view ('failure_workorder.edit' , compact('workorder')) ; 
+        $fworkOrder = WorkOrder :: find('$id') ;
+        return view ('failure_workorder.edit' , compact('fworkOrder')) ; 
     }
 
     public function update ($id) {
-        $fWorkorder = WorkOrder :: find('$id') ;
-        $fWorkorder->name = request('name') ;
-        $fWorkorder->save() ; 
+        $fworkOrder = WorkOrder :: find('$id') ;
+        $fworkOrder->name = request('name') ;
+        $fworkOrder->save() ; 
         return redirect()->route('failure_workorder.list') ;
 
     }
 
     public function delete ($id) {
-        $fWorkorder = WorkOrder :: find('$id') ;
-        $fWorkorder->delete() ;
+        $fworkOrder = WorkOrder :: find('$id') ;
+        $fworkOrder->delete() ;
         return redirect()->route('failure_workorders.list') ;
 
     }
 
     public function show ($id) {
-        $fWorkorder = WorkOrder :: find('$id') ; 
-        return view ('failure_workorders.list' , comapct('workorder')) ;
+        $fworkOrder = WorkOrder :: find('$id') ; 
+        return view ('failure_workorders.list' , comapct('fworkOrder')) ;
     }
 }

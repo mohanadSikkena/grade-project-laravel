@@ -53,7 +53,7 @@
                     <td>{{$machine->location->location_description}}</td>
                     <td>{{$machine->contractor}}</td>
                     <td>{{$machine->supplier}}</td>
-                    <td>{{$machine->critical->name}}</td>
+                    <td>{{$machine->Criticality->name}}</td>
                     <td>{{$machine->machine_code_id}}</td>
                     <td>{{$machine->serial_number}}</td>
                     <td>{{$machine->contract_expiry_date}}</td>

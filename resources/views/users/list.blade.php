@@ -37,11 +37,11 @@
                   <tr>
                     <td>{{$user->name}}</td>
                     <td>{{$user->address}}</td>
-                    <td>{{$user->phone_number}}</td>
-                    <td>{{$user->house_number}}</td>
-                    <td>{{$user->hourly_salary}}</td>
+                    <td>{{$user->phone_no}}</td>
+                    <td>{{$user->house_no}}</td>
+                    <td>{{$user->hourly_salery}}</td>
                     <td>{{$user->department->name}}</td>
-                    <td>{{$user->loactaion->name}}</td>
+                    <td>{{$user->location->location_description}}</td>
 
                   </tr>
                   @endforeach
