@@ -25,7 +25,7 @@ return new class extends Migration
             $table->date('received_date')->nullable();
             $table->string('requirements', 255);
             $table->timestamps();
-            $table->foreign('work_status_id')->references('id')->on('work_status')->onUpdate('CASCADE')->onDelete('RESTRICT');
+            $table->foreign('work_status_id')->references('id')->on('work_statuses')->onUpdate('CASCADE')->onDelete('RESTRICT');
             $table->foreign('work_type_id')->references('id')->on('work_types')->onUpdate('CASCADE')->onDelete('RESTRICT');
             $table->foreign('work_trade_id')->references('id')->on('work_trades')->onUpdate('CASCADE')->onDelete('RESTRICT');
             $table->foreign('machine_id')->references('id')->on('machines')->onUpdate('CASCADE')->onDelete('RESTRICT');

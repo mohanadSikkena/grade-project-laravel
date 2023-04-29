@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->integer('address')->nullable();
+            $table->string('address')->nullable();
             $table->integer('phone_no')->nullable();
             $table->integer('house_no')->nullable();
             $table->foreignId('department_id')->nullable();
