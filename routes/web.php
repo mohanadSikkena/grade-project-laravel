@@ -42,6 +42,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+
 /* Machines Routes */
 Route::get('/machines' , [MachinesController::class , 'index'])->name('machines.list')->middleWare("auth");
 Route::post('/machines/save' , [MachinesController::class , 'store'])->name('machines.save')->middleWare("auth");

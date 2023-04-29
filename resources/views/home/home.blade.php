@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{{Asset('bootstrap.css.map')}}">
+    <link rel="stylesheet" href="{{Asset('bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{Asset('icons/style.css')}}">
     <link rel="stylesheet" href="{{Asset('homeStyle.css')}}">
     <meta charset="UTF-8">
@@ -16,19 +16,19 @@
        <div class="container">
 
            <div class="row">
-               <a href="WorkOrder.html"> <button class="home-button">
+               <a href={{ route('home.WorkOrder') }}> <button class="home-button">
                    <div class="fs1"><span class="icon-file-text2"></span><br>
                  </div> Work Order</button></a>
-               <a href="../table/assets.html"> <button class="home-button">
+               <a href={{ route('machines.list') }}> <button class="home-button">
                    <div class="fs1"><span class="icon-cog"></span><br>
                    </div> Assets</button></a>
-               <a href="../table/Users.html"> <button class="home-button"> <div class="fs1"><span class="icon-users"></span><br>
+               <a href={{ route('users.list') }}> <button class="home-button"> <div class="fs1"><span class="icon-users"></span><br>
                </div> Users</button></a>
-               <a href="../table/Matrial.html"> <button class="home-button"> <div class="fs1"><span class="icon-database"></span><br>
+               <a href={{ route('materials.list') }}> <button class="home-button"> <div class="fs1"><span class="icon-database"></span><br>
                </div> Matrials</button></a>
-               <a href="../table/WorkRequest.html"> <button class="home-button"> <div class="fs1"><span class="icon-paste"></span><br>
+               <a href={{ route ('workRequests.list') }}> <button class="home-button"> <div class="fs1"><span class="icon-paste"></span><br>
                </div> Work Requests</button></a>
-               <a href=""> <button class="home-button"> <div class="fs1"><span class="icon-exit"></span><br>
+               <a href=> <button class="home-button"> <div class="fs1"><span class="icon-exit"></span><br>
                </div>  Exit</button></a>
            </div>
        </div>

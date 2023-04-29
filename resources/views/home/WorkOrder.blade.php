@@ -14,10 +14,10 @@
     <div class="container">
         
         <div class="row">
-            <a href="../table/WorkOrderPlanned.html"> <button class="home-button"> 
+            <a href={{ route('planned_workorder.list') }}> <button class="home-button"> 
                 <div class="fs1"><span class="icon-file-text2"></span><br>
               </div>Planned Work Order</button></a>
-            <a href="../table/WorkOrderFailure.html"> <button class="home-button"> 
+            <a href={{ route('failure_workorder.list') }}> <button class="home-button"> 
                 <div class="fs1"><span class="icon-cog"></span><br>
                 </div> Failure Work Order</button></a>
             
