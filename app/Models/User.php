@@ -16,6 +16,8 @@ use App\Models\WorkRequest;
 use App\Models\Machine;
 use App\Models\Department;
 use App\Models\Location;
+use App\Models\Role;
+use App\Models\Permission;
 
 class User extends Authenticatable
 {
@@ -66,5 +68,12 @@ class User extends Authenticatable
     public function location(){
         return $this->belongsTo(Location::class);
     }
+    public function roles(){
+        return $this->belongsToMany(Role::class, 'user_roles');
+    }
+    public function permissions(){
+    return $this->hasMany(Permission::class, 'role', 'role');
+    }
+
 
 }
