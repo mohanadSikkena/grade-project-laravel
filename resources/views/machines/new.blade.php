@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{Asset('bootstrap.css.map')}}">
-
+    <link rel="stylesheet" href="{{Asset('bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{Asset('formStyle.css')}}">
     <title>New Machine</title>
 </head>
@@ -31,38 +30,38 @@
                     </div>
                         <div class="row">
                           <div class="col">
-                            <label for="">User Id</label>
+                            <label for="">User </label>
                             <select class="form-select" aria-label="Default select example">
                               @foreach ($users as $user)
                               <option value="{{ $user->id }}">{{ $user->name }}</option>
+                              @endforeach
                             </select>
-                            @endforeach
                           </div>
                             <div class="col">
-                              <label for="">Department Id</label>
-                              @foreach ($departments as $department)
+                              <label for="">Department </label>
                               <select class="form-select" aria-label="Default select example">
+                                @foreach ($departments as $department)
                                 <option value="{{$department->id}}">{{$department->name}}</option>
+                                @endforeach
                               </select>
-                              @endforeach
                             </div>
                           </div>
                             <div class="row">
                             <div class="col">
                               <label for="">Category Id</label>
-                              @foreach ($categories AS $category)
                               <select class="form-select" aria-label="Default select example">
+                                @foreach ($categories AS $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>
-                              </select>
-                              @endforeach
+                                @endforeach
+                              </select>                      
                             </div>
                             <div class="col">
                               <label for="">Location Id</label>
-                              @foreach ($locations AS $location)
                               <select class="form-select" aria-label="Default select example">
+                                @foreach ($locations AS $location)
                                 <option value="{{$location->id}}">{{$location->name}}</option>
+                                @endforeach
                               </select>
-                              @endforeach
                             </div>
                         </div>
 
@@ -81,19 +80,19 @@
                   <div class="row">
                     <div class="col">
                       <label for="">Critcality Id</label>
-                      @foreach ($criticals As $crtical)
-                      <select class="form-select" aria-label="Default select example">
+                      <select class="form-select" aria-label="Default select example"> 
+                        @foreach ($criticals As $crtical) 
                         <option value="{{$crtical->id}}">{{$crtical->name}}</option>
                         @endforeach
                       </select>
                     </div>
                       <div class="col">
                         <label for="">Assets Code Id</label>
-                        @foreach ($assetsCode AS $assetCode)
                         <select class="form-select" aria-label="Default select example">
-                          <option value="{{$assetCode->id}}">{{$assetCode->name}}</option>
-                        </select>
-                        @endforeach
+                          @foreach ($machineCodes AS $machineCode)
+                          <option value="{{$machineCode->id}}">{{$machineCode->name}}</option>
+                          @endforeach
+                        </select>                     
                       </div>
                       <div class="col">
                         <label for="">Serial Number</label>

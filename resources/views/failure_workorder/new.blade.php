@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{Asset('bootstrap.css.map')}}">
+    <link rel="stylesheet" href="{{Asset('bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{Asset('formStyle.css')}}">
     <title> New Failure Work Order</title>
 </head>
@@ -14,23 +14,24 @@
    <div class="contain">
     <div class="all">
       <div class="header">Failure Work Order</div>
-        <form action="{{failure_workorder.save}}" method="post">
+        <form action={{Route('failure_workorder.save')}} method="post">
             <div class="col">
                 <label for="">Assign To</label>
-                @foreach ($users AS $user)
                 <select class="form-select" aria-label="Default select example">
+                  @foreach ($users AS $user)
                     <option value="{{$user->id}}">{{$user->name}}</option>
+                    @endforeach
                 </select>
-                @endforeach
                 </div>
             <div class="row">
                 <div class="col">
                     <label for="">Asset</label>
-                    @foreach ($machines AS $machine)
                     <select class="form-select" aria-label="Default select example">
+                      @foreach ($machines AS $machine)
                         <option value="{{$machine->id}}">{{$machine->name}}</option>
+                        @endforeach
                     </select>
-                    @endforeach
+                    
                 </div>
                 
             </div>

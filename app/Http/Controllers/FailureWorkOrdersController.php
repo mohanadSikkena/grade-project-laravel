@@ -12,13 +12,13 @@ class FailureWorkOrdersController extends Controller
 {
     public function index () {
         $fworkOrders = WorkOrder :: all() ;
-        return view ('failure_workorder.list' , compact ('fworkOrders')) ;
+        return view ('failure_workorder.list' , compact('fworkOrders')) ;
     }
 
     public function create () {
         $users = User :: all ();
         $machines = Machine :: all();
-        return view ('failure_workorder.create' . compact('users , machines')) ;
+        return view ('failure_workorder.new' , compact('users' , 'machines')) ;
     }
 
     public function store () {

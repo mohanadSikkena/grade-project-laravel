@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{Asset('bootstrap.css.map')}}">
+    <link rel="stylesheet" href="{{Asset('bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{Asset('formStyle.css')}}">
     <title>New Planned Work Order</title>
 </head>
@@ -17,20 +17,20 @@
         <form action="" method="post">
             <div class="col">
                 <label for="">Assign To</label>
-                @foreach ($users AS $user)
                 <select class="form-select" aria-label="Default select example">
+                    @foreach ($users AS $user)
                     <option value="{{$user->id}}">{{$user->name}}</option>
+                    @endforeach
                 </select>
-                @endforeach
                 </div>
             <div class="row">
                 <div class="col">
                     <label for="">Asset</label>
-                    @foreach ($assets AS $asset)
                     <select class="form-select" aria-label="Default select example">
-                        <option value="{{$asset->id}}">{{$asset->name}}</option>
+                        @foreach ($machines AS $machine)
+                        <option value="{{$machine->id}}">{{$machine->name}}</option>
+                        @endforeach
                     </select>
-                    @endforeach
                 </div>
 
             </div>
@@ -38,37 +38,33 @@
                 <div class="row">
                     <div class="col">
                         <label for="">Work Status</label>
-                        @foreach ($workStatuses AS $workStatus)
                         <select class="form-select" aria-label="Default select example">
+                            @foreach ($workStatuses AS $workStatus)
                             <option value="{{$workStatus->id}}">{{$workStatus->name}}</option>
+                            @endforeach
                         </select>
-                        @endforeach
                     </div>
                     <div class="col">
                         <label for="">Work type </label>
-                        @foreach ($workTypes AS $workType)
                         <select class="form-select" aria-label="Default select example">
+                            @foreach ($workTypes AS $workType)
                             <option value="{{$workType->id}}">{{$workType->name}}</option>
+                            @endforeach
                         </select>
-                        @endforeach
                     </div>
                     <div class="col">
                         <label for="">Work Priority</label>
-                        @foreach ($workPrioritys AS $workPriority)
                         <select class="form-select" aria-label="Default select example">
+                            @foreach ($workPriorities AS $workPriority)
                             <option value="{{$workPriority->id}}">{{$workPriority->name}}</option>
-                        </select>
-                        @endforeach
+                            @endforeach
+                        </select>                    
                     </div>
                 </div>
                 <div class=" mb-3">
                     <label for="floatingPassword">Requirements</label>
                     <input type="taxt" class="form-control">
                   </div>
-                <div class=" mb-3">
-                    <label for="floatingPassword"> Received Date</label>
-                    <input type="datetime-local" class="form-control">
-                </div>
               <div class="button">
                 <button class="submit" type="submit">Submit</button>
               </div>

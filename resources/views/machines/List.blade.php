@@ -11,7 +11,7 @@
 <body>
     <section>
         <div class="form-design" >
-            <a href="../form/Assets.html">  <button  class="button">Add</button> </a> </td>
+            <a href="{{ route('machines.new') }}">  <button  class="button">Add</button> </a> </td>
             <form class="d-flex" role="search" method="POST">
                 @csrf
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -23,6 +23,8 @@
             <table>
                 <thead>
                   <tr>
+                    <th>actions</th>
+                    <th>Machine ID</th>
                     <th>Machine Name</th>
                     <th>Machine Model</th>
                     <th>Manfcatturer</th>
@@ -44,6 +46,12 @@
                 <tbody>
                   @foreach ($machines as $machine)
                   <tr>
+                    <td>
+                      <a class="btn btn-outline-success" href="">Report</a>
+                      <a class="btn btn-outline-primary" href="">Edit</a>
+                      <a class="btn btn-outline-danger" href="#">Delete</a>
+                    </td>
+                    <td>{{$machine->id}}</td>
                     <td>{{$machine->name}}</td>
                     <td>{{$machine->machine_model}}</td>
                     <td>{{$machine->manfacturer}}</td>
@@ -52,6 +60,7 @@
                     <td>{{$machine->category->name}}</td>
                     <td>{{$machine->location->location_description}}</td>
                     <td>{{$machine->contractor}}</td>
+                    <td>{{$machine->machine_status}}</td>
                     <td>{{$machine->supplier}}</td>
                     <td>{{$machine->Criticality->name}}</td>
                     <td>{{$machine->machine_code_id}}</td>

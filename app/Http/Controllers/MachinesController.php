@@ -9,7 +9,7 @@ use App\Models\WorkRequest;
 use App\Models\Department;
 use App\Models\Location;
 use App\Models\Category;
-use App\Models\Criticaly;
+use App\Models\Criticality;
 use App\Models\MachineCode;
 use App\Models\User;
 
@@ -27,11 +27,11 @@ class MachinesController extends Controller
         $departments = Department :: all();
         $categories = Category :: all();
         $machineCodes = MachineCode :: all();
-        $criticals = Criticaly :: all();
+        $criticals = Criticality :: all();
         $users = User :: all();
         $locations = Location :: all();
 
-        return view('machines.new' , compact('pworkOredrs,fworkOredrs,workRequests,departments,categories,machinecodes,criticals,users ,locations'));
+        return view('machines.new' , compact('pworkOredrs' , 'fworkOredrs' , 'workRequests' , 'departments' , 'categories' , 'machineCodes' , 'criticals' , 'users' , 'locations'));
     }
 
     public function store () {

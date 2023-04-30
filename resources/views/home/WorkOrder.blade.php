@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="{{Asset('bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{Asset('icons/style.css')}}">
     <link rel="stylesheet" href="{{Asset('homeStyle.css')}}">
     <meta charset="UTF-8">

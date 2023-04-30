@@ -27,7 +27,7 @@ class plannedWorkOrdersController extends Controller
         $machines = Machine :: all ();
         $workPriorities = WorkPriority :: all ();
 
-        return view ('planned_workorder.create' , compact('workStatuses,workTrades,workTypes,users,machines,workPriorities')) ;
+        return view ('planned_workorder.new' , compact('workStatuses' , 'workTrades' , 'workTypes' , 'users' , 'machines' , 'workPriorities')) ;
     }
 
     public function store () {

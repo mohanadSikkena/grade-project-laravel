@@ -16,6 +16,9 @@ section{
   .form-design .button{
     margin-right: 20px !important;
   }
+  .actions{
+    width: 200px !important;
+  }
   h1{
     font-size: 30px;
     text-transform:capitalize;
@@ -62,7 +65,7 @@ table {
   table td, table th {
     padding:0 10px 0 10px ;
     text-align: left;
-    max-width: 150px;
+    max-width: 250px;
     max-height: 50px;
     padding-left: 8px;
     font-size: 20px;
@@ -74,8 +77,14 @@ table {
     position: sticky; /* make the table heads sticky */
         top: 0px; /* table head will be placed from the top of the table and sticks to it */
   }
+
+  table thead tr th{
+    background: #00456A !important;
+    color: white;
+
+  }
   table thead tr {
-    width: 50px;
+
     height: 60px;
     background: #00456A !important;
     color: white;

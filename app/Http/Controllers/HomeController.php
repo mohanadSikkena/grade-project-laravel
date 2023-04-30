@@ -25,4 +25,8 @@ class HomeController extends Controller
     {
         return view('home.home');
     }
+    public function workorder()
+    {
+        return view('home.WorkOrder');
+    }
 }

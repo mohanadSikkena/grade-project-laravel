@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Matrial;
 use App\Models\Location;
 use App\Models\Category;
-use App\Models\Criticaly;
+use App\Models\Criticality;
 use App\Models\SparePart;
 
 class MatrialsController extends Controller
@@ -19,9 +19,9 @@ class MatrialsController extends Controller
     public function create () {
         $locations = Location :: all();
         $categories = Category :: all();
-        $criticals = Criticaly :: all();
+        $criticals = Criticality :: all();
         $spareParts = SparePart :: all ();
-        return view ('materials.create' , compact('locations,categories,criticals,spareParts')) ;
+        return view ('materials.new' , compact('locations' , 'categories' , 'criticals' , 'spareParts')) ;
     }
 
     public function store () {
