@@ -13,9 +13,41 @@ class LocationTableSeeder extends Seeder
      */
     public function run(): void
     {
-        Location::factory()
-                ->count(10)
-                ->create();
+        $location = new Location;
+        $location->location_description ='location 1';
+        $location->save();
+
+        $location = new Location;
+        $location->location_description ='location 2';
+        $location->save();
+
+        $location = new Location;
+        $location->location_description ='location 3';
+        $location->save();
+
+        $location = new Location;
+        $location->location_description ='location 4';
+        $location->save();
+
+        $location = new Location;
+        $location->location_description ='location 5';
+        $location->save();
+
+        $location = new Location;
+        $location->location_description ='location 6';
+        $location->save();
+
+        $location = new Location;
+        $location->location_description ='location 7';
+        $location->save();
+
+        $location = new Location;
+        $location->location_description ='location 8';
+        $location->save();
+
+        $location = new Location;
+        $location->location_description ='location 9';
+        $location->save();
 
     }
 }

@@ -13,9 +13,41 @@ class CategoryTableSeeder extends Seeder
      */
     public function run(): void
     {
-        Category::factory()
-                ->count(10)
-                ->create();
+        $category = new Category;
+        $category->name ='cat 1';
+        $category->save();
+
+        $category = new Category;
+        $category->name ='cat 2';
+        $category->save();
+
+        $category = new Category;
+        $category->name ='cat 3';
+        $category->save();
+
+        $category = new Category;
+        $category->name ='cat 4';
+        $category->save();
+
+        $category = new Category;
+        $category->name ='cat 5';
+        $category->save();
+
+        $category = new Category;
+        $category->name ='cat 6';
+        $category->save();
+
+        $category = new Category;
+        $category->name ='cat 7';
+        $category->save();
+
+        $category = new Category;
+        $category->name ='cat 8';
+        $category->save();
+
+        $category = new Category;
+        $category->name ='cat 9';
+        $category->save();
 
     }
 }

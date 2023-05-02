@@ -13,9 +13,41 @@ class MachineCodeTableSeeder extends Seeder
      */
     public function run(): void
     {
-        MachineCode::factory()
-        ->count(10)
-        ->create();
+        $machineCode = new MachineCode;
+        $machineCode->code = '5463121';
+        $machineCode->save();
+
+        $machineCode = new MachineCode;
+        $machineCode->code = '6541331';
+        $machineCode->save();
+
+        $machineCode = new MachineCode;
+        $machineCode->code = '6456465';
+        $machineCode->save();
+
+        $machineCode = new MachineCode;
+        $machineCode->code = '5643213';
+        $machineCode->save();
+
+        $machineCode = new MachineCode;
+        $machineCode->code = '4232112';
+        $machineCode->save();
+
+        $machineCode = new MachineCode;
+        $machineCode->code = '6534233';
+        $machineCode->save();
+
+        $machineCode = new MachineCode;
+        $machineCode->code = '6432132';
+        $machineCode->save();
+
+        $machineCode = new MachineCode;
+        $machineCode->code = '6451322';
+        $machineCode->save();
+
+        $machineCode = new MachineCode;
+        $machineCode->code = '9432416';
+        $machineCode->save();
 
     }
 }
