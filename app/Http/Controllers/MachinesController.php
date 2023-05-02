@@ -93,4 +93,10 @@ class MachinesController extends Controller
         $machine = Machine :: find($id);
         return view ('machines.show' , compact('machines'));
     }
+
+    public function index_api()
+    {
+        $machines = Machine::all();
+        return response()->json(['data' => $machines], 200);
+    }
 }

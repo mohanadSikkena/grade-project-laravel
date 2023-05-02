@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            //for authorization
+            $table->unsignedBigInteger('role_id')->nullable();
+            $table->foreign('role_id')->references('id')->on('roles');
+            //end
             $table->rememberToken();
             $table->string('address')->nullable();
             $table->integer('phone_no')->nullable();
@@ -26,6 +30,7 @@ return new class extends Migration
             $table->float('hourly_salery')->nullable();
             $table->foreign('location_id')->references('id')->on('locations')->onUpdate('CASCADE')->onDelete('RESTRICT');
             $table->foreign('department_id')->references('id')->on('departments')->onUpdate('CASCADE')->onDelete('RESTRICT');
+            
             $table->timestamps();
         });
     }

@@ -68,12 +68,23 @@ class User extends Authenticatable
     public function location(){
         return $this->belongsTo(Location::class);
     }
-    public function roles(){
-        return $this->belongsToMany(Role::class, 'user_roles');
-    }
-    public function permissions(){
-    return $this->hasMany(Permission::class, 'role', 'role');
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
     }
 
+    public function hasRole($role)
+    {
+        return optional($this->role)->name === $role;
+    }
+    
+    public function hasPermission($permission)
+    {
+        return optional($this->role)->permissions->contains('name', $permission);
+   
+    }
+    
+   
 
 }

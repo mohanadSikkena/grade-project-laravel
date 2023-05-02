@@ -12,7 +12,12 @@ class UserTableSeeder extends Seeder
      */
     public function run(): void
     {
-        
+        $user = new User;
+        $user->name ='abdalla';
+        $user->email = 'abdalla@gmail.com';
+        $user->password = '12345678';
+        $user->role_id = '1' ;
+        $user->save();
               
     }
 }

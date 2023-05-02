@@ -47,4 +47,7 @@ class UsersController extends Controller
         $user = User :: find('$id') ; 
         return view ('users.list' , comapct('user')) ;
     }
+
+
+    
 }
