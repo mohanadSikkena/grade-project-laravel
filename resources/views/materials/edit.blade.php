@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{Asset('bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{Asset('formStyle.css')}}">
-    <title>Edit Matrial</title>
-</head>
-<body>
+@extends('layout')
+@section('title')
+Edit Matrial
+@endsection
+@section('style')
+<link rel="stylesheet" href="{{ asset('formStyle.css') }}">
+@endsection
 
-
-   <div class="contain">
+@section('content')
+<div class="contain">
     <div class="all">
       <div class="header">Materials </div>
         <form action="{{materials.update}}" method="post">
@@ -67,6 +63,4 @@
     </div>
    </div>
   </div>
-
-</body>
-</html>
+@endsection

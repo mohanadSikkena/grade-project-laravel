@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{Asset('bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{Asset('formStyle.css')}}">
-    <title> Planned Work Order</title>
-</head>
-<body>
+@extends('layout')
+@section('title')
+edit Planned Work Order
+@endsection
+@section('style')
+<link rel="stylesheet" href="{{ asset('formStyle.css') }}">
+@endsection
 
-
-   <div class="contain">
+@section('content')
+<div class="contain">
     <div class="all">
       <div class="header">Planned Work Order</div>
         <form action="" method="post">
@@ -85,6 +81,5 @@
     </div>
    </div>
   </div>
-
-</body>
-</html>
+ 
+@endsection
