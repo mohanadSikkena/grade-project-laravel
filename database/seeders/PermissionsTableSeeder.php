@@ -29,6 +29,5 @@ class PermissionsTableSeeder extends Seeder
         $permission->name='view_machine_details';
         $permission->save();
 
-       
     }
 }
