@@ -25,7 +25,7 @@ Matarials
 
 
 @section('content')
-<div class="table">
+<section>
   <table>
     <thead>
       <tr>
@@ -57,6 +57,6 @@ Matarials
       </tr>
       @endforeach
     </tbody>
-  </table>   
-</div> 
+  </table>  
+</section>
 @endsection
