@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('machine_codes', function (Blueprint $table) {
             $table->id();
-            $table->integer('code');
+            $table->string('code');
             $table->timestamps();
         });
     }

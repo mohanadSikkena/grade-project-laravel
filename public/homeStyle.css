@@ -26,13 +26,10 @@ body {
 }
 .home-button{
   opacity: 0.8;
-    /* border-collapse:collapse; */
     margin: 30px 10px;
-    /* color: white; */
     border: 0;
     background-color: white;
     border-radius: 10px;
-    /* border: 2px solid black; */
     box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
     height: 100px;
     width: 350px;

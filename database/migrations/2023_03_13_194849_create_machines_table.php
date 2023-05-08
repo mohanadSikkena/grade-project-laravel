@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('machines', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 150);
-            $table->string('description', 255);
+            $table->string('name', 150)->nullable();
+            $table->string('description', 255)->nullable();
             $table->foreignId('location_id');
             $table->string('machine_model', 150);
             $table->string('manfacturer', 50);
@@ -22,14 +22,13 @@ return new class extends Migration
             $table->foreignId('department_id');
             $table->foreignId('category_id');
             $table->string('contractor', 50);
-            $table->bigInteger('serial_number');
-            //$table->integer('machine_status')->nullable();
+            $table->string('serial_number');
             $table->string('supplier', 50);
             $table->foreignId('criticality_id');
-            $table->string('notes_to_technection', 255);
+            $table->string('notes_to_technection', 255)->nullable();
             $table->date('contract_expiry_date');
             $table->foreignId('machine_code_id');
-            $table->string('requirements', 255);
+            $table->string('requirements', 255)->nullable();
             $table->timestamps();
             $table->foreign('location_id')->references('id')->on('locations')->onUpdate('CASCADE')->onDelete('RESTRICT');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('RESTRICT');

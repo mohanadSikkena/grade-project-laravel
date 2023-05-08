@@ -5,7 +5,7 @@ Home
 @endsection
 
 @section('style')
-<link rel="stylesheet" href="{{Asset('icons/style.css')}}">
+
 <link rel="stylesheet" href="{{Asset('homeStyle.css')}}">
 @endsection
 @section('content')
@@ -21,13 +21,16 @@ Home
             <a href={{ route('machines.list') }}> <button class="home-button">
                 <div class="fs1"><span class="icon-cog"></span><br>
                 </div> Assets</button></a>
-            <a href={{ route('users.list') }}> <button class="home-button"> <div class="fs1"><span class="icon-users"></span><br>
+            <a href={{ route('users.list') }}> <button class="home-button"> <div class="fs1">
+                <span class="icon-users"></span><br>
             </div> Users</button></a>
-            <a href={{ route('materials.list') }}> <button class="home-button"> <div class="fs1"><span class="icon-database"></span><br>
-            </div> Matrials</button></a>
-            <a href={{ route ('workRequests.list') }}> <button class="home-button"> <div class="fs1"><span class="icon-paste"></span><br>
+            <a href={{ route('materials.list') }}> <button class="home-button"><div class="fs1">
+                <span class="icon-database"></span><br>
+            </div> Materials</button></a>
+            <a href={{ route ('workRequests.list') }}> <button class="home-button"><div class="fs1">
+                <span class="icon-paste"></span><br>
             </div> Work Requests</button></a>
-            <a href={{ route('logout') }}> <button class="home-button"> <div class="fs1"><span class="icon-exit"></span><br>
+            <a href={{ route('logout') }}> <button class="home-button"><div class="fs1"><span class="icon-exit"></span><br>
             </div>logout</button></a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
