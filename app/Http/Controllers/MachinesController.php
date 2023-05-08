@@ -31,7 +31,7 @@ class MachinesController extends Controller
         $users = User :: all();
         $locations = Location :: all();
 
-        return view('machines.new' , compact('pworkOredrs' , 'fworkOredrs' , 'workRequests' , 'departments' , 'categories' , 'machineCodes' , 'criticals' , 'users' , 'locations'));
+        return view('machines.new' , compact('pworkOredrs', 'locations' , 'fworkOredrs' , 'workRequests' , 'departments' , 'categories' , 'machineCodes' , 'criticals' , 'users' ));
     }
 
     public function store () {
@@ -46,11 +46,10 @@ class MachinesController extends Controller
         $machine->category_id = request('category_id');
         $machine->contractor = request('contractor');
         $machine->serial_number = request('serial_number');
-        $machine->machine_status = request('machine_status');
         $machine->supplier = request('supplier');
         $machine->criticality_id = request('criticality_id');
-        $machine->note_to_technection = request('note_to_technection');
-        $machine->contract_expiry_data = request('contract_expiry_data');
+        $machine->notes_to_technection = request('note_to_technection');
+        $machine->contract_expiry_date = request('contract_expiry_data');
         $machine->machine_code_id = request('machine_code_id');
         $machine->save();
         return redirect ()->route('machines.list');
@@ -99,4 +98,20 @@ class MachinesController extends Controller
         $machines = Machine::all();
         return response()->json(['data' => $machines], 200);
     }
+    public function get_machine($id)
+    {
+        $machine = Machine::find($id);
+        return response()->json(['data' => $machine], 200);
+    }
+
+    public function delete_machine_api($id){
+        $machine = Machine::find($id);
+        $machine->delete();
+        return response()->json(['data' => $machine], 200);
+    }
+    public function show_machine_api ($id) {
+        $machine = Machine :: select('name','id','machine_model')->with('workOrder.workStatus')->find($id);
+        return response()->json(['data' => $machine], 200);
+    }
+    
 }

@@ -52,4 +52,28 @@ class WorkRequestsController extends Controller
         $workRequest = WorkRequest :: find('$id') ; 
         return view ('workRequests.list' , comapct('workRequest')) ;
     }
+
+    public function index_api(){
+        $workRequests = WorkRequest :: all();
+        return response()->json(['data' => $workRequests], 200);
+    }
+
+    public function show_work_request_details($id){
+        $workRequest = WorkRequest :: select('machine_id' , 'id' ,'problem_description')->with('machine.machineCode')-> find($id);
+        return response()->json(['data' => $workRequest], 200);
+    }
+
+    public function delete_work_request_api($id){
+        $workRequest = WorkRequest::find($id);
+        $workRequest->delete();
+        return response()->json(['data' => 'deleted'], 200);
+    }
+    public function create_work_request_api(){
+        $workRequest = new WorkRequest ;
+        $workRequest->problem_description = request('problem_description') ;
+        $workRequest ->machine_id = request('machine_id') ;
+        $workRequest ->requster_id = request('requster_id') ;
+        $workRequest->save();
+        return response()->json(['data' => 'Added Succesfully'], 200);
+    }
 }

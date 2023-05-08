@@ -180,11 +180,6 @@ Route::get('/users/{id}/edit' , [UsersController::class , 'edit'])->name('users.
 Route::put('/users/{id}/update' , [UsersController::class , 'update'])->name('users.update')->middleWare("auth");
 Route::delete('/users/{id}/delete' , [UsersController::class , 'delete'])->name('users.delete')->middleWare("auth");
 
-/* Machines API Routes */
-Route::get('' , [MachinesController::class ,'index_api'])->name('')->middleware('');
-Route::get('' , [MachinesController::class ,'index_api'])->name('')->middleware('');
-Route::get('' , [MachinesController::class ,'index_api'])->name('')->middleware('');
-Route::get('' , [MachinesController::class ,'index_api'])->name('')->middleware('');
 
 
 
