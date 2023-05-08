@@ -5,186 +5,322 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Machine;
+use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
-
 
 class MachineTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public function run()
     {
-        $machine = new Machine ;
-        $machine->name ='machine 1';
-        $machine->description ='description 1';
-        $machine->location_id ='1';
-        $machine->machine_model ='machine_model 1';
-        $machine->manfacturer ='manfacturer 1';
-        $machine->user_id ='1';
-        $machine->department_id ='1';
-        $machine->category_id ='1';
-        $machine->contractor ='contractor 1';
-        $machine->serial_number ='11111111111111';
-        $machine->supplier ='supplier 1';
-        $machine->criticality_id ='1';
-        $machine->notes_to_technection ='notes_to_technection 1';
-        $machine->contract_expiry_date = Carbon::parse('2030-01-01');
-        $machine->machine_code_id ='1';
-        $machine->requirements ='requirements 1';
-        $machine->save();
+        $machines = [
+            [
+                'machine_code_id' => '1',
+                'machine_model' => '1960',
+                'manfacturer' => 'Marlin Gerin',
+                'user_id' => 10,
+                'location_id' => 8,
+                'contractor' => 'factory manager',
+                'serial_number' => 'ABC123',
+                'department_id' => 1,
+                'supplier' => 'china',
+                'category_id' => 1,
+                'notes_to_technection' => 'Ensure that all enclosure panels,doors, and structures are well maintained',
+                'description' => 'Ensure that all enclosure panels,doors, and structures are well maintained',
+                'criticality_id' => 1,
+                'contract_expiry_date' => Carbon::now()->addYear(2),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
 
-        $machine = new Machine ;
-        $machine->name ='machine 2';
-        $machine->description ='description 2';
-        $machine->location_id ='2';
-        $machine->machine_model ='machine_model 2';
-        $machine->manfacturer ='manfacturer 2';
-        $machine->user_id ='2';
-        $machine->department_id ='2';
-        $machine->category_id ='2';
-        $machine->contractor ='contractor 2';
-        $machine->serial_number ='2222222222222';
-        $machine->supplier ='supplier 2';
-        $machine->criticality_id ='2';
-        $machine->notes_to_technection ='notes_to_technection 2';
-        $machine->contract_expiry_date = Carbon::parse('2030-01-01');
-        $machine->machine_code_id ='2';
-        $machine->requirements ='requirements 2';
-        $machine->save();
+            ],
+            [
+                'machine_code_id' => '2',
+                'machine_model' => '1961',
+                'manfacturer' => 'Marlin Gerin',
+                'user_id' => 9,
+                'notes_to_technection' => 'Enclosures are to be vacuum cleaned of all loose dirt and debris',
+                'description' => 'Enclosures are to be vacuum cleaned of all loose dirt and debris',
+                'location_id' => 3,
+                'contractor' => 'factory manager',
+                'serial_number' => 'ABC124',
+                'department_id' => 1,
+                'supplier' => 'spain',
+                'category_id' => 1,
+                'criticality_id' => 2,
+                'contract_expiry_date' => Carbon::now()->addYear(2),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
 
-        $machine = new Machine ;
-        $machine->name ='machine 3';
-        $machine->description ='description 3';
-        $machine->location_id ='3';
-        $machine->machine_model ='machine_model 3';
-        $machine->manfacturer ='manfacturer 3';
-        $machine->user_id ='3';
-        $machine->department_id ='3';
-        $machine->category_id ='3';
-        $machine->contractor ='contractor 3';
-        $machine->serial_number ='33333333333333';
-        $machine->supplier ='supplier 3';
-        $machine->criticality_id ='3';
-        $machine->notes_to_technection ='notes_to_technection 3';
-        $machine->contract_expiry_date = Carbon::parse('2030-01-01');
-        $machine->machine_code_id ='3';
-        $machine->requirements ='requirements 3';
-        $machine->save();
+            ],
+            [
+                'machine_code_id' => '3',
+                'machine_model' => '1962',
+                'manfacturer' => 'Schnieder electric',
+                'user_id' => 8,
+                'notes_to_technection' => 'All vents and fan grills are to be cleaned of all dust and/or dirt accumulations and openings are not obstructed',
+                'location_id' => 1,
+                'contractor' => 'factory manager',
+                'serial_number' => 'ABC125',
+                'department_id' => 2,
+                'supplier' => 'france',
+                'category_id' => 2,
+                'description' => 'All vents and fan grills are to be cleaned of all dust and/or dirt accumulations and openings are not obstructed',
+                'criticality_id' => 2,
+                'contract_expiry_date' => Carbon::now()->addYear(2),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
 
-        $machine = new Machine ;
-        $machine->name ='machine 4';
-        $machine->description ='description 4';
-        $machine->location_id ='4';
-        $machine->machine_model ='machine_model 4';
-        $machine->manfacturer ='manfacturer 4';
-        $machine->user_id ='4';
-        $machine->department_id ='4';
-        $machine->category_id ='4';
-        $machine->contractor ='contractor 4';
-        $machine->serial_number ='44444444444444';
-        $machine->supplier ='supplier 4';
-        $machine->criticality_id ='4';
-        $machine->notes_to_technection ='notes_to_technection 4';
-        $machine->contract_expiry_date = Carbon::parse('2030-01-01');
-        $machine->machine_code_id ='4';
-        $machine->requirements ='requirements 4';
-        $machine->save();
+            ],
+            [
+                'machine_code_id' => '4',
+                'machine_model' => '1963',
+                'manfacturer' => 'Schnieder electric',
+                'user_id' => 6,
+                'notes_to_technection' => 'Inspect insulators and conductor supports for signs of cracking, broken pieces, and other physical damage or deterioration.',
+                'location_id' => 3,
+                'contractor' => 'factory manager',
+                'serial_number' => 'ABC126',
+                'department_id' => 1,
+                'supplier' => 'egypt',
+                'category_id' => 1,
+                'description' => 'Inspect insulators and conductor supports for signs of cracking, broken pieces, and other physical damage or deterioration.',
+                'criticality_id' => 2,
+                'contract_expiry_date' => Carbon::now()->addYear(2),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
 
-        $machine = new Machine ;
-        $machine->name ='machine 5';
-        $machine->description ='description 5';
-        $machine->location_id ='5';
-        $machine->machine_model ='machine_model 5';
-        $machine->manfacturer ='manfacturer 5';
-        $machine->user_id ='5';
-        $machine->department_id ='5';
-        $machine->category_id ='5';
-        $machine->contractor ='contractor 5';
-        $machine->serial_number ='55555555555555';
-        $machine->supplier ='supplier 5';
-        $machine->criticality_id ='5';
-        $machine->notes_to_technection ='notes_to_technection 5';
-        $machine->contract_expiry_date = Carbon::parse('2030-01-01');
-        $machine->machine_code_id ='5';
-        $machine->requirements ='requirements 5';
-        $machine->save();
+            ],
+            [
+                'machine_code_id' => '5',
+                'machine_model' => '1964',
+                'manufacturer' => 'Schnieder electric',
+                'user_id' => 2,
+                'description' => 'Repair or replace damaged insulators and supports as necessary.',
+                'location_id' => 7,
+                'contractor' => 'factory manager',
+                'serial_number' => 'ABC127',
+                'department_id' => 1,
+                'supplier' => 'canada',
+                'category_id' => 1,
+                'notes_to_technection' => 'Repair or replace damaged insulators and supports as necessary.',
+                'criticality_id' => 2,
+                'contract_expiry_date' => Carbon::now()->addYear(2),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
 
-        $machine = new Machine ;
-        $machine->name ='machine 6';
-        $machine->description ='description 6';
-        $machine->location_id ='6';
-        $machine->machine_model ='machine_model 6';
-        $machine->manfacturer ='manfacturer 6';
-        $machine->user_id ='6';
-        $machine->department_id ='6';
-        $machine->category_id ='6';
-        $machine->contractor ='contractor 6';
-        $machine->serial_number ='6666666666666';
-        $machine->supplier ='supplier 6';
-        $machine->criticality_id ='6';
-        $machine->notes_to_technection ='notes_to_technection 6';
-        $machine->contract_expiry_date = Carbon::parse('2030-01-01');
-        $machine->machine_code_id ='6';
-        $machine->requirements ='requirements 6';
-        $machine->save();
+            ],
+            [
+                'machine_code_id' => '6',
+                'machine_model' => '1965',
+                'manufacturer' => 'Schnieder electric',
+                'user_id' => 1,
+                'location_id' => 1,
+                'contractor' => 'factory manager',
+                'serial_number' => 'ABC128',
+                'department_id' => 2,
+                'supplier' => 'italy',
+                'category_id' => 2,
+                'notes_to_technection' => 'Examine all bolts and connecting devices for signs of deterioration,corrosion, or overheating.',
+                'description' => 'Examine all bolts and connecting devices for signs of deterioration,corrosion, or overheating.',
+                'criticality_id' => 2,
+                'contract_expiry_date' => Carbon::now()->addYear(2),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
 
-        $machine = new Machine ;
-        $machine->name ='machine 7';
-        $machine->description ='description 7';
-        $machine->location_id ='7';
-        $machine->machine_model ='machine_model 7';
-        $machine->manfacturer ='manfacturer 7';
-        $machine->user_id ='7';
-        $machine->department_id ='7';
-        $machine->category_id ='7';
-        $machine->contractor ='contractor 7';
-        $machine->serial_number ='7777777777777';
-        $machine->supplier ='supplier 7';
-        $machine->criticality_id ='7';
-        $machine->notes_to_technection ='notes_to_technection 7';
-        $machine->contract_expiry_date = Carbon::parse('2030-01-01');
-        $machine->machine_code_id ='7';
-        $machine->requirements ='requirements 7';
-        $machine->save();
+            ],
+            [
+                'machine_code_id' => '7',
+                'machine_model' => '1966',
+                'manfacturer' => 'Schnieder electric',
+                'user_id' => 4,
+                'location_id' => 3,
+                'contractor' => 'factory manager',
+                'serial_number' => 'ABC129',
+                'department_id' => 1,
+                'supplier' => 'china',
+                'category_id' => 1,
+                'notes_to_technection' => 'Ensure that bolts and connecting devices are tight but be careful not to overtorque bolts and connecting devices since insulators are easy to damage and difficult to replace.',
+                'description' => 'Ensure that bolts and connecting devices are tight but be careful not to overtorque bolts and connecting devices since insulators are easy to damage and difficult to replace.',
+                'criticality_id' => 1,
+                'contract_expiry_date' => Carbon::now()->addYear(2),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
 
-        $machine = new Machine ;
-        $machine->name ='machine 8';
-        $machine->description ='description 8';
-        $machine->location_id ='8';
-        $machine->machine_model ='machine_model 8';
-        $machine->manfacturer ='manfacturer 8';
-        $machine->user_id ='8';
-        $machine->department_id ='8';
-        $machine->category_id ='8';
-        $machine->contractor ='contractor 8';
-        $machine->serial_number ='8888888888888';
-        $machine->supplier ='supplier 8';
-        $machine->criticality_id ='8';
-        $machine->notes_to_technection ='notes_to_technection 8';
-        $machine->contract_expiry_date = Carbon::parse('2030-01-01');
-        $machine->machine_code_id ='8';
-        $machine->requirements ='requirements 8';
-        $machine->save();
+            ],
+            [
+                'machine_code_id' => '8',
+                'machine_model' => '1967',
+                'manfacturer' => 'Schnieder electric',
+                'user_id' => 13,
+                'location_id' => 8,
+                'contractor' => 'factory manager',
+                'serial_number' => 'ABC130',
+                'department_id' => 2,
+                'supplier' => 'spain',
+                'category_id' => 2,
+                'notes_to_technection' => 'Examine all connections for signs of overheating, cracked or broken connectors, and signs of tracking or arcing.',
+                'description' => 'Examine all connections for signs of overheating, cracked or broken connectors, and signs of tracking or arcing.',
+                'criticality_id' => 2,
+                'contract_expiry_date' => Carbon::now()->addYear(2),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
 
-        $machine = new Machine ;
-        $machine->name ='machine 9';
-        $machine->description ='description 9';
-        $machine->location_id ='9';
-        $machine->machine_model ='machine_model 9';
-        $machine->manfacturer ='manfacturer 9';
-        $machine->user_id ='9';
-        $machine->department_id ='9';
-        $machine->category_id ='9';
-        $machine->contractor ='contractor 9';
-        $machine->serial_number ='999999999999';
-        $machine->supplier ='supplier 9';
-        $machine->criticality_id ='9';
-        $machine->notes_to_technection ='notes_to_technection 9';
-        $machine->contract_expiry_date = Carbon::parse('2030-01-01');
-        $machine->machine_code_id ='9';
-        $machine->requirements ='requirements 9';
-        $machine->save();
+            ],
+            [
+                'machine_code_id' => '9',
+                'machine_model' => '1968',
+                'manfacturer' => 'Schnieder electric',
+                'user_id' => 5,
+                'description' => '7',
+                'location_id' => 1,
+                'contractor' => 'factory manager',
+                'serial_number' => 'ABC131',
+                'department_id' => 1,
+                'supplier' => 'france',
+                'category_id' => 1,
+                'description' => 'Ensure that conductors are clean and dry.',
+                'notes_to_technection' => 'Ensure that conductors are clean and dry.',
+                'criticality_id' => 2,
+                'contract_expiry_date' => Carbon::now()->addYear(2),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+
+            ],
+            [
+                'machine_code_id' => '10',
+                'machine_model' => '1969',
+                'manfacturer' => 'FCT DI FAVEROL',
+                'user_id' => 1,
+                'location_id' => 3,
+                'contractor' => 'factory manager',
+                'serial_number' => 'ABC132',
+                'department_id' => 1,
+                'supplier' => 'egypt',
+                'category_id' => 1,
+                'notes_to_technection' => 'Clean every component inside the machine from dust such as limit switch, sensors, selectors, proportional valve, rosetta motor…etc.',
+                'description' => 'Clean every component inside the machine from dust such as limit switch, sensors, selectors, proportional valve, rosetta motor…etc.',
+                'criticality_id' => 2,
+                'contract_expiry_date' => Carbon::now()->addYear(2),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+
+            ],
+            [
+                'machine_code_id' => '11',
+                'machine_model' => '1970',
+                'manfacturer' => 'FCT DI FAVEROL',
+                'user_id' => 12,
+                'description' => '5',
+                'location_id' => 7,
+                'contractor' => 'factory manager',
+                'serial_number' => 'ABC133',
+                'department_id' => 1,
+                'supplier' => 'canada',
+                'category_id' => 1,
+                'notes_to_technection' => 'Test every component such as conductor, overload, fuse, limit switch, sensor...etc.',
+                'description' => 'Test every component such as conductor, overload, fuse, limit switch, sensor...etc.',
+                'criticality_id' => 2,
+                'contract_expiry_date' => Carbon::now()->addYear(2),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+
+            ],
+            [
+                'machine_code_id' => '12',
+                'machine_model' => '1971',
+                'manfacturer' => 'FCT DI FAVEROL',
+                'user_id' => 2,
+                'location_id' => 1,
+                'contractor' => 'factory manager',
+                'serial_number' => 'ABC134',
+                'department_id' => 2,
+                'supplier' => 'italy',
+                'category_id' => 2,
+                'notes_to_technection' => 'Ensure that all enclosure panels, doors, and structures are well maintained.',
+                'description' => 'Ensure that all enclosure panels, doors, and structures are well maintained.',
+                'criticality_id' => 2,
+                'contract_expiry_date' => Carbon::now()->addYear(2),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+
+            ],
+            [
+                'machine_code_id' => '13',
+                'machine_model' => '1968',
+                'manfacturer' => 'Schnieder electric',
+                'user_id' => 5,
+                'description' => 'Ensure that conductors are clean and dry.',
+                'location_id' => 1,
+                'contractor' => 'factory manager',
+                'serial_number' => 'ABC131',
+                'department_id' => 1,
+                'supplier' => 'france',
+                'category_id' => 1,
+                'notes_to_technection' => 'Ensure that conductors are clean and dry.',
+                'criticality_id' => 2,
+                'contract_expiry_date' => Carbon::now()->addYear(2),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+
+            ],
+            [
+                'machine_code_id' => '14',
+                'machine_model' => '1969',
+                'manfacturer' => 'FCT DI FAVEROL',
+                'user_id' => 1,
+                'description' => 'Clean every component inside the machine from dust such as limit switch, sensors, selectors, proportional valve, rosetta motor…etc',
+                'location_id' => 3,
+                'contractor' => 'factory manager',
+                'serial_number' => 'ABC132',
+                'department_id' => 2,
+                'supplier' => 'egypt',
+                'category_id' => 2,
+                'notes_to_technection' => 'Clean every component inside the machine from dust such as limit switch, sensors, selectors, proportional valve, rosetta motor…etc',
+                'criticality_id' => 2,
+                'contract_expiry_date' => Carbon::now()->addYear(2),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+
+            ],
+            [
+                'machine_code_id' => '15',
+                'machine_model' => '1970',
+                'manfacturer' => 'FCT DI FAVEROL',
+                'user_id' => 12,
+                'description' => 'Test every component such as conductor, overload, fuse, limit switch, sensor ...etc',
+                'location_id' => 7,
+                'contractor' => 'factory manager',
+                'serial_number' => 'ABC133',
+                'department_id' => 2,
+                'supplier' => 'canada',
+                'category_id' => 2,
+                'notes_to_technection' => 'Test every component such as conductor, overload, fuse, limit switch, sensor ...etc',
+                'criticality_id' => 2,
+                'contract_expiry_date' => Carbon::now()->addYear(2),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+
+            ],
+            [
+                'machine_code_id' => '16',
+                'machine_model' => '1971',
+                'manfacturer' => 'FCT DI FAVEROL',
+                'user_id' => 2,
+                'description' => 'Ensure that all enclosure panels, doors, and structures are well maintained',
+                'location_id' => 1,
+                'contractor' => 'factory manager',
+                'serial_number' => 'ABC134',
+                'department_id' => 1,
+                'supplier' => 'italy',
+                'category_id' => 1,
+                'notes_to_technection' => 'Ensure that all enclosure panels, doors, and structures are well maintained',
+                'criticality_id' => 2,
+                'contract_expiry_date' => Carbon::now()->addYear(2),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+
+            ],
+        ];
+        DB::table('machines')->insert($machines);
 
     }
 }

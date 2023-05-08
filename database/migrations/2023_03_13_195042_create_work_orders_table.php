@@ -23,7 +23,7 @@ return new class extends Migration
             $table->foreignId('assign_to');
             $table->string('failure_cause', 20)->nullable();
             $table->date('received_date')->nullable();
-            $table->string('requirements', 255);
+            $table->string('requirements', 255)->nullable();
             $table->timestamps();
             $table->foreign('work_status_id')->references('id')->on('work_statuses')->onUpdate('CASCADE')->onDelete('RESTRICT');
             $table->foreign('work_type_id')->references('id')->on('work_types')->onUpdate('CASCADE')->onDelete('RESTRICT');

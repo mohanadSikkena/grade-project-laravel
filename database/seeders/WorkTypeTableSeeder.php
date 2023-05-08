@@ -14,39 +14,27 @@ class WorkTypeTableSeeder extends Seeder
     public function run(): void
     {
         $workType = new WorkType;
-        $workType->name ='W_Type 1';
+        $workType->name ='Corrective';
         $workType->save();
 
         $workType = new WorkType;
-        $workType->name ='W_Type 2';
+        $workType->name ='Breakdown';
         $workType->save();
 
         $workType = new WorkType;
-        $workType->name ='W_Type 3';
+        $workType->name ='Predictive';
         $workType->save();
 
         $workType = new WorkType;
-        $workType->name ='W_Type 4';
+        $workType->name ='Inspection';
         $workType->save();
 
         $workType = new WorkType;
-        $workType->name ='W_Type 5';
+        $workType->name ='Preventive';
         $workType->save();
 
         $workType = new WorkType;
-        $workType->name ='W_Type 6';
-        $workType->save();
-
-        $workType = new WorkType;
-        $workType->name ='W_Type 7';
-        $workType->save();
-
-        $workType = new WorkType;
-        $workType->name ='W_Type 8';
-        $workType->save();
-
-        $workType = new WorkType;
-        $workType->name ='W_Type 9';
+        $workType->name ='Reimbursable';
         $workType->save();
 
     }

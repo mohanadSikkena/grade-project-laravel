@@ -14,39 +14,11 @@ class WorkTradeTableSeeder extends Seeder
     public function run(): void
     {
         $workTrade = new WorkTrade;
-        $workTrade->name ='W_Trade 1';
+        $workTrade->name ='mechanical';
         $workTrade->save();
 
         $workTrade = new WorkTrade;
-        $workTrade->name ='W_Trade 2';
-        $workTrade->save();
-
-        $workTrade = new WorkTrade;
-        $workTrade->name ='W_Trade 3';
-        $workTrade->save();
-
-        $workTrade = new WorkTrade;
-        $workTrade->name ='W_Trade 4';
-        $workTrade->save();
-
-        $workTrade = new WorkTrade;
-        $workTrade->name ='W_Trade 5';
-        $workTrade->save();
-
-        $workTrade = new WorkTrade;
-        $workTrade->name ='W_Trade 6';
-        $workTrade->save();
-
-        $workTrade = new WorkTrade;
-        $workTrade->name ='W_Trade 7';
-        $workTrade->save();
-
-        $workTrade = new WorkTrade;
-        $workTrade->name ='W_Trade 8';
-        $workTrade->save();
-
-        $workTrade = new WorkTrade;
-        $workTrade->name ='W_Trade 9';
+        $workTrade->name ='electriacl';
         $workTrade->save();
 
     }
