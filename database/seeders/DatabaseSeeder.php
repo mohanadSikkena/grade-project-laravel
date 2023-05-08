@@ -30,7 +30,8 @@ class DatabaseSeeder extends Seeder
             WorkTypeTableSeeder::class,
             RolesTableSeeder::class,
             PermissionsTableSeeder::class,
-            
+            PermissionRoleTableSeeder::class,
+
         ]);
     }
 }
