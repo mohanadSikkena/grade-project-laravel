@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Events\OrderEvent;
 use Illuminate\Http\Request;
 use App\Models\WorkRequest;
 use App\Models\Machine;
@@ -73,7 +73,21 @@ class WorkRequestsController extends Controller
         $workRequest->problem_description = request('problem_description') ;
         $workRequest ->machine_id = request('machine_id') ;
         $workRequest ->requster_id = request('requster_id') ;
-        $workRequest->save();
+        event(new WorkRequest($workRequest));
+        return response()->json(['message' => 'Order created successfully']);
         return response()->json(['data' => 'Added Succesfully'], 200);
     }
+    // web sockets
+    public function createOrder(Request $request)
+{
+    // create the order
+    $order = WorkRequest::create($request->all());
+
+    // broadcast the event
+    event(new WorkRequest($order));
+
+    // return the response
+    return response()->json(['message' => 'Order created successfully']);
+}
+
 }
