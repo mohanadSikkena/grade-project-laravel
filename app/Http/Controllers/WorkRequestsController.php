@@ -1,6 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\NewWorkRequest;
+
 use App\Events\OrderEvent;
 use Illuminate\Http\Request;
 use App\Models\WorkRequest;
@@ -73,21 +77,10 @@ class WorkRequestsController extends Controller
         $workRequest->problem_description = request('problem_description') ;
         $workRequest ->machine_id = request('machine_id') ;
         $workRequest ->requster_id = request('requster_id') ;
-        event(new WorkRequest($workRequest));
-        return response()->json(['message' => 'Order created successfully']);
+        $users = User::all();
+        Notification::send($users, new NewWorkRequest($workRequest));
         return response()->json(['data' => 'Added Succesfully'], 200);
     }
-    // web sockets
-    public function createOrder(Request $request)
-{
-    // create the order
-    $order = WorkRequest::create($request->all());
-
-    // broadcast the event
-    event(new WorkRequest($order));
-
-    // return the response
-    return response()->json(['message' => 'Order created successfully']);
-}
+    
 
 }
