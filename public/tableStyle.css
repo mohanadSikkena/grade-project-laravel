@@ -25,13 +25,14 @@ section{
     font-weight: 300;
     text-align: center;
     margin-top: 0px;
+    font-weight: bold;
     margin-bottom: 15px;
  }
 .table{
-    border-radius: 15px;
+    border-radius: 10px;
     background-color: transparent;
-    height: 600px;
-    max-width: 1400px;
+    height: 550px;
+    max-width: 1420px;
     width: 1500px;
     overflow:auto ;
     /* display: flex;
@@ -44,7 +45,7 @@ table {
     background: white;
     border-radius: 6px;
     overflow: auto;
-    max-width: 1400px;
+    max-width: 1410px;
     width: 1500px;
     margin: 0 auto;
     position: relative;
@@ -202,4 +203,6 @@ table {
   ::-webkit-scrollbar-thumb:hover {
     background: darkgrey;
   }
- 
+ .delete{
+  display: inline;
+ }

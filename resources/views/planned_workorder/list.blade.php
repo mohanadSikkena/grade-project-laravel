@@ -41,10 +41,10 @@
       <td>
         <a class="btn btn-outline-success" href="">Report</a>
         <a class="btn btn-outline-primary" href="{{route('planned_workorder.edit', $pworkOrder->id)}}">Edit</a>
-          <form action="{{ route('planned_workorder.delete', $pworkOrder->id) }}" method="post" class="delete-btn">
+          <form class="delete" action="{{ route('planned_workorder.delete', $pworkOrder->id) }}" method="post" class="delete-btn">
             @method('DELETE')
             @csrf
-            <button type="submit" class="btn btn-danger">Delete</button>
+            <button type="submit" class="btn btn-outline-danger">Delete</button>
           </form>
       </td>
       <td>{{$pworkOrder->assigendTo->name}}</td>

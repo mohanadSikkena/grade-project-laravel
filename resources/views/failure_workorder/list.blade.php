@@ -43,10 +43,10 @@ Failure Work Order
       <td>
         <a class="btn btn-outline-success" href="">Report</a>
         <a class="btn btn-outline-primary" href="{{route('failure_workorder.edit',$fworkOrder->id)}}">Edit</a>
-        <form action="{{ route('failure_workorder.delete', $fworkOrder->id) }}" method="post" class="delete-btn">
+        <form class="delete" action="{{ route('failure_workorder.delete', $fworkOrder->id) }}" method="post" class="delete-btn">
           @method('DELETE')
           @csrf
-          <button type="submit" class="btn btn-danger">Delete</button>
+          <button type="submit" class="btn btn-outline-danger">Delete</button>
         </form>
       </td>
       <td>{{$fworkOrder->id}}</td>
