@@ -16,6 +16,7 @@
         </div>
         <div class="form">
           <form action="home.html">
+            @csrf
             <h1 class="sing-in">Sign In</h1>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Email address</label>

@@ -11,7 +11,7 @@ use App\Models\Machine;
 class FailureWorkOrdersController extends Controller
 {
     public function index () {
-        $fworkOrders = WorkOrder :: all()->where('fault' , 1) ;
+        $fworkOrders = WorkOrder :: latest()->where('fault' , 1)->get();
         return view ('failure_workorder.list' , compact('fworkOrders')) ;
     }
 

@@ -52,7 +52,7 @@ Failure Work Order
       <td>{{$fworkOrder->id}}</td>
       <td>{{$fworkOrder->assigendTo->name}}</td>
       <td>{{$fworkOrder->machine->name}}</td>
-      <td>{{$fworkOrder->failure_cause}}</td>
+      <td>{{$fworkOrder->problem_description}}</td>
       <td>{{$fworkOrder->created_at}}</td>
       <td>{{$fworkOrder->requirements}}</td>
       <td>{{$fworkOrder->fault}}</td>

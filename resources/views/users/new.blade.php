@@ -11,6 +11,7 @@ New User
   <div class="all">
     <div class="header">Users </div>
       <form action="{{route('users.save')}}" method="post">
+        @csrf
           <div class=" mb-3">
               <label for="floatingPassword">Name</label>
               <input type="text" class="form-control" name="name" >
