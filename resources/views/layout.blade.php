@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{Asset('icons/style.css')}}">
     <link rel="stylesheet" href="{{ asset('bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('layoutStyle.css') }}">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     @yield('style')
     <script src=""></script>
