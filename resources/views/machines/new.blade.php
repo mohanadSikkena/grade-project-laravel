@@ -17,7 +17,7 @@
                     <div class="row">
                       <div class="col">
                         <label for="">Asset Name </label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="name">
                       </div>
                       <div class="col">
                         <label for="">Asset Model </label>
@@ -59,7 +59,7 @@
                               <label for="">Location Id</label>
                               <select class="form-select" aria-label="Default select example">
                                 @foreach ($locations AS $location)
-                                <option value="{{$location->id}}">{{$location->name}}</option>
+                                <option value="{{$location->id}}">{{$location->location_description}}</option>
                                 @endforeach
                               </select>
                             </div>
@@ -67,10 +67,6 @@
 
                 <div class=" mb-3">
                 <label for="floatingInput">Contractor</label>
-                <input type="text" class="form-control">
-              </div>
-              <div class=" mb-3">
-                <label for="floatingPassword">Asset Status</label>
                 <input type="text" class="form-control">
               </div>
               <div class=" mb-3">
@@ -90,7 +86,7 @@
                         <label for="">Assets Code Id</label>
                         <select class="form-select" aria-label="Default select example">
                           @foreach ($machineCodes AS $machineCode)
-                          <option value="{{$machineCode->id}}">{{$machineCode->name}}</option>
+                          <option value="{{$machineCode->id}}">{{$machineCode->code}}</option>
                           @endforeach
                         </select>                     
                       </div>

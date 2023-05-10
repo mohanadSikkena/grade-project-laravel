@@ -14,39 +14,75 @@ class LocationTableSeeder extends Seeder
     public function run(): void
     {
         $location = new Location;
-        $location->location_description ='location 1';
+        $location->location_description ='A1';
         $location->save();
 
         $location = new Location;
-        $location->location_description ='location 2';
+        $location->location_description ='B2';
         $location->save();
 
         $location = new Location;
-        $location->location_description ='location 3';
+        $location->location_description ='B3';
         $location->save();
 
         $location = new Location;
-        $location->location_description ='location 4';
+        $location->location_description ='B4';
         $location->save();
 
         $location = new Location;
-        $location->location_description ='location 5';
+        $location->location_description ='B5';
         $location->save();
 
         $location = new Location;
-        $location->location_description ='location 6';
+        $location->location_description ='B6';
         $location->save();
 
         $location = new Location;
-        $location->location_description ='location 7';
+        $location->location_description ='B7';
         $location->save();
 
         $location = new Location;
-        $location->location_description ='location 8';
+        $location->location_description ='B8';
         $location->save();
 
         $location = new Location;
-        $location->location_description ='location 9';
+        $location->location_description ='B9';
+        $location->save();
+
+        $location = new Location;
+        $location->location_description ='A1';
+        $location->save();
+
+        $location = new Location;
+        $location->location_description ='A2';
+        $location->save();
+
+        $location = new Location;
+        $location->location_description ='A3';
+        $location->save();
+
+        $location = new Location;
+        $location->location_description ='A4';
+        $location->save();
+
+        $location = new Location;
+        $location->location_description ='A5';
+        $location->save();
+
+        $location = new Location;
+        $location->location_description ='A6';
+        $location->save();
+
+        $location = new Location;
+        $location->location_description ='A7';
+        $location->save();
+
+        $location = new Location;
+        $location->location_description ='A8';
+        $location->save();
+
+        $location = new Location;
+        $location->location_description ='A9';
         $location->save();
 
     }

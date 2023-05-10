@@ -14,40 +14,11 @@ class DepartmentTableSeeder extends Seeder
     public function run(): void
     {
         $department = new Department;
-        $department->name ='depart 1';
+        $department->name ='Mechanical';
         $department->save();
 
         $department = new Department;
-        $department->name ='depart 2';
+        $department->name ='Electrical';
         $department->save();
-
-        $department = new Department;
-        $department->name ='depart 3';
-        $department->save();
-
-        $department = new Department;
-        $department->name ='depart 4';
-        $department->save();
-
-        $department = new Department;
-        $department->name ='depart 5';
-        $department->save();
-
-        $department = new Department;
-        $department->name ='depart 6';
-        $department->save();
-
-        $department = new Department;
-        $department->name ='depart 7';
-        $department->save();
-
-        $department = new Department;
-        $department->name ='depart 8';
-        $department->save();
-
-        $department = new Department;
-        $department->name ='depart 9';
-        $department->save();
-
     }
 }

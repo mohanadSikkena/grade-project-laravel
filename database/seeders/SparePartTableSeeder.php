@@ -14,65 +14,100 @@ class SparePartTableSeeder extends Seeder
     public function run(): void
     {
         $sparePart = new SparePart;
-        $sparePart-> name = 'SparePart 1';
+        $sparePart-> name = 'Control Panel';
         $sparePart-> location_id = '1';
         $sparePart-> priority_id = '1';
         $sparePart-> quantity = '1000';
         $sparePart->save();
 
         $sparePart = new SparePart;
-        $sparePart-> name = 'SparePart 2';
+        $sparePart-> name = 'Operting Panel';
         $sparePart-> location_id = '2';
         $sparePart-> priority_id = '2';
         $sparePart-> quantity = '1000';
         $sparePart->save();
 
         $sparePart = new SparePart;
-        $sparePart-> name = 'SparePart 3';
+        $sparePart-> name = 'Cutting Control Pedal';
         $sparePart-> location_id = '3';
         $sparePart-> priority_id = '3';
         $sparePart-> quantity = '1000';
         $sparePart->save();
 
         $sparePart = new SparePart;
-        $sparePart-> name = 'SparePart 4';
+        $sparePart-> name = 'SMain Engine Pump';
         $sparePart-> location_id = '4';
+        $sparePart-> priority_id = '1';
+        $sparePart-> quantity = '1000';
+        $sparePart->save();
+
+        $sparePart = new SparePart;
+        $sparePart-> name = 'Hydraulic power unit';
+        $sparePart-> location_id = '5';
+        $sparePart-> priority_id = '2';
+        $sparePart-> quantity = '1000';
+        $sparePart->save();
+
+        $sparePart = new SparePart;
+        $sparePart-> name = 'Oil Tank';
+        $sparePart-> location_id = '6';
         $sparePart-> priority_id = '4';
         $sparePart-> quantity = '1000';
         $sparePart->save();
 
         $sparePart = new SparePart;
-        $sparePart-> name = 'SparePart 5';
-        $sparePart-> location_id = '5';
+        $sparePart-> name = 'Right Hydraulic Cylinder for shear';
+        $sparePart-> location_id = '7';
+        $sparePart-> priority_id = '2';
+        $sparePart-> quantity = '1000';
+        $sparePart->save();
+
+        $sparePart = new SparePart;
+        $sparePart-> name = 'Left Hydraulic Cylinder for shear';
+        $sparePart-> location_id = '8';
+        $sparePart-> priority_id = '2';
+        $sparePart-> quantity = '1000';
+        $sparePart->save();
+
+        $sparePart = new SparePart;
+        $sparePart-> name = 'Hold-Down for shear';
+        $sparePart-> location_id = '9';
+        $sparePart-> priority_id = '1';
+        $sparePart-> quantity = '1000';
+        $sparePart->save();
+
+        $sparePart = new SparePart;
+        $sparePart-> name = 'Rear Reference';
+        $sparePart-> location_id = '9';
+        $sparePart-> priority_id = '1';
+        $sparePart-> quantity = '1000';
+        $sparePart->save();
+
+        $sparePart = new SparePart;
+        $sparePart-> name = 'Motorization of the back gauge';
+        $sparePart-> location_id = '9';
+        $sparePart-> priority_id = '2';
+        $sparePart-> quantity = '1000';
+        $sparePart->save();
+
+        $sparePart = new SparePart;
+        $sparePart-> name = 'Upper Blade';
+        $sparePart-> location_id = '9';
+        $sparePart-> priority_id = '3';
+        $sparePart-> quantity = '1000';
+        $sparePart->save();
+
+        $sparePart = new SparePart;
+        $sparePart-> name = 'Lower Blade';
+        $sparePart-> location_id = '9';
         $sparePart-> priority_id = '5';
         $sparePart-> quantity = '1000';
         $sparePart->save();
 
         $sparePart = new SparePart;
-        $sparePart-> name = 'SparePart 6';
-        $sparePart-> location_id = '6';
-        $sparePart-> priority_id = '6';
-        $sparePart-> quantity = '1000';
-        $sparePart->save();
-
-        $sparePart = new SparePart;
-        $sparePart-> name = 'SparePart 7';
-        $sparePart-> location_id = '7';
-        $sparePart-> priority_id = '7';
-        $sparePart-> quantity = '1000';
-        $sparePart->save();
-
-        $sparePart = new SparePart;
-        $sparePart-> name = 'SparePart 8';
-        $sparePart-> location_id = '8';
-        $sparePart-> priority_id = '8';
-        $sparePart-> quantity = '1000';
-        $sparePart->save();
-
-        $sparePart = new SparePart;
-        $sparePart-> name = 'SparePart 9';
+        $sparePart-> name = 'Air Compressed Unit';
         $sparePart-> location_id = '9';
-        $sparePart-> priority_id = '9';
+        $sparePart-> priority_id = '2';
         $sparePart-> quantity = '1000';
         $sparePart->save();
 

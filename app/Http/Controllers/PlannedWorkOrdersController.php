@@ -15,7 +15,7 @@ use App\Models\WorkPriority;
 class plannedWorkOrdersController extends Controller
 {
     public function index () {
-        $pworkOrders = WorkOrder :: all() ;
+        $pworkOrders = WorkOrder :: all()->where('fault', 0) ;
         return view ('planned_workorder.list' , compact ('pworkOrders')) ;
     }
 
@@ -62,4 +62,34 @@ class plannedWorkOrdersController extends Controller
         $pworkOrder = WorkOrder :: find('$id') ; 
         return view ('planned_workorder.list' , comapct('pworkOrder')) ;
     }
+
+    
+
+    public function show_work_order_api($id){
+        $pworkOrder = WorkOrder :: with('machine.machineCode')->with('workPriority' ,'workStatus','workType')->find($id);
+        return response()->json(['data' => $pworkOrder], 200);
+    }
+    public function index_api_manger () {
+        $pworkOrders = WorkOrder :: with('workStatus')->all()->where('fault' , 1) ;
+        return response()->json(['data' => $pworkOrders], 200);
+    }
+    public function index_api_user($id){
+        $pworkOrders = WorkOrder :: with('workStatus')->where('assign_to',$id)->get();
+        return response()->json(['data' => $pworkOrders], 200);
+    }
+
+    public function transform_api ($id) {
+        $pworkOrder = WorkOrder :: find($id);
+        $pworkOrder->work_status_id = 4 ;
+        $pworkOrder->save();
+        return response()->json(['data' => $pworkOrder], 200);
+    }
+
+   
+    public function delete_work_order_api($id){
+        $pworkOrder = WorkOrder::find($id);
+        $pworkOrder->delete();
+        return response()->json(['data' => 'deleted'], 200);
+    }
+   
 }

@@ -14,40 +14,19 @@ class WorkPriorityTableSeeder extends Seeder
     public function run(): void
     {
         $workPriority = new WorkPriority;
-        $workPriority->name ='W_Priority 1';
+        $workPriority->name ='normal';
         $workPriority->save();
 
         $workPriority = new WorkPriority;
-        $workPriority->name ='W_Priority 2';
+        $workPriority->name ='urgent';
         $workPriority->save();
 
         $workPriority = new WorkPriority;
-        $workPriority->name ='W_Priority 3';
+        $workPriority->name ='emergency';
         $workPriority->save();
 
         $workPriority = new WorkPriority;
-        $workPriority->name ='W_Priority 4';
+        $workPriority->name ='routine';
         $workPriority->save();
-
-        $workPriority = new WorkPriority;
-        $workPriority->name ='W_Priority 5';
-        $workPriority->save();
-
-        $workPriority = new WorkPriority;
-        $workPriority->name ='W_Priority 6';
-        $workPriority->save();
-
-        $workPriority = new WorkPriority;
-        $workPriority->name ='W_Priority 7';
-        $workPriority->save();
-
-        $workPriority = new WorkPriority;
-        $workPriority->name ='W_Priority 8';
-        $workPriority->save();
-
-        $workPriority = new WorkPriority;
-        $workPriority->name ='W_Priority 9';
-        $workPriority->save();
-
         }
 }

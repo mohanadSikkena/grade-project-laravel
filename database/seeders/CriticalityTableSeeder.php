@@ -14,39 +14,11 @@ class CriticalityTableSeeder extends Seeder
     public function run(): void
     {
         $criticality = new Criticality;
-        $criticality->name ='crit 1';
+        $criticality->name ='Critical';
         $criticality->save();
 
         $criticality = new Criticality;
-        $criticality->name ='crit 2';
-        $criticality->save();
-
-        $criticality = new Criticality;
-        $criticality->name ='crit 3';
-        $criticality->save();
-
-        $criticality = new Criticality;
-        $criticality->name ='crit 4';
-        $criticality->save();
-
-        $criticality = new Criticality;
-        $criticality->name ='crit 5';
-        $criticality->save();
-
-        $criticality = new Criticality;
-        $criticality->name ='crit 6';
-        $criticality->save();
-
-        $criticality = new Criticality;
-        $criticality->name ='crit 7';
-        $criticality->save();
-
-        $criticality = new Criticality;
-        $criticality->name ='crit 8';
-        $criticality->save();
-
-        $criticality = new Criticality;
-        $criticality->name ='crit 9';
+        $criticality->name ='Normal';
         $criticality->save();
 
     }
