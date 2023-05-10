@@ -34,6 +34,7 @@ Failure Work Order
       <th>Failure Cause</th>
       <th>resived date</th>
       <th>Requirements </th>
+      <th>Fault</th>
     </tr>
   <thead>
   <tbody>
@@ -41,8 +42,12 @@ Failure Work Order
     <tr>
       <td>
         <a class="btn btn-outline-success" href="">Report</a>
-        <a class="btn btn-outline-primary" href="">Edit</a>
-        <a class="btn btn-outline-danger" href="#">Delete</a>
+        <a class="btn btn-outline-primary" href="{{route('failure_workorder.edit',$fworkOrder->id)}}">Edit</a>
+        <form action="{{ route('failure_workorder.delete', $fworkOrder->id) }}" method="post" class="delete-btn">
+          @method('DELETE')
+          @csrf
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
       </td>
       <td>{{$fworkOrder->id}}</td>
       <td>{{$fworkOrder->assigendTo->name}}</td>
@@ -50,6 +55,7 @@ Failure Work Order
       <td>{{$fworkOrder->failure_cause}}</td>
       <td>{{$fworkOrder->created_at}}</td>
       <td>{{$fworkOrder->requirements}}</td>
+      <td>{{$fworkOrder->fault}}</td>
       
     </tr>
     @endforeach

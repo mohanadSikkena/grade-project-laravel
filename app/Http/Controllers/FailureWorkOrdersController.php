@@ -23,21 +23,30 @@ class FailureWorkOrdersController extends Controller
 
     public function store () {
         $fworkOrder = new WorkOrder ;
-        $fworkOrder->name = request('name') ;
+        $fworkOrder->problem_description = request('problem_description') ;
+        $fworkOrder->machine_id =request('machine_id');
+        $fworkOrder->assign_to=request('assign_to');
+        $fworkOrder->requirements =request('requirements');
         $fworkOrder->save() ;
         return redirect()->route('failure_workorder.list') ;
-         
+        
     }
 
     public function edit ($id) {
         $fworkOrder = WorkOrder :: find($id) ;
-        return view ('failure_workorder.edit' , compact('fworkOrder')) ; 
+        $users = User :: all ();
+        $machines = Machine :: all();
+
+        return view ('failure_workorder.edit' , compact('fworkOrder','users','machines')) ; 
     }
 
     public function update ($id) {
         $fworkOrder = WorkOrder :: find($id) ;
-        $fworkOrder->name = request('name') ;
-        $fworkOrder->save() ; 
+        $fworkOrder->problem_description = request('problem_description') ;
+        $fworkOrder->machine_id =request('machine_id');
+        $fworkOrder->assign_to=request('assign_to');
+        $fworkOrder->requirements =request('requirements');
+        $fworkOrder->save() ;
         return redirect()->route('failure_workorder.list') ;
 
     }

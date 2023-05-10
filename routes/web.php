@@ -16,6 +16,8 @@ use App\HTTP\Controllers\DepartmentsController;
 use App\HTTP\Controllers\CategoriesController;
 use App\HTTP\Controllers\CriticalsController;
 use App\HTTP\Controllers\UsersController;
+use App\Services\FirebaseService;
+use Illuminate\Http\Request;
 
 
 /*
@@ -179,7 +181,5 @@ Route::get('/users/{id}/show' , [UsersController::class , 'show'])->name('users.
 Route::get('/users/{id}/edit' , [UsersController::class , 'edit'])->name('users.edit')->middleWare("auth");
 Route::put('/users/{id}/update' , [UsersController::class , 'update'])->name('users.update')->middleWare("auth");
 Route::delete('/users/{id}/delete' , [UsersController::class , 'delete'])->name('users.delete')->middleWare("auth");
-
-
 
 

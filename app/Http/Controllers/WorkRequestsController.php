@@ -8,6 +8,11 @@ use App\Notifications\NewWorkRequest;
 use App\Events\OrderEvent;
 use Illuminate\Http\Request;
 use App\Models\WorkRequest;
+use App\Models\WorkType;
+use App\Models\WorkTrade;
+use App\Models\WorkPriority;
+use App\Models\WorkStatus;
+use App\Models\Matrial;
 use App\Models\Machine;
 use App\Models\User;
 
@@ -26,20 +31,26 @@ class WorkRequestsController extends Controller
 
     public function store () {
         $workRequest = new WorkRequest ;
-        $workRequest->name = request('name') ;
+        $workRequest->problem_description = request('problem_description') ;
+        $workRequest->machine_id = request('machine_id') ;
+        $workRequest ->requster_id = request('requster_id') ;
         $workRequest->save() ;
         return redirect()->route('workRequests.list') ;
          
     }
 
     public function edit ($id) {
-        $workRequest= WorkRequest :: find('$id') ;
-        return view ('workRequests.edit' , compact('workRequest')) ; 
+        $workRequest= WorkRequest :: find($id) ;
+        $machines = Machine:: all();
+        $users = User:: all();
+        return view ('workRequests.edit' , compact('workRequest','machines','users')) ; 
     }
 
     public function update ($id) {
-        $workRequest = WorkRequest :: find('$id') ;
-        $workRequest->name = request('name') ;
+        $workRequest = WorkRequest :: find($id) ;
+        $workRequest->problem_description = request('problem_description') ;
+        $workRequest->machine_id = request('machine_id') ;
+        $workRequest ->requster_id = request('requster_id') ;
         $workRequest->save() ; 
         return redirect()->route('workRequests.list') ;
 

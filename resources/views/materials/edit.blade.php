@@ -10,47 +10,57 @@ Edit Matrial
 <div class="contain">
     <div class="all">
       <div class="header">Materials </div>
-        <form action="{{materials.update}}" method="post">
+        <form action="{{route('materials.update',$material->id)}}" method="post">
+            @method('PUT')
+            @csrf
             <div class=" mb-3">
                 <label for="floatingPassword">Name</label>
-                <input type="text" class="form-control" value="{{$materials->name}}">
+                <input type="text" class="form-control" value="{{$material->name}}" name="name">
               </div>
               <div class=" mb-3">
                 <label for="floatingPassword">Quantity</label>
-                <input type="text" class="form-control" value="{{$materials->quantity}}">
+                <input type="text" class="form-control" value="{{$material->quantity}}" name="quantity">
               </div>
                 <div class="col">
                     <label for="">Spare Parts Id</label>
-                    @foreach ($spareParts AS $sparePart)
-                    <select class="form-select" aria-label="Default select example">
-                        <option {{$sparePart->id == $materials->spare_part_id ? 'selected' : ''}} value="{{$sparePart->id}}">{{$sparePart->name}}</option>
+                    
+                    <select class="form-select" aria-label="Default select example" name="spare_part_id">
+                        @foreach ($spareParts AS $sparePart)
+                        <option {{$sparePart->id == $material->spare_part_id ? 'selected' : ''}} value="{{$sparePart->id}}">{{$sparePart->name}}</option>
+                        @endforeach
                     </select>
-                    @endforeach
+                    
                 </div>
                 <div class="col">
                     <label for="">Criticals Id</label>
-                    @foreach ($criticals As $critical)
-                    <select class="form-select" aria-label="Default select example">
-                        <option {{ $critical->id == $materials->critical_id ? 'selected' : '' }} value="{{$critical->id}}">{{$critical->name}}</option>
+                    
+                    <select class="form-select" aria-label="Default select example" name="criticality_id">
+                        @foreach ($criticals As $critical)
+                        <option {{ $critical->id == $material->critical_id ? 'selected' : '' }} value="{{$critical->id}}">{{$critical->name}}</option>
+                        @endforeach
                     </select>
-                    @endforeach
+                   
                 </div>
                 <div class="col">
                     <label for="">Location Id</label>
-                    @foreach ($locations AS $location)
-                    <select class="form-select" aria-label="Default select example">
-                        <option  {{ $location->id == $materials->location_id ? 'selected' : '' }} value="{{$location->id}}">{{$location->name}}</option>
+                   
+                    <select class="form-select" aria-label="Default select example" name="location_id">
+                        @foreach ($locations AS $location)
+                        <option  {{ $location->id == $material->location_id ? 'selected' : '' }} value="{{$location->id}}">{{$location->location_description}}</option>
+                        @endforeach
                     </select>
-                    @endforeach
+                    
                 </div>
             <div class="row">
                 <div class="col">
                     <label for="">Catigory Id</label>
-                    @foreach ($categories AS $category)
-                    <select class="form-select" aria-label="Default select example">
-                        <option {{ $category->id == $materials->category_id ? 'selected' : '' }} value="{{$category->id}}">{{$category->name}}</option>
+                    
+                    <select class="form-select" aria-label="Default select example" name="category_id">
+                        @foreach ($categories AS $category)
+                        <option {{ $category->id == $material->category_id ? 'selected' : '' }} value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
                     </select>
-                    @endforeach
+                   
                 </div>
 
 

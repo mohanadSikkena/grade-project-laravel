@@ -21,17 +21,17 @@
                       </div>
                       <div class="col">
                         <label for="">Asset Model </label>
-                        <input type="text" class="form-control" >
+                        <input type="text" class="form-control" name="machine_model">
                       </div>
                         <div class="col">
                           <label for="">Manufacturer </label>
-                          <input type="text" class="form-control" >
+                          <input type="text" class="form-control"name="manfacturer" >
                         </div>
                     </div>
                         <div class="row">
                           <div class="col">
                             <label for="">User </label>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" name="user_id">
                               @foreach ($users as $user)
                               <option value="{{ $user->id }}">{{ $user->name }}</option>
                               @endforeach
@@ -39,7 +39,7 @@
                           </div>
                             <div class="col">
                               <label for="">Department </label>
-                              <select class="form-select" aria-label="Default select example">
+                              <select class="form-select" aria-label="Default select example"name="department_id">
                                 @foreach ($departments as $department)
                                 <option value="{{$department->id}}">{{$department->name}}</option>
                                 @endforeach
@@ -49,7 +49,7 @@
                             <div class="row">
                             <div class="col">
                               <label for="">Category Id</label>
-                              <select class="form-select" aria-label="Default select example">
+                              <select class="form-select" aria-label="Default select example"name="category_id">
                                 @foreach ($categories AS $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>
                                 @endforeach
@@ -57,7 +57,7 @@
                             </div>
                             <div class="col">
                               <label for="">Location Id</label>
-                              <select class="form-select" aria-label="Default select example">
+                              <select class="form-select" aria-label="Default select example"name="location_id">
                                 @foreach ($locations AS $location)
                                 <option value="{{$location->id}}">{{$location->location_description}}</option>
                                 @endforeach
@@ -67,16 +67,16 @@
 
                 <div class=" mb-3">
                 <label for="floatingInput">Contractor</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control"name="contractor">
               </div>
               <div class=" mb-3">
                 <label for="floatingInput">Supplier</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control"name="supplier">
               </div>
                   <div class="row">
                     <div class="col">
                       <label for="">Critcality Id</label>
-                      <select class="form-select" aria-label="Default select example"> 
+                      <select class="form-select" aria-label="Default select example"name="criticality_id"> 
                         @foreach ($criticals As $crtical) 
                         <option value="{{$crtical->id}}">{{$crtical->name}}</option>
                         @endforeach
@@ -84,7 +84,7 @@
                     </div>
                       <div class="col">
                         <label for="">Assets Code Id</label>
-                        <select class="form-select" aria-label="Default select example">
+                        <select class="form-select" aria-label="Default select example"name="machine_code_id">
                           @foreach ($machineCodes AS $machineCode)
                           <option value="{{$machineCode->id}}">{{$machineCode->code}}</option>
                           @endforeach
@@ -92,24 +92,24 @@
                       </div>
                       <div class="col">
                         <label for="">Serial Number</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control"name="serial_number">
                       </div>
                   </div>
 
               <div class=" mb-3">
                 <label for="floatingPassword">Contract Expiry Date</label>
-                <input type="date" class="form-control">
+                <input type="date" class="form-control"name="contract_expiry_data">
               </div>
 
 
                 <div class="">
                   <label for="floatingTextarea6">Note To Technection</label>
-                  <textarea class="form-control" placeholder="" id="floatingTextarea2" style="height: 100px"></textarea>
+                  <textarea name="note_to_technection" class="form-control" placeholder="" id="floatingTextarea2" style="height: 100px"></textarea>
                 </div>
 
               <div class="">
                 <label for="floatingTextarea6">Description</label>
-                <textarea class="form-control" placeholder="" id="floatingTextarea2" style="height: 100px"></textarea>
+                <textarea name="description" class="form-control" placeholder="" id="floatingTextarea2" style="height: 100px"></textarea>
               </div>
               <div class="button">
                 <button class="submit" type="submit">Submit</button>

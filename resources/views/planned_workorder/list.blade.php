@@ -31,6 +31,7 @@
       <th>Work Priority</th>
       <th>Requirements </th>
       <th>Received Date</th>
+      <th>Fault</th>
 
     </tr>
   <thead>
@@ -39,8 +40,12 @@
     <tr>
       <td>
         <a class="btn btn-outline-success" href="">Report</a>
-        <a class="btn btn-outline-primary" href="">Edit</a>
-        <a class="btn btn-outline-danger" href="#">Delete</a>
+        <a class="btn btn-outline-primary" href="{{route('planned_workorder.edit', $pworkOrder->id)}}">Edit</a>
+          <form action="{{ route('planned_workorder.delete', $pworkOrder->id) }}" method="post" class="delete-btn">
+            @method('DELETE')
+            @csrf
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
       </td>
       <td>{{$pworkOrder->assigendTo->name}}</td>
       <td>{{$pworkOrder->machine->name}}</td>
@@ -49,6 +54,7 @@
       <td>{{$pworkOrder->workPriority->name}}</td>
       <td>{{$pworkOrder->requirements}}</td>
       <td>{{$pworkOrder->created_at}}</td>
+      <td>{{$pworkOrder->fault}}</td>
     </tr>
     @endforeach
   </tbody>

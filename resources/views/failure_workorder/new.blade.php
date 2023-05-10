@@ -14,7 +14,7 @@ New Failure Work Order
       <form action={{Route('failure_workorder.save')}} method="post">
           <div class="col">
               <label for="">Assign To</label>
-              <select class="form-select" aria-label="Default select example">
+              <select class="form-select" aria-label="Default select example" name="assign_to">
                 @foreach ($users AS $user)
                   <option value="{{$user->id}}">{{$user->name}}</option>
                   @endforeach
@@ -22,8 +22,8 @@ New Failure Work Order
               </div>
           <div class="row">
               <div class="col">
-                  <label for="">Asset</label>
-                  <select class="form-select" aria-label="Default select example">
+                  <label for="">Machine</label>
+                  <select class="form-select" aria-label="Default select example" name="machine_id">
                     @foreach ($machines AS $machine)
                       <option value="{{$machine->id}}">{{$machine->name}}</option>
                       @endforeach
@@ -35,12 +35,12 @@ New Failure Work Order
 
            <div class="">
               <label for="floatingTextarea6">Description</label>
-              <textarea class="form-control" placeholder="" id="floatingTextarea2" style="height: 100px"></textarea>
+              <textarea name="problem_description" class="form-control" placeholder="" id="floatingTextarea2" style="height: 100px"></textarea>
             </div>
 
               <div class=" mb-3">
                   <label for="floatingPassword">Requirements</label>
-                  <input type="taxt" class="form-control">
+                  <input type="taxt" class="form-control" name="requirements">
                 </div>
 
             <div class="button">

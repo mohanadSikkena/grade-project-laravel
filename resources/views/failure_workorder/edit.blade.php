@@ -19,33 +19,39 @@ edit Failure Work Order
 <div class="contain">
     <div class="all">
       <div class="header">Failure Work Order</div>
-        <form action="" method="post">
+        <form action="{{route('failure_workorder.update',$fworkOrder->id)}}" method="post">
+            @method('PUT')
+            @csrf
             <div class="col">
                 <label for="">Assign To</label>
-                @foreach ($users AS $user)
-                <select class="form-select" aria-label="Default select example">
+                
+                <select class="form-select" aria-label="Default select example" name="assign_to">
+                    @foreach ($users AS $user)
                     <option value="{{$user->id}}">{{$user->name}}</option>
+                    @endforeach
                 </select>
-                @endforeach
+                
                 </div>
             <div class="row">
                 <div class="col">
-                    <label for="">Asset</label>
-                    @foreach ($machines AS $machine)
-                    <select class="form-select" aria-label="Default select example">
+                    <label for="">Machine</label>
+                    
+                    <select class="form-select" aria-label="Default select example" name="machine_id">
+                        @foreach ($machines AS $machine)
                         <option  value="{{$machine->id}}">{{$machine->name}}</option>
+                        @endforeach
                     </select>
-                    @endforeach
+                    
                 </div>
                
             </div>
                 <div class="">
                     <label for="floatingTextarea6">Description</label>
-                    <input type="taxt" class="form-control" value="{{$fworkOrder->description}}">
+                    <input type="taxt" class="form-control" value="{{$fworkOrder->problem_description}}" name="problem_description">
                 </div>
                 <div class=" mb-3">
                     <label for="floatingPassword">Requirements</label>
-                    <input type="taxt" class="form-control" value="{{$fworkOrder->requirements}}">
+                    <input type="taxt" class="form-control" value="{{$fworkOrder->requirements}}" name="requirements">
                   </div>
               <div class="button">
                 <button class="submit" type="submit">Submit</button>

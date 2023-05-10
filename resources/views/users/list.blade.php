@@ -40,8 +40,12 @@ Users
       <tr>
         <td>
           <a class="btn btn-outline-success" href="">Report</a>
-          <a class="btn btn-outline-primary" href="">Edit</a>
-          <a class="btn btn-outline-danger" href="#">Delete</a>
+          <a class="btn btn-outline-primary" href="{{route('users.edit', $user->id)}}">Edit</a>
+          <form action="{{ route('users.delete', $user->id) }}" method="post" class="delete-btn">
+            @method('DELETE')
+            @csrf
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
         </td>
         <td>{{$user->id}}</td>
         <td>{{$user->name}}</td>

@@ -32,7 +32,13 @@ class plannedWorkOrdersController extends Controller
 
     public function store () {
         $pworkOrder = new WorkOrder ;
-        $pworkOrder->name = request('name') ;
+        $pworkOrder->assign_to = request('assign_to') ;
+        $pworkOrder->machine_id = request('machine_id') ;
+        $pworkOrder->work_status_id = request('work_status_id') ;
+        $pworkOrder->work_type_id = request('work_type_id') ;
+        $pworkOrder->work_priority_id = request('work_priority_id') ;
+        $pworkOrder->requirements = request('requirements') ;
+        $pworkOrder->fault = request('fault') ;
         $pworkOrder->save() ;
         return redirect()->route('planned_workorder.list') ;
          
@@ -45,8 +51,15 @@ class plannedWorkOrdersController extends Controller
 
     public function update ($id) {
         $pworkOrder = WorkOrder :: find('$id') ;
-        $pworkOrder->name = request('name') ;
-        $pworkOrder->save() ; 
+        $pworkOrder->assign_to = request('assign_to') ;
+        $pworkOrder->machine_id = request('machine_id') ;
+        $pworkOrder->work_status_id = request('work_status_id') ;
+        $pworkOrder->work_type_id = request('work_type_id') ;
+        $pworkOrder->work_priority_id = request('work_priority_id') ;
+        $pworkOrder->requirements = request('requirements') ;
+        $pworkOrder->fault = request('fault') ;
+        $pworkOrder->received_date = request('received_date') ;
+        $pworkOrder->save() ;
         return redirect()->route('planned_workorder.list') ;
 
     }
