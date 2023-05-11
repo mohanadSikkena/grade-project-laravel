@@ -15,6 +15,7 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required|string',
+            'fcm' => 'required|string',
         ]);
 
         if ($validator->fails()) {
@@ -28,6 +29,8 @@ class AuthController extends Controller
         }
 
         $user = $request->user();
+        $user->device_key = request('fcm');
+        $user->save();
 
         $token = $user->createToken('API Token')->plainTextToken;
 
@@ -36,5 +39,14 @@ class AuthController extends Controller
             'role' => $user->role,
             'token' => $token
         ]);
+    }
+
+    public function get_user(){
+        $user = Auth::user();
+        $userx = User:: with('role')->find($user->id);
+        $userx->device_key = request('fcm');
+        $userx->save();
+        return response()->json($userx , 200);
+
     }
 }

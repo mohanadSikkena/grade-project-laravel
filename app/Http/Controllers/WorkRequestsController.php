@@ -23,21 +23,7 @@ class WorkRequestsController extends Controller
         return view ('workRequests.list' , compact ('workRequests')) ;
     }
 
-    public function create () {
-        $machines = Machine :: all () ; 
-        $users = User :: all () ;
-        return view ('workRequests.create') ;
-    }
-
-    public function store () {
-        $workRequest = new WorkRequest ;
-        $workRequest->problem_description = request('problem_description') ;
-        $workRequest->machine_id = request('machine_id') ;
-        $workRequest ->requster_id = request('requster_id') ;
-        $workRequest->save() ;
-        return redirect()->route('workRequests.list') ;
-         
-    }
+    
 
     public function edit ($id) {
         $workRequest= WorkRequest :: find($id) ;
@@ -88,8 +74,25 @@ class WorkRequestsController extends Controller
         $workRequest->problem_description = request('problem_description') ;
         $workRequest ->machine_id = request('machine_id') ;
         $workRequest ->requster_id = request('requster_id') ;
-        $users = User::all();
-        Notification::send($users, new NewWorkRequest($workRequest));
+        $workRequest->save();
+        $FcmToken = User::whereNotNull('device_key')
+        ->whereIn("role_id",[1,2,3])
+        ->pluck('device_key');
+        if(count($FcmToken)==0){
+            return response()->json(['data' => 'Added Succesfully'], 200);
+        }
+        $data = [
+        "registration_ids" => $FcmToken,
+        "notification" => [
+            "title" => "Work Request Recieved",
+            // title =>workrequest =>
+            "body" => "الفرعون العاشق جاهز للاحتفال",
+        ]
+    ];
+        $notificationController =new WebNotificationController;
+        $notificationController->sendWebNotification($data);
+
+
         return response()->json(['data' => 'Added Succesfully'], 200);
     }
     

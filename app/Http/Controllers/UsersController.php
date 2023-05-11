@@ -77,6 +77,11 @@ class UsersController extends Controller
         return view ('users.list' , comapct('user')) ;
     }
 
+    public function get_users_roles_api(){
+        $users = User::whereIn('role_id', [3, 5])->get();
+        return response()->json(['data' => $users], 200);
+    }
+
     
 
 

@@ -12,6 +12,7 @@ New Failure Work Order
   <div class="all">
     <div class="header">Failure Work Order</div>
       <form action={{Route('failure_workorder.save')}} method="post">
+        @csrf
           <div class="col">
               <label for="">Assign To</label>
               <select class="form-select" aria-label="Default select example" name="assign_to">
