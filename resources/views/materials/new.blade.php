@@ -12,6 +12,7 @@ New Matrial
     <div class="all">
       <div class="header">Matrials </div>
         <form action={{Route('materials.save')}} method="post">
+            @csrf
             <div class=" mb-3">
                 <label for="floatingPassword">Name</label>
                 <input type="text" class="form-control" name="name">

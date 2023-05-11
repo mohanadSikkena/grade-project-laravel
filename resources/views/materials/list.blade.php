@@ -25,7 +25,7 @@ Matarials
 
 
 @section('content')
-<section>
+<div class="table">
   <table>
     <thead>
       <tr>
@@ -45,10 +45,10 @@ Matarials
         <td>
           <a class="btn btn-outline-success" href="">Report</a>
           <a class="btn btn-outline-primary" href="{{route('materials.edit', $material->id)}}">Edit</a>
-          <form action="{{ route('materials.delete', $material->id) }}" method="post" class="delete-btn">
+          <form class="delete" action="{{ route('materials.delete', $material->id) }}" method="post" class="delete-btn">
             @method('DELETE')
             @csrf
-            <button type="submit" class="btn btn-danger">Delete</button>
+            <button type="submit" class="btn btn-outline-danger">Delete</button>
           </form>
         </td>
         <td>{{$material->id}}</td>
@@ -62,5 +62,5 @@ Matarials
       @endforeach
     </tbody>
   </table>  
-</section>
+</div>
 @endsection

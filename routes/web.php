@@ -47,7 +47,7 @@ Route::get('/homeworkorder', [App\Http\Controllers\HomeController::class, 'worko
 
 
 /* Machines Routes */
-Route::get('/machines' , [MachinesController::class , 'index'])->name('machines.list')->middleWare("auth" ,"role_and_permission:manger,view_machine_details");
+Route::get('/machines' , [MachinesController::class , 'index'])->name('machines.list')->middleWare("auth" ,"role_and_permission:manger,all_machine_details");
 Route::post('/machines/save' , [MachinesController::class , 'store'])->name('machines.save')->middleWare("auth");
 Route::get('/machines/new' , [MachinesController::class , 'create'])->name('machines.new')->middleWare("auth");
 Route::get('/machines/{id}/show' , [MachinesController::class , 'show'])->name('machines.show')->middleWare("auth");

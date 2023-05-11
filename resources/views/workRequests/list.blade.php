@@ -36,10 +36,10 @@ Work Requset
         <td>
           <a class="btn btn-outline-success" href="">Report</a>
           <a class="btn btn-outline-primary" href="{{route('workRequests.edit', $workRequest->id)}}">Edit</a>
-          <form action="{{ route('workRequests.delete', $workRequest->id) }}" method="post" class="delete-btn">
+          <form class="delete" action="{{ route('workRequests.delete', $workRequest->id) }}" method="post" class="delete-btn">
             @method('DELETE')
             @csrf
-            <button type="submit" class="btn btn-danger">Delete</button>
+            <button type="submit" class="btn btn-outline-danger">Delete</button>
           </form>
         </td>
         <td>{{$workRequest->id}}</td>

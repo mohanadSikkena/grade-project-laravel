@@ -49,10 +49,10 @@
                     <td>
                       <a class="btn btn-outline-success" href="">Report</a>
                       <a class="btn btn-outline-primary" href="{{route('machines.edit',$machine->id)}}">Edit</a>
-                      <form action="{{ route('workRequests.delete', $machine->id) }}" method="post" class="delete-btn">
+                      <form class="delete" action="{{ route('workRequests.delete', $machine->id) }}" method="post" class="delete-btn">
                         @method('DELETE')
                         @csrf
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-outline-danger">Delete</button>
                       </form>
                     </td>
                     <td>{{$machine->id}}</td>
