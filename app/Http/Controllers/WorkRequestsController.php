@@ -23,13 +23,13 @@ class WorkRequestsController extends Controller
         return view ('workRequests.list' , compact ('workRequests')) ;
     }
 
-    
+
 
     public function edit ($id) {
         $workRequest= WorkRequest :: find($id) ;
         $machines = Machine:: all();
         $users = User:: all();
-        return view ('workRequests.edit' , compact('workRequest','machines','users')) ; 
+        return view ('workRequests.edit' , compact('workRequest','machines','users')) ;
     }
 
     public function update ($id) {
@@ -37,7 +37,7 @@ class WorkRequestsController extends Controller
         $workRequest->problem_description = request('problem_description') ;
         $workRequest->machine_id = request('machine_id') ;
         $workRequest ->requster_id = request('requster_id') ;
-        $workRequest->save() ; 
+        $workRequest->save() ;
         return redirect()->route('workRequests.list') ;
 
     }
@@ -50,7 +50,7 @@ class WorkRequestsController extends Controller
     }
 
     public function show ($id) {
-        $workRequest = WorkRequest :: find('$id') ; 
+        $workRequest = WorkRequest :: find('$id') ;
         return view ('workRequests.list' , comapct('workRequest')) ;
     }
 
@@ -60,7 +60,7 @@ class WorkRequestsController extends Controller
     }
 
     public function show_work_request_details($id){
-        $workRequest = WorkRequest :: select('machine_id' , 'id' ,'problem_description')->with('machine.machineCode')-> find($id);
+        $workRequest = WorkRequest :: select('machine_id' , 'id' ,'problem_description','requster_id')->with('machine.machineCode')-> find($id);
         return response()->json(['data' => $workRequest], 200);
     }
 
@@ -95,6 +95,6 @@ class WorkRequestsController extends Controller
 
         return response()->json(['data' => 'Added Succesfully'], 200);
     }
-    
+
 
 }
