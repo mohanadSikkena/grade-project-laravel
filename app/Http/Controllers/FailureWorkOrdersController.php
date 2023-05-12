@@ -18,7 +18,8 @@ class FailureWorkOrdersController extends Controller
     public function create () {
         $users = User :: all ();
         $machines = Machine :: all();
-        return view ('failure_workorder.new' , compact('users' , 'machines')) ;
+        return view ('failure_workorder.new' , compact('users' , 'machines'))
+         ;
     }
 
     public function store () {
@@ -28,6 +29,23 @@ class FailureWorkOrdersController extends Controller
         $fworkOrder->assign_to=request('assign_to');
         $fworkOrder->requirements =request('requirements');
         $fworkOrder->save() ;
+        $FcmToken = User::whereNotNull('device_key')
+        ->where("id",$fworkOrder->assign_to)
+        ->pluck('device_key');
+        if(count($FcmToken)==0){
+            return redirect()->route('failure_workorder.list') ;
+        }
+        $data = [
+        "registration_ids" => $FcmToken,
+        "notification" => [
+            "title" => "Work Order Recieved",
+            // title =>workrequest =>
+            "body" => "الفرعون العاشق جاهز للاحتفال",
+        ]
+    ];
+        $notificationController =new WebNotificationController;
+        $notificationController->sendWebNotification($data);
+
         return redirect()->route('failure_workorder.list') ;
         
     }
@@ -80,8 +98,28 @@ class FailureWorkOrdersController extends Controller
         $fworkOrder ->assign_to = request('assign_to') ;
         $fworkOrder ->requirements = request('requirements') ;
         $fworkOrder->save();
+        $FcmToken = User::whereNotNull('device_key')
+        ->where("id",$fworkOrder->assign_to)
+        ->pluck('device_key');
+        if(count($FcmToken)==0){
+            return response()->json(['data' => 'Added Succesfully'], 200);
+        }
+        $data = [
+        "registration_ids" => $FcmToken,
+        "notification" => [
+            "title" => "Work Order Recieved",
+            // title =>workrequest =>
+            "body" => "الفرعون العاشق جاهز للاحتفال",
+        ]
+    ];
+        $notificationController =new WebNotificationController;
+        $notificationController->sendWebNotification($data);
+
         return response()->json(['data' => 'Added Succesfully'], 200);
+        
     }
+
+    
 
     
     

@@ -32,7 +32,25 @@ class Kernel extends ConsoleKernel
                 $workOrder-> received_date = Carbon::parse('2023-01-01');
                 $workOrder-> requirements ='requirement1 ';
                 $workOrder->save();
-            }
+                $FcmToken = User::whereNotNull('device_key')
+                ->where("id",$fworkOrder->assign_to)
+                ->pluck('device_key');
+                 if(count($FcmToken)==0){
+                    return ;
+                }
+                $data = [
+                 "registration_ids" => $FcmToken,
+                "notification" => [
+                "title" => "Work Order Recieved",
+                    // title =>workrequest =>
+                    "body" => "الفرعون العاشق جاهز للاحتفال",
+        ]
+    ];
+        $notificationController =new WebNotificationController;
+        $notificationController->sendWebNotification($data);
+
+        
+    }
         })->daily();
     }
 

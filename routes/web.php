@@ -103,8 +103,6 @@ Route::delete('/failure_workorder/{id}/delete' , [FailureWorkOrdersController::c
 
 /* Work Requests Routes */
 Route::get('/workRequests' , [WorkRequestsController::class , 'index'])->name('workRequests.list')->middleWare("auth");
-Route::post('/workRequests/save' , [WorkRequestsController::class , 'store'])->name('workRequests.save')->middleWare("auth");
-Route::get('/workRequests/new' , [WorkRequestsController::class , 'create'])->name('workRequests.new')->middleWare("auth");
 Route::get('/workRequests/{id}/show' , [WorkRequestsController::class , 'show'])->name('workRequests.show')->middleWare("auth");
 Route::get('/workRequests/{id}/edit' , [WorkRequestsController::class , 'edit'])->name('workRequests.edit')->middleWare("auth");
 Route::put('/workRequests/{id}/update' , [WorkRequestsController::class , 'update'])->name('workRequests.update')->middleWare("auth");
