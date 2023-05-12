@@ -7,8 +7,6 @@
 @endsection
 @section('add')
 <div class="form-design">
-  <a href="{{ route('planned_workorder.new') }}">
-    <button class="button">Add</button> </a>
   <form class="d-flex" role="search">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button class="button" type="submit">Search</button>

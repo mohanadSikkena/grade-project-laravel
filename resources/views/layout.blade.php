@@ -14,13 +14,8 @@
 </head>
 
 <body>
-
-
-  <main>
       @yield('add')
-      <h1>@yield('page_title')</h1>
           @yield('content')
-  </main>
 
 
   
