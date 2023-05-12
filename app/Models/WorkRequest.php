@@ -12,7 +12,7 @@ class WorkRequest extends Model
 {
     use HasFactory;
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, "requster_id", "id");
     }
     public function machine(){
         return $this->belongsTo(Machine::class);

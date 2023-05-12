@@ -8,8 +8,8 @@ Work Requset
 @endsection
 @section('add')
 <div class="form-design">
-  <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+  <form class="d-flex" role="search" action="{{ route('workRequest.search') }}" method="GET">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="term">
       <button class="button" type="submit">Search</button>
   </form>
 </div>
@@ -27,7 +27,7 @@ Work Requset
         <th>Assets</th>
         <th>Requester</th>
         <th>problem description</th>
-  
+
       </tr>
     <thead>
     <tbody>
@@ -43,7 +43,7 @@ Work Requset
         </td>
         <td>{{$workRequest->id}}</td>
         <td>{{$workRequest->machine->name}}</td>
-        <td>{{$workRequest->requster_id}}</td>
+        <td>{{$workRequest->user->name}}</td>
         <td>{{$workRequest->problem_description}}</td>
       </tr>
       @endforeach

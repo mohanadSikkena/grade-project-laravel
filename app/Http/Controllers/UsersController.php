@@ -12,7 +12,7 @@ class UsersController extends Controller
 {
     public function index () {
         $users = User :: all() ;
-        
+
         return view ('users.list' , compact ('users')) ;
     }
 
@@ -37,7 +37,7 @@ class UsersController extends Controller
         $user->department_id = request('department_id') ;
         $user->save() ;
         return redirect()->route('users.list') ;
-       
+
     }
 
     public function edit ($id) {
@@ -45,7 +45,7 @@ class UsersController extends Controller
         $locations = Location::all();
         $roles= Role:: all();
         $departments = Department:: all();
-        return view ('users.edit' , compact('user','locations','roles','departments')) ; 
+        return view ('users.edit' , compact('user','locations','roles','departments')) ;
     }
 
     public function update ($id) {
@@ -60,7 +60,7 @@ class UsersController extends Controller
         $user->password = request('password') ;
         $user->email = request('email') ;
         $user->department_id = request('department_id') ;
-        $user->save() ; 
+        $user->save() ;
         return redirect()->route('users.list') ;
 
     }
@@ -73,7 +73,7 @@ class UsersController extends Controller
     }
 
     public function show ($id) {
-        $user = User :: find('$id') ; 
+        $user = User :: find('$id') ;
         return view ('users.list' , comapct('user')) ;
     }
 
@@ -82,8 +82,21 @@ class UsersController extends Controller
         return response()->json(['data' => $users], 200);
     }
 
-    
-
-
-    
+public function search()
+{
+    $term = request('term');
+        $users = User::where('name', 'like','%' . $term . '%')->orWhere('address', 'LIKE', "%$term%")
+        ->orWhere('phone_no', 'LIKE', "%$term%")
+        ->orWhere('house_no', 'LIKE', "%$term%")
+        ->orWhere('hourly_salery', 'LIKE', "%$term%")
+        ->orWhereHas('department', function ($department) {
+            $term = request('term');
+            $department->where('name', 'LIKE', "%$term%");
+        })
+        ->orWhereHas('location', function ($location) {
+            $term = request('term');
+            $location->where('location_description', 'LIKE', "%$term%");
+        })->get();
+        return view('users.search', compact('users'));
+}
 }

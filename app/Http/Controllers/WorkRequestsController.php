@@ -23,13 +23,13 @@ class WorkRequestsController extends Controller
         return view ('workRequests.list' , compact ('workRequests')) ;
     }
 
-    
+
 
     public function edit ($id) {
         $workRequest= WorkRequest :: find($id) ;
         $machines = Machine:: all();
         $users = User:: all();
-        return view ('workRequests.edit' , compact('workRequest','machines','users')) ; 
+        return view ('workRequests.edit' , compact('workRequest','machines','users')) ;
     }
 
     public function update ($id) {
@@ -37,7 +37,7 @@ class WorkRequestsController extends Controller
         $workRequest->problem_description = request('problem_description') ;
         $workRequest->machine_id = request('machine_id') ;
         $workRequest ->requster_id = request('requster_id') ;
-        $workRequest->save() ; 
+        $workRequest->save() ;
         return redirect()->route('workRequests.list') ;
 
     }
@@ -50,7 +50,7 @@ class WorkRequestsController extends Controller
     }
 
     public function show ($id) {
-        $workRequest = WorkRequest :: find('$id') ; 
+        $workRequest = WorkRequest :: find('$id') ;
         return view ('workRequests.list' , comapct('workRequest')) ;
     }
 
@@ -95,6 +95,19 @@ class WorkRequestsController extends Controller
 
         return response()->json(['data' => 'Added Succesfully'], 200);
     }
-    
+    public function search(){
+        $term = request('term');
+            $workRequests = WorkRequest::where('problem_description', 'like','%' . $term . '%')
+            ->orWhereHas('machine', function ($machine) {
+                $term = request('term');
+                $machine->where('name', 'LIKE', "%$term%");
+            })
+            ->orWhereHas('user', function ($user) {
+                $term = request('term');
+                $user->where('name', 'LIKE', "%$term%");
+            })->get();
+            return view('workRequests.search', compact('workRequests'));
+    }
+
 
 }

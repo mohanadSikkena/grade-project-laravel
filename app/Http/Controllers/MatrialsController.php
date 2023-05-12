@@ -34,7 +34,7 @@ class MatrialsController extends Controller
         $material->quantity = request('quantity') ;
         $material->save() ;
         return redirect()->route('materials.list') ;
-         
+
     }
 
     public function edit ($id) {
@@ -43,7 +43,7 @@ class MatrialsController extends Controller
         $categories = Category :: all();
         $criticals = Criticality :: all();
         $spareParts = SparePart :: all ();
-        return view ('materials.edit' , compact('material','locations' , 'categories' , 'criticals' , 'spareParts')) ; 
+        return view ('materials.edit' , compact('material','locations' , 'categories' , 'criticals' , 'spareParts')) ;
     }
 
     public function update ($id) {
@@ -67,7 +67,30 @@ class MatrialsController extends Controller
     }
 
     public function show ($id) {
-        $material = Matrial :: find('$id') ; 
+        $material = Matrial :: find('$id') ;
         return view ('materials.list' , comapct('material')) ;
     }
+
+    public function search(){
+    $term = request('term');
+        $materials = Matrial::where('name', 'like','%' . $term . '%')->orWhere('quantity', 'LIKE', "%$term%")
+        ->orWhereHas('sparePart', function ($spare_part) {
+            $term = request('term');
+            $spare_part->where('name', 'LIKE', "%$term%");
+        })
+        ->orWhereHas('location', function ($location) {
+            $term = request('term');
+            $location->where('location_description', 'LIKE', "%$term%");
+        })
+        ->orWhereHas('category', function ($category) {
+            $term = request('term');
+            $category->where('name', 'LIKE', "%$term%");
+        })
+        ->orWhereHas('criticality', function ($criticality) {
+            $term = request('term');
+            $criticality->where('name', 'LIKE', "%$term%");
+        })->get();
+        return view('materials.search', compact('materials'));
+}
+
 }

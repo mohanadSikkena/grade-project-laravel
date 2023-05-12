@@ -28,10 +28,10 @@ class MachinesController extends Controller
         $categories = Category :: all();
         $machineCodes = MachineCode :: all();
         $criticals = Criticality :: all();
-        $users = User :: all();
+        $machine = User :: all();
         $locations = Location :: all();
 
-        return view('machines.new' , compact('pworkOredrs', 'locations' , 'fworkOredrs' , 'workRequests' , 'departments' , 'categories' , 'machineCodes' , 'criticals' , 'users' ));
+        return view('machines.new' , compact('pworkOredrs', 'locations' , 'fworkOredrs' , 'workRequests' , 'departments' , 'categories' , 'machineCodes' , 'criticals' , 'machine$machine' ));
     }
 
     public function store () {
@@ -56,16 +56,16 @@ class MachinesController extends Controller
     }
 
     public function edit ($id) {
-        $machine = Machine :: find($id);    
+        $machine = Machine :: find($id);
         $departments = Department :: all();
         $categories = Category :: all();
         $machineCodes = MachineCode :: all();
         $criticals = Criticality :: all();
-        $users = User :: all();
+        $machine = User :: all();
         $locations = Location :: all();
-        return view('machines.edit' , compact('machine','users','locations','criticals','departments','categories','machineCodes'));
-        
-    }    
+        return view('machines.edit' , compact('machine','machine$machine','locations','criticals','departments','categories','machineCodes'));
+
+    }
     public function update ($id) {
         $machine = Machine :: find($id);
         $machine->name = request('name');
@@ -119,5 +119,44 @@ class MachinesController extends Controller
         $machine = Machine :: select('name','id','machine_model')->with('workOrder.workStatus')->find($id);
         return response()->json(['data' => $machine], 200);
     }
-    
+
+    public function search()
+    {
+        $term = request('term');
+            $machines = Machine::where('name', 'like','%' . $term . '%')->orWhere('description', 'LIKE', "%$term%")
+            ->orWhere('machine_model', 'LIKE', "%$term%")
+            ->orWhere('manfacturer', 'LIKE', "%$term%")
+            ->orWhere('contractor', 'LIKE', "%$term%")
+            ->orWhere('serial_number', 'LIKE', "%$term%")
+            ->orWhere('supplier', 'LIKE', "%$term%")
+            ->orWhere('notes_to_technection', 'LIKE', "%$term%")
+            ->orWhere('contract_expiry_date', 'LIKE', "%$term%")
+            ->orWhere('requirements', 'LIKE', "%$term%")
+            ->orWhereHas('department', function ($department) {
+                $term = request('term');
+                $department->where('name', 'LIKE', "%$term%");
+            })
+            ->orWhereHas('location', function ($location) {
+                $term = request('term');
+                $location->where('location_description', 'LIKE', "%$term%");
+            })
+            ->orWhereHas('user', function ($user) {
+                $term = request('term');
+                $user->where('name', 'LIKE', "%$term%");
+            })
+            ->orWhereHas('category', function ($category) {
+                $term = request('term');
+                $category->where('name', 'LIKE', "%$term%");
+            })
+            ->orWhereHas('criticality', function ($criticality) {
+                $term = request('term');
+                $criticality->where('name', 'LIKE', "%$term%");
+            })
+            ->orWhereHas('machineCode', function ($machineCode) {
+                $term = request('term');
+                $machineCode->where('code', 'LIKE', "%$term%");
+            })->get();
+            return view('machines.search', compact('machines'));
+    }
+
 }
