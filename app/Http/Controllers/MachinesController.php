@@ -56,8 +56,14 @@ class MachinesController extends Controller
     }
 
     public function edit ($id) {
-        $machine = Machine :: find($id);
-        return view('machines.edit' , compact('machine'));
+        $machine = Machine :: find($id);    
+        $departments = Department :: all();
+        $categories = Category :: all();
+        $machineCodes = MachineCode :: all();
+        $criticals = Criticality :: all();
+        $users = User :: all();
+        $locations = Location :: all();
+        return view('machines.edit' , compact('machine','users','locations','criticals','departments','categories','machineCodes'));
         
     }    
     public function update ($id) {

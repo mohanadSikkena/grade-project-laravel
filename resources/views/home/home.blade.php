@@ -30,10 +30,11 @@ Home
             <a href={{ route ('workRequests.list') }}> <button class="home-button"><div class="fs1">
                 <span class="icon-paste"></span><br>
             </div> Work Requests</button></a>
-            <a href={{ route('logout') }}> <button class="home-button"><div class="fs1"><span class="icon-exit"></span><br>
-            </div>logout</button></a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @method('POST')
                 @csrf
+                <button type="submit" class="home-button"><div class="fs1"><span class="icon-exit"></span><br>
+                </div>logout</button>
             </form>
             </div>
         </div>
