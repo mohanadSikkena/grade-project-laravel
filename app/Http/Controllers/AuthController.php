@@ -49,4 +49,11 @@ class AuthController extends Controller
         return response()->json($userx , 200);
 
     }
+
+    public function logout(){
+        $user=Auth::user();
+        $user->device_key=null;
+        $user->save();
+        return response()->json("user Logged Out Successfully", 200, );
+    }
 }

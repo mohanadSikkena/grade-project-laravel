@@ -60,7 +60,7 @@ class WorkRequestsController extends Controller
     }
 
     public function show_work_request_details($id){
-        $workRequest = WorkRequest :: select('machine_id' , 'id' ,'problem_description')->with('machine.machineCode')-> find($id);
+        $workRequest = WorkRequest :: select('machine_id' , 'id' ,'problem_description','requster_id')->with('machine.machineCode')-> find($id);
         return response()->json(['data' => $workRequest], 200);
     }
 
