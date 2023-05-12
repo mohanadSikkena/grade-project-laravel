@@ -12,7 +12,7 @@
    <div class="contain">
     <div class="all">
       <div class="header">Machines</div>
-        <form action="{{ route('machines.update') }}" method="post">
+        <form action="{{ route('machines.update',$machine->id) }}" method="post">
           @method('PUT')
           @csrf
                     <div class="row">
@@ -33,7 +33,7 @@
                           <div class="col">
                             <label for="">User </label>
                             <select class="form-select" aria-label="Default select example" name="user_id">
-                              @foreach ($users as $user)
+                              @foreach ($users AS $user)
                               <option value="{{ $user->id }}">{{ $user->name }}</option>
                               @endforeach
                             </select>

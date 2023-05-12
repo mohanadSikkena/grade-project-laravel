@@ -35,7 +35,6 @@ Work Requset
       <tr>
         <td>
           <a class="btn btn-outline-success" href="">Report</a>
-          <a class="btn btn-outline-primary" href="{{route('workRequests.edit', $workRequest->id)}}">Edit</a>
           <form class="delete" action="{{ route('workRequests.delete', $workRequest->id) }}" method="post" class="delete-btn">
             @method('DELETE')
             @csrf
