@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\NewWorkRequest;
+use Illuminate\Support\Facades\Validator;
 
 use App\Events\OrderEvent;
 use Illuminate\Http\Request;

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\Machine;
 use App\Models\WorkOrder;
@@ -12,6 +12,7 @@ use App\Models\Category;
 use App\Models\Criticality;
 use App\Models\MachineCode;
 use App\Models\User;
+
 
 class MachinesController extends Controller
 {

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\WorkOrder;
 use App\Models\WorkStatus;
@@ -10,6 +10,7 @@ use App\Models\WorkType;
 use App\Models\User;
 use App\Models\Machine;
 use App\Models\WorkPriority;
+
 
 
 class plannedWorkOrdersController extends Controller

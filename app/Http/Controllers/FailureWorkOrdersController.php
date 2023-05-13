@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\WorkOrder;
 use App\Models\User;
 use App\Models\Machine;
+
 
 
 class FailureWorkOrdersController extends Controller
