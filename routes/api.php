@@ -41,6 +41,7 @@ Route::get('/work_order/{id}/show' , [PlannedWorkOrdersController::class ,'show_
 Route::PUT('/workorders/{id}/transform' ,[PlannedWorkOrdersController::class , 'transform']);
 Route::delete('/workorders/{id}/delete' , [PlannedWorkOrdersController::class ,'delete_work_order_api']);
 //Failure
+//changed /work_order/{id} to /work_order
 Route::post('/work_order' , [FailureWorkOrdersController::class , 'create_work_order_api']);
 
 

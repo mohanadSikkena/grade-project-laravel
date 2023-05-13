@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\WorkOrder;
 use App\Models\User;
 use App\Models\Machine;
-
+use App\Models\WorkRequest;
 
 
 class FailureWorkOrdersController extends Controller
@@ -48,7 +48,7 @@ class FailureWorkOrdersController extends Controller
         $notificationController->sendWebNotification($data);
 
         return redirect()->route('failure_workorder.list') ;
-        
+
     }
 
     public function edit ($id) {
@@ -56,7 +56,7 @@ class FailureWorkOrdersController extends Controller
         $users = User :: all ();
         $machines = Machine :: all();
 
-        return view ('failure_workorder.edit' , compact('fworkOrder','users','machines')) ; 
+        return view ('failure_workorder.edit' , compact('fworkOrder','users','machines')) ;
     }
 
     public function update ($id) {
@@ -78,7 +78,7 @@ class FailureWorkOrdersController extends Controller
     }
 
     public function show ($id) {
-        $fworkOrder = WorkOrder :: find($id) ; 
+        $fworkOrder = WorkOrder :: find($id) ;
         return view ('failure_workorders.list' , comapct('fworkOrder')) ;
     }
 
@@ -126,6 +126,11 @@ public function create_work_order_api()
     $fworkOrder->requirements = request('requirements');
     $fworkOrder->save();
 
+    //changed $id to request('work_request_id')
+    $WorkRequest = WorkRequest::find(request('work_request_id'));
+    $workRequest->delete();
+
+
     $FcmToken = User::whereNotNull('device_key')
         ->where("id", $fworkOrder->assign_to)
         ->pluck('device_key');
@@ -148,8 +153,8 @@ public function create_work_order_api()
     return response()->json(['data' => 'Added Succesfully'], 200);
 }
 
-    
 
-    
-    
+
+
+
 }
