@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\WorkOrder;
 use App\Models\User;
 use App\Models\Machine;
-
+use App\Models\WorkRequest;
 
 
 class FailureWorkOrdersController extends Controller
@@ -104,7 +104,7 @@ public function show_work_order_api($id)
     return response()->json(['data' => $fworkOrder], 200);
 }
 
-public function create_work_order_api()
+public function create_work_order_api($id)
 {
     $validator = Validator::make(request()->all(), [
         'problem_description' => 'required|string',
@@ -125,6 +125,9 @@ public function create_work_order_api()
     $fworkOrder->assign_to = request('assign_to');
     $fworkOrder->requirements = request('requirements');
     $fworkOrder->save();
+    $WorkRequest = WorkRequest::find($id);
+    $workRequest->delete();
+
 
     $FcmToken = User::whereNotNull('device_key')
         ->where("id", $fworkOrder->assign_to)
