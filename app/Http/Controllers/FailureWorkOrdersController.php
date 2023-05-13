@@ -127,7 +127,7 @@ public function create_work_order_api()
     $fworkOrder->save();
 
     //changed $id to request('work_request_id')
-    $WorkRequest = WorkRequest::find(request('work_request_id'));
+    $workRequest = WorkRequest::find(request('work_request_id'));
     $workRequest->delete();
 
 
