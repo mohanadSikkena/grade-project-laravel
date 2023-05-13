@@ -38,7 +38,7 @@ Route::delete('machines/{id}/delete' , [MachinesController::class ,'delete_machi
 Route::get('/workorders/manger_work_orders' ,[PlannedWorkOrdersController::class , 'index_api_manger']);
 Route::get('/workorders/{id}/user_work_orders' ,[PlannedWorkOrdersController::class , 'index_api_user']);
 Route::get('/work_order/{id}/show' , [PlannedWorkOrdersController::class ,'show_work_order_api']);
-Route::PUT('/workorders/{id}/transform' ,[PlannedWorkOrdersController::class , 'transform']);
+Route::PUT('/workorders/{id}/transform' ,[PlannedWorkOrdersController::class , 'transform_api']);
 Route::delete('/workorders/{id}/delete' , [PlannedWorkOrdersController::class ,'delete_work_order_api']);
 //Failure
 //changed /work_order/{id} to /work_order
