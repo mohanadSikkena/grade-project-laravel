@@ -78,31 +78,57 @@ class plannedWorkOrdersController extends Controller
 
     
 
-    public function show_work_order_api($id){
-        $pworkOrder = WorkOrder :: with('machine.machineCode')->with('workPriority' ,'workStatus','workType')->find($id);
-        return response()->json(['data' => $pworkOrder], 200);
-    }
-    public function index_api_manger () {
-        $pworkOrders = WorkOrder :: with('workStatus')->all()->where('fault' , 1) ;
-        return response()->json(['data' => $pworkOrders], 200);
-    }
-    public function index_api_user($id){
-        $pworkOrders = WorkOrder :: with('workStatus')->where('assign_to',$id)->get();
-        return response()->json(['data' => $pworkOrders], 200);
+    public function show_work_order_api($id)
+{
+    $pworkOrder = WorkOrder::with('machine.machineCode')->with('workPriority', 'workStatus', 'workType')->find($id);
+
+    if (!$pworkOrder) {
+        return response()->json(['error' => 'Work order not found'], 404);
     }
 
-    public function transform_api ($id) {
-        $pworkOrder = WorkOrder :: find($id);
-        $pworkOrder->work_status_id = 4 ;
-        $pworkOrder->save();
-        return response()->json(['data' => $pworkOrder], 200);
+    return response()->json(['data' => $pworkOrder], 200);
+}
+
+public function index_api_manger()
+{
+    $pworkOrders = WorkOrder::with('workStatus')->where('fault', 1)->get();
+
+    return response()->json(['data' => $pworkOrders], 200);
+}
+
+public function index_api_user($id)
+{
+    $pworkOrders = WorkOrder::with('workStatus')->where('assign_to', $id)->get();
+
+    return response()->json(['data' => $pworkOrders], 200);
+}
+
+public function transform_api($id)
+{
+    $pworkOrder = WorkOrder::find($id);
+
+    if (!$pworkOrder) {
+        return response()->json(['error' => 'Work order not found'], 404);
     }
 
-   
-    public function delete_work_order_api($id){
-        $pworkOrder = WorkOrder::find($id);
-        $pworkOrder->delete();
-        return response()->json(['data' => 'deleted'], 200);
+    $pworkOrder->work_status_id = 4;
+    $pworkOrder->save();
+
+    return response()->json(['data' => $pworkOrder], 200);
+}
+
+public function delete_work_order_api($id)
+{
+    $pworkOrder = WorkOrder::find($id);
+
+    if (!$pworkOrder) {
+        return response()->json(['error' => 'Work order not found'], 404);
     }
+
+    $pworkOrder->delete();
+
+    return response()->json(['data' => 'deleted'], 200);
+}
+
    
 }

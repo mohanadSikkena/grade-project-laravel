@@ -54,47 +54,67 @@ class WorkRequestsController extends Controller
         return view ('workRequests.list' , comapct('workRequest')) ;
     }
 
-    public function index_api(){
-        $workRequests = WorkRequest :: all();
-        return response()->json(['data' => $workRequests], 200);
+    public function index_api()
+{
+    $workRequests = WorkRequest::all();
+
+    return response()->json(['data' => $workRequests], 200);
+}
+
+public function show_work_request_details($id)
+{
+    $workRequest = WorkRequest::select('machine_id', 'id', 'problem_description', 'requster_id')->with('machine.machineCode')->find($id);
+
+    if (!$workRequest) {
+        return response()->json(['error' => 'Work request not found'], 404);
     }
 
-    public function show_work_request_details($id){
-        $workRequest = WorkRequest :: select('machine_id' , 'id' ,'problem_description','requster_id')->with('machine.machineCode')-> find($id);
-        return response()->json(['data' => $workRequest], 200);
+    return response()->json(['data' => $workRequest], 200);
+}
+
+public function delete_work_request_api($id)
+{
+    $workRequest = WorkRequest::find($id);
+
+    if (!$workRequest) {
+        return response()->json(['error' => 'Work request not found'], 404);
     }
 
-    public function delete_work_request_api($id){
-        $workRequest = WorkRequest::find($id);
-        $workRequest->delete();
-        return response()->json(['data' => 'deleted'], 200);
-    }
-    public function create_work_request_api(){
-        $workRequest = new WorkRequest ;
-        $workRequest->problem_description = request('problem_description') ;
-        $workRequest ->machine_id = request('machine_id') ;
-        $workRequest ->requster_id = request('requster_id') ;
-        $workRequest->save();
-        $FcmToken = User::whereNotNull('device_key')
-        ->whereIn("role_id",[1,2,3])
+    $workRequest->delete();
+
+    return response()->json(['data' => 'deleted'], 200);
+}
+
+public function create_work_request_api()
+{
+    $workRequest = new WorkRequest;
+    $workRequest->problem_description = request('problem_description');
+    $workRequest->machine_id = request('machine_id');
+    $workRequest->requster_id = request('requster_id');
+    $workRequest->save();
+
+    $FcmToken = User::whereNotNull('device_key')
+        ->whereIn("role_id", [1, 2, 3])
         ->pluck('device_key');
-        if(count($FcmToken)==0){
-            return response()->json(['data' => 'Added Succesfully'], 200);
-        }
-        $data = [
+
+    if (count($FcmToken) == 0) {
+        return response()->json(['data' => 'Added Successfully'], 200);
+    }
+
+    $data = [
         "registration_ids" => $FcmToken,
         "notification" => [
-            "title" => "Work Request Recieved",
-            // title =>workrequest =>
+            "title" => "Work Request Received",
             "body" => "الفرعون العاشق جاهز للاحتفال",
         ]
     ];
-        $notificationController =new WebNotificationController;
-        $notificationController->sendWebNotification($data);
 
+    $notificationController = new WebNotificationController;
+    $notificationController->sendWebNotification($data);
 
-        return response()->json(['data' => 'Added Succesfully'], 200);
-    }
+    return response()->json(['data' => 'Added Successfully'], 200);
+}
+
     public function search(){
         $term = request('term');
             $workRequests = WorkRequest::where('problem_description', 'like','%' . $term . '%')
