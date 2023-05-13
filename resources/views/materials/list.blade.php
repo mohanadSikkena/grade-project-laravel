@@ -7,6 +7,17 @@ Matarials
 Matarials
 @endsection
 
+@section('add')
+<div class="form-design">
+  <a href="{{ route('materials.new') }}">
+    <button class="button">Add</button> </a>
+  <form class="d-flex" role="search" action="{{ route('materials.search') }}" method="GET">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="term">
+      <button class="button" type="submit">Search</button>
+  </form>
+</div>
+
+@endsection
 
 @section('style')
 <link rel="stylesheet" href="{{ asset('tableStyle.css') }}">
@@ -60,6 +71,6 @@ Matarials
       </tr>
       @endforeach
     </tbody>
-  </table>  
+  </table>
 </div>
 @endsection

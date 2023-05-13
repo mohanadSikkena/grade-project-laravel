@@ -12,9 +12,8 @@
     <section>
         <div class="form-design" >
             <a href="{{ route('machines.new') }}">  <button  class="button">Add</button> </a> </td>
-            <form class="d-flex" role="search" method="POST">
-                @csrf
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex" role="search" action="{{ route('machine.search') }}" method="GET">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="term">
                 <button class="button" type="submit">Search</button>
               </form>
           </div>
@@ -67,7 +66,7 @@
                     <td>{{$machine->machine_status_id}}</td>
                     <td>{{$machine->supplier}}</td>
                     <td>{{$machine->Criticality->name}}</td>
-                    <td>{{$machine->machine_code_id}}</td>
+                    <td>{{$machine->machineCode->code}}</td>
                     <td>{{$machine->serial_number}}</td>
                     <td>{{$machine->contract_expiry_date}}</td>
                     <td>{{$machine->notes_to_technection}}</td>
