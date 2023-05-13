@@ -18,7 +18,7 @@
     <header>
 		<nav>
 			<ul>
-				<li><a class="a" href="#">Home</a></li>
+				<li><a class="a" href="{{ route('home') }}">Home</a></li>
 				<li><a class="a" href="#">About Us</a></li>
 				<li><a class="a" href="#">Contact Us</a></li>
 			</ul>

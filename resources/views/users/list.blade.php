@@ -7,18 +7,17 @@ Users
 Users
 @endsection
 @section('add')
-<div class="form-design">
-  <a href="{{ route('users.new') }}">
-    <button class="button">Add</button> </a>
-    <form class="d-flex" role="search" action="{{ route('users.search') }}" method="GET">
-        <input class="form-control me-2" type="search" name="term" placeholder="Search" aria-label="Search">
-        <button class="button" type="submit">Search</button>
-      </form></div>
+      <a href="{{ route('users.new') }}"><button  class="add-button">Add</button></a>
+      <form class="search-form" role="search" action="{{ route('users.search') }}" method="GET">
+				<input type="text" id="search" aria-label="Search" placeholder="Search" name="term">
+				<button type="submit">Search</button>
+			  </form>
 @endsection
 @section('style')
 <link rel="stylesheet" href="{{ asset('tableStyle.css') }}">
 @endsection
 @section('content')
+<h1>Users</h1>
 <div class="table">
   <table>
     <thead>

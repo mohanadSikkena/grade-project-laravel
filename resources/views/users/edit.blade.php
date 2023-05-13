@@ -11,6 +11,7 @@ Edit User
   <div class="card">
     <h2>Users</h2>
     <form class="card-form" action="{{ route('users.update',$user->id) }}" method="post">
+      @method('PUT')
       @csrf
       <div class="input">
         <input type="text" value="{{$user->name}}" name="name" class="input-field"  required name="name" >
@@ -21,7 +22,7 @@ Edit User
         <label class="input-label" for="floatingPassword">Email</label>
       </div>
       <div class="input">
-        <input type="password" class="input-field" value="{{$user->password}}"name="password" required name="password">
+        <input type="password" class="input-field" name="password" required name="password">
         <label class="input-label" for="floatingPassword">Password</label>
       </div>
       <div class="row">

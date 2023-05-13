@@ -2,22 +2,18 @@
 @section('title')
 Work Requset
 @endsection
-
-@section('page_title')
-Work Requset
-@endsection
 @section('add')
-<div class="form-design">
-  <form class="d-flex" role="search" action="{{ route('workRequest.search') }}" method="GET">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="term">
-      <button class="button" type="submit">Search</button>
+<form class="search-form" role="search" action="{{ route('workRequest.search') }}" method="GET">
+  <input type="text" id="search" aria-label="Search" placeholder="Search" name="term">
+  <button type="submit">Search</button>
   </form>
-</div>
+
 @endsection
 @section('style')
 <link rel="stylesheet" href="{{ asset('tableStyle.css') }}">
 @endsection
 @section('content')
+<h1>Work Requset</h1>
 <div class="table">
   <table>
     <thead>

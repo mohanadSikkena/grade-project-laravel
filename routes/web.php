@@ -182,8 +182,8 @@ Route::delete('/users/{id}/delete' , [UsersController::class , 'delete'])->name(
 
 /*search*/
 Route::get('/users/search' , [UsersController::class , 'search'])->name('users.search')->middleWare("auth");
-Route::get('/materials/search' , [MatrialsController::class , 'search'])->name('material.search')->middleWare("auth");
+Route::get('/materials/search' , [MatrialsController::class , 'search'])->name('materials.search')->middleWare("auth");
 Route::get('/workRequests/search' , [WorkRequestsController::class , 'search'])->name('workRequest.search')->middleWare("auth");
-Route::get('/machines/search' , [MachinesController::class , 'search'])->name('machine.search')->middleWare("auth");
+Route::get('/machines/search' , [MachinesController::class , 'search'])->name('machines.search')->middleWare("auth");
 
 
