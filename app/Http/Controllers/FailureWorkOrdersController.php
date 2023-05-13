@@ -48,7 +48,7 @@ class FailureWorkOrdersController extends Controller
         $notificationController->sendWebNotification($data);
 
         return redirect()->route('failure_workorder.list') ;
-        
+
     }
 
     public function edit ($id) {
@@ -56,7 +56,7 @@ class FailureWorkOrdersController extends Controller
         $users = User :: all ();
         $machines = Machine :: all();
 
-        return view ('failure_workorder.edit' , compact('fworkOrder','users','machines')) ; 
+        return view ('failure_workorder.edit' , compact('fworkOrder','users','machines')) ;
     }
 
     public function update ($id) {
@@ -78,7 +78,7 @@ class FailureWorkOrdersController extends Controller
     }
 
     public function show ($id) {
-        $fworkOrder = WorkOrder :: find($id) ; 
+        $fworkOrder = WorkOrder :: find($id) ;
         return view ('failure_workorders.list' , comapct('fworkOrder')) ;
     }
 
@@ -104,7 +104,7 @@ public function show_work_order_api($id)
     return response()->json(['data' => $fworkOrder], 200);
 }
 
-public function create_work_order_api($id)
+public function create_work_order_api()
 {
     $validator = Validator::make(request()->all(), [
         'problem_description' => 'required|string',
@@ -125,7 +125,9 @@ public function create_work_order_api($id)
     $fworkOrder->assign_to = request('assign_to');
     $fworkOrder->requirements = request('requirements');
     $fworkOrder->save();
-    $WorkRequest = WorkRequest::find($id);
+
+    //changed $id to request('work_request_id')
+    $WorkRequest = WorkRequest::find(request('work_request_id'));
     $workRequest->delete();
 
 
@@ -151,8 +153,8 @@ public function create_work_order_api($id)
     return response()->json(['data' => 'Added Succesfully'], 200);
 }
 
-    
 
-    
-    
+
+
+
 }
