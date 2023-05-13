@@ -107,34 +107,34 @@ class MachinesController extends Controller
     }
     public function get_machine($id)
     {
-        $machine = Machine::find($id);
+        $machine = Machine::with('location','department','category','Criticality')->find($id);
         return response()->json(['data' => $machine], 200);
     }
 
     public function delete_machine_api($id)
     {
         $machine = Machine::find($id);
-    
+
         if (!$machine) {
             return response()->json(['error' => 'Machine not found'], 404);
         }
-    
+
         $machine->delete();
-    
+
         return response()->json(['data' => $machine], 200);
     }
-    
+
     public function show_machine_api($id)
     {
         $machine = Machine::select('name', 'id', 'machine_model')->with('workOrder.workStatus')->find($id);
-    
+
         if (!$machine) {
             return response()->json(['error' => 'Machine not found'], 404);
         }
-    
+
         return response()->json(['data' => $machine], 200);
     }
-    
+
     public function search()
     {
         $term = request('term');
