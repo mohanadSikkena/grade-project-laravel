@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
+use app\Models\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,26 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
+        
+        
+
+        if (Gate::allows('view-all',$user)) {
+            
+        } elseif (Gate::allows('view-coordinator',$user)) {
+            
+        } /*elseif (Gate::allows('view-engineer',$user)) {
+            
+        } elseif (Gate::allows('view-technician',$user)) {
+
+        }elseif (Gate::allows('view-worker',$user)) {
+
+   
+        } */else {
+            // Unauthorized access
+            abort(403);
+        }
+        
         return view('home.home');
     }
     public function workorder()
