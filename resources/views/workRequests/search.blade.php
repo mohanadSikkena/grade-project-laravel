@@ -1,12 +1,49 @@
-<!-- Add a search form -->
-<form action="{{ route('workRequest.search') }}" method="GET">
-    <input type="text" name="term" placeholder="Search workRequests">
-    <button type="submit">Search</button>
-</form>
+@extends('layout')
+@section('title')
+Work Requset
+@endsection
+@section('add')
+<form class="search-form" role="search" action="{{ route('workRequest.search') }}" method="GET">
+  <input type="text" id="search" aria-label="Search" placeholder="Search" name="term">
+  <button type="submit">Search</button>
+  </form>
 
-<!-- Display the list of workRequests -->
-<ul>
-    @foreach ($workRequests as $workRequest)
-        <li>{{ $workRequest->problem_description }}</li>
-    @endforeach
-</ul>
+@endsection
+@section('style')
+<link rel="stylesheet" href="{{ asset('tableStyle.css') }}">
+@endsection
+@section('content')
+<h1>Work Requset</h1>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Actions</th>
+        <th>Id</th>
+        <th>Assets</th>
+        <th>Requester</th>
+        <th>problem description</th>
+
+      </tr>
+    <thead>
+    <tbody>
+      @foreach ( $workRequests AS $workRequest)
+      <tr>
+        <td>
+          <a class="btn btn-outline-success" href="">Report</a>
+          <form class="delete" action="{{ route('workRequests.delete', $workRequest->id) }}" method="post" class="delete-btn">
+            @method('DELETE')
+            @csrf
+            <button type="submit" class="btn btn-outline-danger">Delete</button>
+          </form>
+        </td>
+        <td>{{$workRequest->id}}</td>
+        <td>{{$workRequest->machine->name}}</td>
+        <td>{{$workRequest->user->name}}</td>
+        <td>{{$workRequest->problem_description}}</td>
+      </tr>
+      @endforeach
+    </tbody>
+  </table>
+</div>
+@endsection

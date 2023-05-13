@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{Asset('bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{Asset('tableStyle.css')}}">
-    <title>Machines</title>
-</head>
-<body>
-    <section>
-        <div class="form-design" >
-            <a href="{{ route('machines.new') }}">  <button  class="button">Add</button> </a> </td>
-            <form class="d-flex" role="search" action="{{ route('machine.search') }}" method="GET">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="term">
-                <button class="button" type="submit">Search</button>
-              </form>
-          </div>
-          <h1>Machines</h1>
+@extends('layout')
+@section('title')
+Machines
+@endsection
+@section('add')
+      <a href="{{ route('machines.new') }}"><button  class="add-button">Add</button></a>
+      <form class="search-form" role="search" action="{{ route('machines.search') }}" method="GET">
+				<input type="text" id="search" aria-label="Search" placeholder="Search" name="term">
+				<button type="submit">Search</button>
+			  </form>
+@endsection
+@section('style')
+<link rel="stylesheet" href="{{ asset('tableStyle.css') }}">
+@endsection
+@section('content')
+<h1>Machines</h1>
         <div class="table">
             <table>
                 <thead>
@@ -81,7 +77,5 @@
             </table>
 
         </div>
-    </section>
+@endsection
 
-</body>
-</html>

@@ -35,6 +35,7 @@
     <tr>
       <td>
         <a class="btn btn-outline-success" href="">Report</a>
+        <a class="btn btn-outline-primary" href="{{route('planned_workorder.edit', $pworkOrder->id)}}">Edit</a>
           <form class="delete" action="{{ route('planned_workorder.delete', $pworkOrder->id) }}" method="post" class="delete-btn">
             @method('DELETE')
             @csrf
