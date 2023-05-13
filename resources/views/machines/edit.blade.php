@@ -1,125 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{Asset('bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{Asset('formStyle.css')}}">
-    <title>New Machine</title>
-</head>
-<body>
-   <div class="contain">
-    <div class="all">
-      <div class="header">Machines</div>
-        <form action="{{ route('machines.update',$machine->id) }}" method="post">
-          @method('PUT')
-          @csrf
-                    <div class="row">
-                      <div class="col">
-                        <label for="">Machine Name </label>
-                        <input type="text" class="form-control" name="name" value="{{$machine->name}}">
-                      </div>
-                      <div class="col">
-                        <label for="">Machine Model </label>
-                        <input type="text" class="form-control" name="machine_model" value="{{$machine->machine_model}}">
-                      </div>
-                        <div class="col">
-                          <label for="">Manufacturer </label>
-                          <input type="text" class="form-control"name="manfacturer"value="{{$machine->manfacturer}}" >
-                        </div>
-                    </div>
-                        <div class="row">
-                          <div class="col">
-                            <label for="">User </label>
-                            <select class="form-select" aria-label="Default select example" name="user_id">
-                              @foreach ($users AS $user)
-                              <option value="{{ $user->id }}">{{ $user->name }}</option>
-                              @endforeach
-                            </select>
-                          </div>
-                            <div class="col">
-                              <label for="">Department </label>
-                              <select class="form-select" aria-label="Default select example" name="department_id">
-                                @foreach ($departments as $department)
-                                <option value="{{$department->id}}">{{$department->name}}</option>
-                                @endforeach
-                              </select>
-                            </div>
-                          </div>
-                            <div class="row">
-                            <div class="col">
-                              <label for="">Category Id</label>
-                              <select class="form-select" aria-label="Default select example"name="category_id">
-                                @foreach ($categories AS $category)
-                                <option value="{{$category->id}}">{{$category->name}}</option>
-                                @endforeach
-                              </select>                      
-                            </div>
-                            <div class="col">
-                              <label for="">Location Id</label>
-                              <select class="form-select" aria-label="Default select example"name="location_id">
-                                @foreach ($locations AS $location)
-                                <option value="{{$location->id}}">{{$location->location_description}}</option>
-                                @endforeach
-                              </select>
-                            </div>
-                        </div>
+@extends('layout')
+@section('title')
+Edit Machine
+@endsection
+@section('style')
+<link rel="stylesheet" href="{{ asset('style3.css') }}">
+@endsection
 
-                <div class=" mb-3">
-                <label for="floatingInput">Contractor</label>
-                <input type="text" class="form-control"name="contractor" value="{{$machine->contractor}}">
-              </div>
-              <div class=" mb-3">
-                <label for="floatingInput">Supplier</label>
-                <input type="text" class="form-control"name="supplier" value="{{$machine->supplier}}">
-              </div>
-                  <div class="row">
-                    <div class="col">
-                      <label for="">Critcality Id</label>
-                      <select class="form-select" aria-label="Default select example" name="criticality_id"> 
-                        @foreach ($criticals As $crtical) 
-                        <option value="{{$crtical->id}}">{{$crtical->name}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                      <div class="col">
-                        <label for="">Assets Code Id</label>
-                        <select class="form-select" aria-label="Default select example" name="machine_code_id">
-                          @foreach ($machineCodes AS $machineCode)
-                          <option value="{{$machineCode->id}}">{{$machineCode->code}}</option>
-                          @endforeach
-                        </select>                     
-                      </div>
-                      <div class="col">
-                        <label for="">Serial Number</label>
-                        <input type="text" class="form-control"name="serial_number" value="{{$machine->serial_number}}">
-                      </div>
-                  </div>
-
-              <div class=" mb-3">
-                <label for="floatingPassword">Contract Expiry Date</label>
-                <input type="date" class="form-control"name="contract_expiry_data" value="{{$machine->contract_expiry_data}}">
-              </div>
-
-
-                <div class="">
-                  <label for="floatingTextarea6">Note To Technection</label>
-                  <textarea name="note_to_technection" class="form-control" placeholder="" id="floatingTextarea2" style="height: 100px">{{$machine->note_to_technection}}</textarea>
-                </div>
-
-              <div class="">
-                <label for="floatingTextarea6">Description</label>
-                <textarea name="description" class="form-control" placeholder="" id="floatingTextarea2" style="height: 100px">{{$machine->description}}</textarea>
-              </div>
-              <div class="button">
-                <button class="submit" type="submit">Submit</button>
-              </div>
-            </div>
-        </form>
+@section('content')
+<div class="container">
+  <div class="card">
+      <h2>Edit Machines</h2>
+    <form class="card-form" action="{{ route('machines.update',$machine->id) }}" method="post">
+    @method('PUT')
+    @csrf        
+      <div class="input2">
+        <div class="input">
+          <input type="text" value="{{$machine->name}}" class="input-field"   name="name" required>
+          <label class="input-label">Asset Name </label>
+        </div>
+        <div class="input">
+          <input type="text" value="{{$machine->machine_model}}" class="input-field"   name="machine_model" required>
+          <label class="input-label">Asset Model </label>
+        </div>
+        <div class="input">
+          <input type="text" value="{{$machine->manfacturer}}" class="input-field"   name="manfacturer" required >
+          <label class="input-label">Manufacturer </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label class="label">User </label>
+          <select class="form-select" aria-label="Default select example" name="user_id">
+            @foreach ($users as $user)
+            <option value="{{ $user->id }}">{{ $user->name }}</option>
+            @endforeach
+          </select>
+        </div>
+        <div class="col">
+          <label class="label">Department </label>
+          <select class="form-select" aria-label="Default select example"name="department_id">
+            @foreach ($departments as $department)
+            <option value="{{$department->id}}">{{$department->name}}</option>
+            @endforeach
+          </select>
+        </div>
+        <div class="col">
+          <label class="label">Location </label>
+          <select class="form-select" aria-label="Default select example"name="location_id">
+            @foreach ($locations AS $location)
+            <option value="{{$location->id}}">{{$location->location_description}}</option>
+            @endforeach
+          </select>
+        </div>
+      </div>
+    <div class="input">
+      <input type="text" value="{{$machine->contractor}}" class="input-field"   name="contractor" required>
+      <label class="input-label" for="floatingInput">Contractor</label>
     </div>
-   </div>
+    <div class="input">
+      <input type="text" value="{{$machine->supplier}}" class="input-field"   name="supplier" required>
+      <label class="input-label" for="floatingInput">Supplier</label>
+    </div>
+      <div class="row">
+        <div class="col">
+          <label class="label">Category </label>
+          <select class="form-select" aria-label="Default select example"name="category_id">
+            @foreach ($categories AS $category)
+            <option value="{{$category->id}}">{{$category->name}}</option>
+            @endforeach
+          </select>                      
+        </div>
+        <div class="col">
+          <label class="label">Critcality </label>
+          <select class="form-select" aria-label="Default select example"name="criticality_id"> 
+            @foreach ($criticals As $crtical) 
+            <option value="{{$crtical->id}}">{{$crtical->name}}</option>
+            @endforeach
+          </select>
+        </div>
+        <div class="col">
+          <label class="label">Assets Code</label>
+          <select class="form-select" aria-label="Default select example"name="machine_code_id">
+            @foreach ($machineCodes AS $machineCode)
+            <option value="{{$machineCode->id}}">{{$machineCode->code}}</option>
+            @endforeach
+          </select>                     
+        </div>
+      </div>
+      <div class="input">
+        <input type="text" value="{{$machine->serial_number}}" class="input-field"  name="serial_number" required>
+        <label class="input-label">Serial Number</label>
+      </div>
+      <div class="input">
+        <input type="date" value="{{$machine->contract_expiry_date}}" class="input-field"  name="contract_expiry_data" required>
+        <label class="label" for="floatingPassword">Contract Expiry Date</label>
+      </div>
+      <div class="input">
+        <input name="note_to_technection" value="{{$machine->notes_to_technection}}" class="input-field"    id="floatingTextarea2"  required>
+        <label class="input-label" for="floatingTextarea6">Note To Technection</label>
+      </div>
+      <div class="input">
+        <input name="description" class="input-field" value="{{$machine->description}}"  id="floatingTextarea2" required>
+        <label class="input-label" for="floatingTextarea6">Description</label>
+      </div>
+            <div class="row">   
+              <button class="action-button">Eidt</button>
+          </div>
+        </div>
+      </form>
   </div>
+ </div>
+</div>
+    
+@endsection
 
-</body>
-</html>

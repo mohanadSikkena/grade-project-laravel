@@ -7,6 +7,7 @@ Edit Matrial
 @endsection
 
 @section('content')
+
 <<div class="container">
     <div class="card">
         <h2> Edit Matrials</h2>
@@ -54,7 +55,7 @@ Edit Matrial
                     </select>
                 </div> 
                 <div class="row">   
-                <button class="action-button">Add</button>
+                <button class="action-button">Edit</button>
             </div>
         </form>
     </div>

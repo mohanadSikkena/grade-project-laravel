@@ -4,7 +4,7 @@ section{
     align-items: center;
     flex-flow: column wrap;
     box-sizing: border-box;
-    width: 1400px;
+    width: 100%;
  }
  .form-design{
     padding: 15px;
@@ -19,12 +19,16 @@ section{
   .actions{
     width: 200px !important;
   }
+  header{
+    font-size:larger;
+    width: 100%;
+  }
   h1{
     font-size: 30px;
     text-transform:capitalize;
     font-weight: 300;
     text-align: center;
-    margin-top: 0px;
+    margin-top: 10px;
     font-weight: bold;
     margin-bottom: 15px;
  }
@@ -42,7 +46,7 @@ section{
 table {
     border-spacing: 1;
     border-collapse: collapse;
-    background: white;
+    background: #202940;
     border-radius: 6px;
     overflow: auto;
     max-width: 1410px;
@@ -50,11 +54,12 @@ table {
     margin: 0 auto;
     position: relative;
     font-size: 20px;
+    color: white;
 
   }
-  table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-} 
+  /* table tbody tr:nth-of-type(even) {
+    background-color: #202940;
+}  */
   /* table * {
     position: relative;
   } */
@@ -75,25 +80,26 @@ table {
 
   }
  thead {
+    background-image: linear-gradient(to right, #7c20a2, #8228a1, #8730a0, #8c379f, #913e9e);
     position: sticky; /* make the table heads sticky */
         top: 0px; /* table head will be placed from the top of the table and sticks to it */
   }
 
   table thead tr th{
-    background: #00456A !important;
     color: white;
 
   }
+  
   table thead tr {
 
     height: 60px;
-    background: #00456A !important;
-    color: white;
+    background-image: linear-gradient(to right, #7c20a2, #8228a1, #8730a0, #8c379f, #913e9e);
+        color: white;
     font-size: 16px;
   }
   table tbody tr {
     height: 48px;
-    border-bottom: 1px solid #E3F1D5;
+    border-bottom: 1px solid #202940;
   }
   table tbody tr:last-child {
     border: 0;
@@ -153,13 +159,10 @@ table {
     }
   }
   body {
-    background-image: radial-gradient(circle, #ffffff, #bfbec8, #808195, #444964, #051937);
     font: 400 14px 'Calibri', 'Arial';
+    background-color: #1f1e2e;
     text-transform: capitalize;
     padding: 00px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
     /* blockquote {
         color: white;
@@ -178,9 +181,8 @@ table {
      #color:hover{
       background-color:#00456A !important;
      }
-     .btn:hover{
-      background-color: #00456A;
-      border-color: #00456A;
+     .btn{
+      color: white;
      }
        .button:hover{
         background-color: #638F9C;

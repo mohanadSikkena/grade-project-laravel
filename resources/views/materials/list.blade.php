@@ -7,24 +7,23 @@ Matarials
 Matarials
 @endsection
 
-@section('add')
-<div class="form-design">
-  <a href="{{ route('materials.new') }}">
-    <button class="button">Add</button> </a>
-  <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="button" type="submit">Search</button>
-  </form>
-</div>
-
-@endsection
 
 @section('style')
 <link rel="stylesheet" href="{{ asset('tableStyle.css') }}">
 @endsection
 
+@section('add')
+
+  <a href="{{ route('materials.new') }}"><button  class="add-button">Add</button></a>
+        <form class="search-form">
+				<input type="text" id="search" aria-label="Search" placeholder="Search" name="search">
+				<button type="submit">Go</button>
+			  </form>
+@endsection
 
 @section('content')
+
+<h1>materials</h1>
 <div class="table">
   <table>
     <thead>
@@ -43,7 +42,7 @@ Matarials
       @foreach ($materials as $material)
       <tr>
         <td>
-          <a class="btn btn-outline-success" href="">Report</a>
+          <a class="btn btn-outline-success" id="report" href="">Report</a>
           <a class="btn btn-outline-primary" href="{{route('materials.edit', $material->id)}}">Edit</a>
           <form class="delete" action="{{ route('materials.delete', $material->id) }}" method="post" class="delete-btn">
             @method('DELETE')

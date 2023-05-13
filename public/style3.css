@@ -7,7 +7,7 @@ body {
   font-family: "DM Sans", sans-serif;
   line-height: 1.5;
   background-color: #1f1e2e;
-  padding: 0 2rem;
+  padding: 0 ;
 }
 h2{
     background-color: #86399b !important;
@@ -52,8 +52,8 @@ input {
   position: relative;
   padding-top: 1rem;
 }
-.input + .input {
-  margin-top: 1.5rem;
+.input{
+  margin-top: 1.5rem !important;
 }
 
 .input-label {

@@ -30,9 +30,9 @@ class UsersController extends Controller
         $user->phone_no = request('phone_no') ;
         $user->house_no = request('house_no') ;
         $user->role_id = request('role_id') ;
-        $user->location_id = location_id('name') ;
+        $user->location_id = request('location_id') ;
         $user->hourly_salery = request('hourly_salery') ;
-        $user->password = request('password') ;
+        $user->password = Hash::make( request('password'));
         $user->email = request('email') ;
         $user->department_id = request('department_id') ;
         $user->save() ;
@@ -57,7 +57,7 @@ class UsersController extends Controller
         $user->role_id = request('role_id') ;
         $user->location_id = request('location_id') ;
         $user->hourly_salery = request('hourly_salery') ;
-        $user->password = request('password') ;
+        $user->password = Hash::make( request('password'));;
         $user->email = request('email') ;
         $user->department_id = request('department_id') ;
         $user->save() ; 

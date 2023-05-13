@@ -49,7 +49,7 @@
                     <td>
                       <a class="btn btn-outline-success" href="">Report</a>
                       <a class="btn btn-outline-primary" href="{{route('machines.edit',$machine->id)}}">Edit</a>
-                      <form class="delete" action="{{ route('workRequests.delete', $machine->id) }}" method="post" class="delete-btn">
+                      <form class="delete" action="{{ route('machines.delete', $machine->id) }}" method="post" class="delete-btn">
                         @method('DELETE')
                         @csrf
                         <button type="submit" class="btn btn-outline-danger">Delete</button>
@@ -64,7 +64,7 @@
                     <td>{{$machine->category->name}}</td>
                     <td>{{$machine->location->location_description}}</td>
                     <td>{{$machine->contractor}}</td>
-                    <td>{{$machine->machine_status}}</td>
+                    <td>{{$machine->machine_status_id}}</td>
                     <td>{{$machine->supplier}}</td>
                     <td>{{$machine->Criticality->name}}</td>
                     <td>{{$machine->machine_code_id}}</td>

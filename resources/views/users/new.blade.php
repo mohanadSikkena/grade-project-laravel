@@ -21,7 +21,7 @@ New User
         <label class="input-label" for="floatingPassword">Email</label>
       </div>
       <div class="input">
-        <input type="text" class="input-field"  required name="password">
+        <input type="password" class="input-field"  required name="password">
         <label class="input-label" for="floatingPassword">Password</label>
       </div>
       <div class="row">

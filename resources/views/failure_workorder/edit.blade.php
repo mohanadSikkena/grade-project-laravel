@@ -40,7 +40,7 @@ edit Failure Work Order
             <label class="input-label" for="floatingPassword">Requirements</label>
           </div>
           <div class="row">   
-            <button class="action-button">Add</button>
+            <button class="action-button">Edit</button>
           </div>
         </form>
     </div>
