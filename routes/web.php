@@ -32,7 +32,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return ['Laravel' => app()->version()];
+    return redirect()->route('login');
 });
 
 require __DIR__.'/auth.php';
