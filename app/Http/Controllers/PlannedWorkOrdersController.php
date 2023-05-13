@@ -112,7 +112,7 @@ public function transform_api($id)
         return response()->json(['error' => 'Work order not found'], 404);
     }
 
-    $pworkOrder->work_status_id = 4;
+    $pworkOrder->work_status_id = 2;
     $pworkOrder->save();
 
     return response()->json(['data' => $pworkOrder], 200);
