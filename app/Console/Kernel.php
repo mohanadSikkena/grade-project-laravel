@@ -31,6 +31,7 @@ class Kernel extends ConsoleKernel
                 $workOrder-> failure_cause ='1';
                 $workOrder-> received_date = Carbon::parse('2023-01-01');
                 $workOrder-> requirements ='requirement1 ';
+                $workOrder->fault = 0;
                 $workOrder->save();
                 $FcmToken = User::whereNotNull('device_key')
                 ->where("id",$fworkOrder->assign_to)
