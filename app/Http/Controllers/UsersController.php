@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Models\Location;
 use App\Models\Role;
 use App\Models\Department;
-
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
