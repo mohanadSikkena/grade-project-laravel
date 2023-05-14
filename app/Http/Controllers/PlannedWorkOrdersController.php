@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\WorkOrder;
@@ -17,11 +18,11 @@ class plannedWorkOrdersController extends Controller
 {
     public function index () {
         if(Auth::user()->role->name=='manger'){
-            $fworkOrders = WorkOrder :: latest()->where('fault' , 1)->get();}
+            $pworkOrders = WorkOrder :: latest()->where('fault' , 0)->get();}
             else{
                 $pworkOrders = WorkOrder :: all()->where('fault', 0)->where('assign_to' , Auth::user()->id)->get();
             }
-        return view ('planned_workorder.list' , compact ('pworkOrders')) ;
+            return view ('planned_workorder.list' , compact ('pworkOrders')) ;
     }
 
     public function create () {
