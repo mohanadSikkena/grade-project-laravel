@@ -14,7 +14,7 @@ class MachineTableSeeder extends Seeder
     {
         $machines = [
             [
-                'name' => 'machine name',
+                'name' => 'Asset name',
                 'machine_code_id' => '1',
                 'status_id' => 1 ,
                 'machine_model' => '1960',
@@ -35,7 +35,7 @@ class MachineTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'machine name',
+                'name' => 'Asset name',
                 'machine_code_id' => '2',
                 'status_id' => 1 ,
                 'machine_model' => '1961',
@@ -56,7 +56,7 @@ class MachineTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'machine name',
+                'name' => 'Asset name',
                 'machine_code_id' => '3',
                 'status_id' => 1 ,
                 'machine_model' => '1962',
@@ -77,7 +77,7 @@ class MachineTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'machine name',
+                'name' => 'Asset name',
                 'machine_code_id' => '4',
                 'status_id' => 1 ,
                 'machine_model' => '1963',
@@ -98,7 +98,7 @@ class MachineTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'machine name',
+                'name' => 'Asset name',
                 'machine_code_id' => '5',
                 'status_id' => 1 ,
                 'machine_model' => '1964',
@@ -119,7 +119,7 @@ class MachineTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'machine name',
+                'name' => 'Asset name',
                 'machine_code_id' => '6',
                 'status_id' => 1 ,
                 'machine_model' => '1965',
@@ -140,7 +140,7 @@ class MachineTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'machine name',
+                'name' => 'Asset name',
                 'machine_code_id' => '7',
                 'status_id' => 1 ,
                 'machine_model' => '1966',
@@ -161,7 +161,7 @@ class MachineTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'machine name',
+                'name' => 'Asset name',
                 'machine_code_id' => '8',
                 'status_id' => 1 ,
                 'machine_model' => '1967',
@@ -182,7 +182,7 @@ class MachineTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'machine name',
+                'name' => 'Asset name',
                 'machine_code_id' => '9',
                 'status_id' => 1 ,
                 'machine_model' => '1968',
@@ -204,7 +204,7 @@ class MachineTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'machine name',
+                'name' => 'Asset name',
                 'machine_code_id' => '10',
                 'status_id' => 1 ,
                 'machine_model' => '1969',
@@ -216,8 +216,8 @@ class MachineTableSeeder extends Seeder
                 'department_id' => 1,
                 'supplier' => 'egypt',
                 'category_id' => 1,
-                'notes_to_technection' => 'Clean every component inside the machine from dust such as limit switch, sensors, selectors, proportional valve, rosetta motor…etc.',
-                'description' => 'Clean every component inside the machine from dust such as limit switch, sensors, selectors, proportional valve, rosetta motor…etc.',
+                'notes_to_technection' => 'Clean every component inside the Asset from dust such as limit switch, sensors, selectors, proportional valve, rosetta motor…etc.',
+                'description' => 'Clean every component inside the Asset from dust such as limit switch, sensors, selectors, proportional valve, rosetta motor…etc.',
                 'criticality_id' => 2,
                 'contract_expiry_date' => Carbon::now()->addYear(2),
                 'created_at' => Carbon::now(),
@@ -225,7 +225,7 @@ class MachineTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'machine name',
+                'name' => 'Asset name',
                 'machine_code_id' => '11',
                 'status_id' => 1 ,
                 'machine_model' => '1970',
@@ -247,7 +247,7 @@ class MachineTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'machine name',
+                'name' => 'Asset name',
                 'machine_code_id' => '12',
                 'status_id' => 1 ,
                 'machine_model' => '1971',
@@ -268,7 +268,7 @@ class MachineTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'machine name',
+                'name' => 'Asset name',
                 'machine_code_id' => '13',
                 'status_id' => 1 ,
                 'machine_model' => '1968',
@@ -289,20 +289,20 @@ class MachineTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'machine name',
+                'name' => 'Asset name',
                 'machine_code_id' => '14',
                 'status_id' => 1 ,
                 'machine_model' => '1969',
                 'manfacturer' => 'FCT DI FAVEROL',
                 'user_id' => 1,
-                'description' => 'Clean every component inside the machine from dust such as limit switch, sensors, selectors, proportional valve, rosetta motor…etc',
+                'description' => 'Clean every component inside the Asset from dust such as limit switch, sensors, selectors, proportional valve, rosetta motor…etc',
                 'location_id' => 3,
                 'contractor' => 'factory manager',
                 'serial_number' => 'ABC132',
                 'department_id' => 2,
                 'supplier' => 'egypt',
                 'category_id' => 2,
-                'notes_to_technection' => 'Clean every component inside the machine from dust such as limit switch, sensors, selectors, proportional valve, rosetta motor…etc',
+                'notes_to_technection' => 'Clean every component inside the Asset from dust such as limit switch, sensors, selectors, proportional valve, rosetta motor…etc',
                 'criticality_id' => 2,
                 'contract_expiry_date' => Carbon::now()->addYear(2),
                 'created_at' => Carbon::now(),
@@ -310,7 +310,7 @@ class MachineTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'machine name',
+                'name' => 'Asset name',
                 'machine_code_id' => '15',
                 'status_id' => 1 ,
                 'machine_model' => '1970',
@@ -331,7 +331,7 @@ class MachineTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'machine name',
+                'name' => 'Asset name',
                 'machine_code_id' => '16',
                 'status_id' => 1 ,
                 'machine_model' => '1971',
