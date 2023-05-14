@@ -19,9 +19,10 @@ Failure Work Order
 @endsection
 
 @section('content')
+@can('view-all')
 <h1>Failure Work Order</h1>
 <div class="table">
-<table>
+  <table>
   <thead>
     <tr>
       <th>actions</th>
@@ -57,6 +58,76 @@ Failure Work Order
     @endforeach
 
   </tbody>
-</table>  
-</div>  
+  </table>  
+</div>
+@endcan
+@can('view-technician', [App\Models\WorkRequest::class])
+<h1>Failure Work Order</h1>
+<div class="table">
+  <table>
+  <thead>
+    <tr>
+      <th>actions</th>
+      <th>id</th>
+      <th>Assign To</th>
+      <th>Asset</th>
+      <th>Failure Cause</th>
+      <th>resived date</th>
+      <th>Requirements </th>
+    </tr>
+  <thead>
+  <tbody>
+    @foreach ($fworkOrders AS $fworkOrder)
+    <tr>
+      <td>
+        <a class="btn btn-outline-success" href="{{route('failure_workorder.show',$fworkOrder->id)}}">Report</a>
+      </td>
+      <td>{{$fworkOrder->id}}</td>
+      <td>{{$fworkOrder->assigendTo->name}}</td>
+      <td>{{$fworkOrder->machine->name}}</td>
+      <td>{{$fworkOrder->problem_description}}</td>
+      <td>{{$fworkOrder->created_at}}</td>
+      <td>{{$fworkOrder->requirements}}</td>  
+    </tr>
+    @endforeach
+
+  </tbody>
+  </table>  
+</div>
+@endcan
+@can('view-engineer', [App\Models\WorkRequest::class, App\Models\WorkOrder::class])
+<h1>Failure Work Order</h1>
+<div class="table">
+  <table>
+  <thead>
+    <tr>
+      <th>actions</th>
+      <th>id</th>
+      <th>Assign To</th>
+      <th>Asset</th>
+      <th>Failure Cause</th>
+      <th>resived date</th>
+      <th>Requirements </th>
+    </tr>
+  <thead>
+  <tbody>
+    @foreach ($fworkOrders AS $fworkOrder)
+    <tr>
+      <td>
+        <a class="btn btn-outline-success" href="{{route('failure_workorder.show',$fworkOrder->id)}}">Report</a>      </td>
+      <td>{{$fworkOrder->id}}</td>
+      <td>{{$fworkOrder->assigendTo->name}}</td>
+      <td>{{$fworkOrder->machine->name}}</td>
+      <td>{{$fworkOrder->problem_description}}</td>
+      <td>{{$fworkOrder->created_at}}</td>
+      <td>{{$fworkOrder->requirements}}</td>
+
+      
+    </tr>
+    @endforeach
+
+  </tbody>
+  </table>  
+</div>
+@endcan
 @endsection

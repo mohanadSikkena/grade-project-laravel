@@ -79,7 +79,7 @@ class FailureWorkOrdersController extends Controller
     public function delete ($id) {
         $fworkOrder = WorkOrder :: find($id) ;
         $fworkOrder->delete() ;
-        return redirect()->route('failure_workorders.list') ;
+        return redirect()->route('failure_workorder.list') ;
 
     }
 

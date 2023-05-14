@@ -44,7 +44,7 @@ class WorkRequestsController extends Controller
     }
 
     public function delete ($id) {
-        $workRequest = WorkRequest :: find('$id') ;
+        $workRequest = WorkRequest :: find($id) ;
         $workRequest->delete() ;
         return redirect()->route('workRequests.list') ;
 

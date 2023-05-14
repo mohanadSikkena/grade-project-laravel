@@ -20,7 +20,7 @@ class plannedWorkOrdersController extends Controller
         if(Auth::user()->role->name=='manger'){
             $pworkOrders = WorkOrder :: latest()->where('fault' , 0)->get();}
             else{
-                $pworkOrders = WorkOrder :: all()->where('fault', 0)->where('assign_to' , Auth::user()->id)->get();
+                $pworkOrders = WorkOrder :: latest()->where('fault', 0)->where('assign_to' , Auth::user()->id)->get();
             }
             return view ('planned_workorder.list' , compact ('pworkOrders')) ;
     }

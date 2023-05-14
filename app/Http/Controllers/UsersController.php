@@ -66,15 +66,15 @@ class UsersController extends Controller
     }
 
     public function delete ($id) {
-        $user = User :: find('$id') ;
+        $user = User :: find($id) ;
         $user->delete() ;
         return redirect()->route('users.list') ;
 
     }
 
     public function show ($id) {
-        $user = User :: find('$id') ;
-        return view ('users.list' , comapct('user')) ;
+        $user = User :: find($id) ;
+        return view ('users.report' , compact('user')) ;
     }
 
     public function get_users_roles_api(){
