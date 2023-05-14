@@ -108,10 +108,19 @@ class PermissionRoleTableSeeder extends Seeder
         $permissionRole->permission_id= 19;
         $permissionRole->role_id= 1;
         $permissionRole->save();
+        $permissionRole = new PermissionRole;
+        $permissionRole->permission_id= 20;
+        $permissionRole->role_id= 1;
+        $permissionRole->save();
 
         // coordinator
         $permissionRole = new PermissionRole;
         $permissionRole->permission_id= 1;
+        $permissionRole->role_id= 2;
+        $permissionRole->save();
+
+        $permissionRole = new PermissionRole;
+        $permissionRole->permission_id= 5;
         $permissionRole->role_id= 2;
         $permissionRole->save();
 

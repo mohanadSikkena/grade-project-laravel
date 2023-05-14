@@ -76,15 +76,30 @@ class User extends Authenticatable
 
     public function hasRole($role)
     {
-        return optional($this->role)->name === $role;
+        $roles = explode('|', $role);
+
+        foreach ($roles as $singleRole) {
+            if (optional($this->role)->name === $singleRole) {
+                return true;
+            }
+        }
+
+        return false;
     }
-    
+
     public function hasPermission($permission)
     {
-        return optional($this->role)->permissions->contains('name', $permission);
-   
+        $permissions = explode('|', $permission);
+
+        foreach ($permissions as $singlePermission) {
+            if (!optional($this->role)->permissions->contains('name', $singlePermission)) {
+                return false;
+            }
+        }
+
+        return true;
     }
-    
-   
+
+
 
 }
