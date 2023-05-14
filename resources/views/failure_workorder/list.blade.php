@@ -27,7 +27,7 @@ Failure Work Order
       <th>actions</th>
       <th>id</th>
       <th>Assign To</th>
-      <th>Machine</th>
+      <th>Asset</th>
       <th>Failure Cause</th>
       <th>resived date</th>
       <th>Requirements </th>

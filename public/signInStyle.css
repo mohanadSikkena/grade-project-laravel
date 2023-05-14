@@ -82,7 +82,7 @@ justify-content: end;
   padding-top: 10px;
 }
 .input{
-  margin-top: 10px;
+  margin-top: 30px;
 }
 .input_label {
   font-size: large;
@@ -99,7 +99,7 @@ justify-content: end;
 }
 .input_field {
   border: 0;
-  margin-top: 35px;
+
   padding: 2px;
   z-index: 1;
   background-color: transparent;
@@ -116,10 +116,10 @@ justify-content: end;
   outline: 0;
   border-bottom-color: #eee;
 }
-/* .input_field:focus + .input_label, .input_field:valid + .input_label {
+.input_field:focus + .input_label, .input_field:valid + .input_label {
   color: #eee;
   -moz-transform: translateY(-25px);
   -ms-transform: translateY(-25px);
   -webkit-transform: translateY(-25px);
   transform: translateY(-25px);
-} */
+}

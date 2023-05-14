@@ -14,7 +14,7 @@
     
     <div class="card">
         <div class="description">
-            <h3 class="h2">Machine Name: <p>{{$workRequest->machine->name}}</p></h2>
+            <h3 class="h2">Asset Name: <p>{{$workRequest->machine->name}}</p></h2>
               <h3>Description: <p>{{ $workRequest->problem_description}}</p></h2>
         </div>
         <div class="footer">

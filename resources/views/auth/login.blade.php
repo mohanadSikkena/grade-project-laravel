@@ -10,7 +10,7 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <div class="input">
-                <input id="email" type="email" class="input_field @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                <input id="email" type="email" class="input_field @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="off">
                 <label for="email" class="input_label">{{ __('Email Address') }}</label>
                     @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -20,7 +20,7 @@
             </div>
 
             <div class=" input">
-                <input id="password" type="password" class="input_field @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                <input id="password" type="password" class="input_field @error('password') is-invalid @enderror" name="password" required autocomplete="off">
                 <label for="password" class="input_label">{{ __('Password') }}</label>
                     @error('password')
                         <span class="invalid-feedback" role="alert">

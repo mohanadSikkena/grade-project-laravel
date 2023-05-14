@@ -23,7 +23,7 @@ edit Failure Work Order
         </div>
         <div class="row">
           <div class="col">
-            <label class="label">Machine</label>
+            <label class="label">Asset</label>
             <select class="form-select" aria-label="Default select example" name="machine_id">
               @foreach ($machines AS $machine)
               <option value="{{$machine->id}}">{{$machine->name}}</option>
