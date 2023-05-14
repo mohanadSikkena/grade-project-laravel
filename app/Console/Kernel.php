@@ -7,6 +7,7 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use App\Models\Machine;
 use Carbon\Carbon;
 
+
 class Kernel extends ConsoleKernel
 {
     /**
@@ -64,4 +65,8 @@ class Kernel extends ConsoleKernel
 
         require base_path('routes/console.php');
     }
+    protected $routeMiddleware = [
+        // ...
+        'role_and_permission' => \App\Http\Middleware\CheckRoleAndPermission::class,
+    ];
 }
