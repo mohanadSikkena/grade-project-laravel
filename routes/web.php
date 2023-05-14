@@ -185,5 +185,7 @@ Route::get('/users/search' , [UsersController::class , 'search'])->name('users.s
 Route::get('/materials/search' , [MatrialsController::class , 'search'])->name('materials.search')->middleWare("auth" ,"role_and_permission:manger,");
 Route::get('/workRequests/search' , [WorkRequestsController::class , 'search'])->name('workRequest.search')->middleWare("auth" ,"role_and_permission:manger,");
 Route::get('/machines/search' , [MachinesController::class , 'search'])->name('machines.search')->middleWare("auth" ,"role_and_permission:manger,");
+Route::get('/failure_workorder/search' , [FailureWorkOrdersController::class , 'search'])->name('failure_workorder.search')->middleWare("auth");
+
 
 
