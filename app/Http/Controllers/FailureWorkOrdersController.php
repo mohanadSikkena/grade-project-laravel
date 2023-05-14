@@ -7,20 +7,23 @@ use App\Models\WorkOrder;
 use App\Models\User;
 use App\Models\Machine;
 use App\Models\WorkRequest;
-
+use Illuminate\Support\Facades\Auth;
 
 class FailureWorkOrdersController extends Controller
 {
     public function index () {
-        $fworkOrders = WorkOrder :: latest()->where('fault' , 1)->get();
+        if(Auth::user()->role->name=='manger'){
+        $fworkOrders = WorkOrder :: latest()->where('fault' , 1)->get();}
+        else{
+            $fworkOrders = WorkOrder :: latest()->where('fault' , 1)->where('assign_to' , Auth::user()->id)->get();
+        }
         return view ('failure_workorder.list' , compact('fworkOrders')) ;
     }
 
-    public function create () {
+    public function create ($id) {
         $users = User :: all ();
-        $machines = Machine :: all();
-        return view ('failure_workorder.new' , compact('users' , 'machines'))
-         ;
+        $workRequest = WorkRequest::find($id);
+        return view ('failure_workorder.new' , compact('users' , 'workRequest'));
     }
 
     public function store () {

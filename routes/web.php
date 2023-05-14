@@ -94,7 +94,7 @@ Route::delete('/planned_workorder/{id}/delete' , [PlannedWorkOrdersController::c
 /*failure Work Orders Routes */
 Route::get('/failure_workorder' , [FailureWorkOrdersController::class , 'index'])->name('failure_workorder.list');
 Route::post('/failure_workorder/save' , [FailureWorkOrdersController::class , 'store'])->name('failure_workorder.save')->middleWare("auth");
-Route::get('/failure_workorder/new' , [FailureWorkOrdersController::class , 'create'])->name('failure_workorder.new')->middleWare("auth");
+Route::get('/failure_workorder/{id}/new' , [FailureWorkOrdersController::class , 'create'])->name('failure_workorder.new')->middleWare("auth");
 Route::get('/failure_workorder/{id}/show' , [FailureWorkOrdersController::class , 'show'])->name('failure_workorder.show')->middleWare("auth");
 Route::get('/failure_workorder/{id}/edit' , [FailureWorkOrdersController::class , 'edit'])->name('failure_workorder.edit')->middleWare("auth");
 Route::put('/failure_workorder/{id}/update' , [FailureWorkOrdersController::class , 'update'])->name('failure_workorder.update')->middleWare("auth");

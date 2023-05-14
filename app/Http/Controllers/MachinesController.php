@@ -29,10 +29,10 @@ class MachinesController extends Controller
         $categories = Category :: all();
         $machineCodes = MachineCode :: all();
         $criticals = Criticality :: all();
-        $machine = User :: all();
+        $users = User :: all();
         $locations = Location :: all();
 
-        return view('machines.new' , compact('pworkOredrs', 'locations' , 'fworkOredrs' , 'workRequests' , 'departments' , 'categories' , 'machineCodes' , 'criticals' , 'machine$machine' ));
+        return view('machines.new' , compact('pworkOredrs', 'locations' , 'fworkOredrs' , 'workRequests' , 'departments' , 'categories' , 'machineCodes' , 'criticals' , 'users' ));
     }
 
     public function store () {
@@ -62,9 +62,9 @@ class MachinesController extends Controller
         $categories = Category :: all();
         $machineCodes = MachineCode :: all();
         $criticals = Criticality :: all();
-        $machine = User :: all();
+        $users = User :: all();
         $locations = Location :: all();
-        return view('machines.edit' , compact('machine','machine$machine','locations','criticals','departments','categories','machineCodes'));
+        return view('machines.edit' , compact('machine', 'users','locations','criticals','departments','categories','machineCodes'));
 
     }
     public function update ($id) {

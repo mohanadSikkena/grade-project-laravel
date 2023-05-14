@@ -4,34 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{Asset('style.css')}}">
-    <link rel="stylesheet" href="{{Asset('bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{Asset('style (1).css')}}">
+    {{-- <link rel="stylesheet" href="{{Asset('bootstrap.min.css')}}"> --}}
     <title>Document</title>
 </head>
 <body>
-
-    <div class="container">
-        <div class="header">
-          <h1>Report Title</h1>
-        </div>
+  <div class="container">
+    <h2>{{$workRequest->machine->name}} Report</h2>
+    
+    <div class="card">
         <div class="description">
-            <h2 class="h2">{{$workrequest->machine->name}}</h2>
-            
-          <h2>Description:{{ $workrequest->description}}</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel ultrices nulla, sed posuere mauris. Integer id lorem tristique, luctus metus eu, suscipit elit.</p>
+            <h3 class="h2">Machine Name: <p>{{$workRequest->machine->name}}</p></h2>
+              <h3>Description: <p>{{ $workRequest->problem_description}}</p></h2>
         </div>
         <div class="footer">
-          <div class="date-time">
-            <h2>Submited By:{{$workrequest->user->name}}</h2>
-           <h3>{{$machine->created_at}}</h3>
+            <div class="date-time">
+              <h3>Submited By: <p> {{$workRequest->user->name}}</p></h3>
+  
+              <h3>{{$workRequest->created_at}}</h3>
+            </div>
+            <div class="btn">
+              <a class="blue" href="{{route('failure_workorder.new' ,$workRequest->id) }}">Assign WO</a>
+              <a class="red" href="{{'workRequest.list'}}">  Cancel</a> 
+            </div>
           </div>
-          <div class="btn">
-            <a href="{{'failure_workorder.new' ,$workrequest }}">  <button  class="button">Assign WO</button> </a> </td>
-            <a href="{{'workrequest.list'}}">  <button  class="red">Cancel</button> </a> </td>
 
-          </div>
-        </div>
-      </div>
+    </div>
+</div>
       
       
 </body>

@@ -116,10 +116,10 @@ justify-content: end;
   outline: 0;
   border-bottom-color: #eee;
 }
-.input_field:focus + .input_label, .input_field:valid + .input_label {
+/* .input_field:focus + .input_label, .input_field:valid + .input_label {
   color: #eee;
   -moz-transform: translateY(-25px);
   -ms-transform: translateY(-25px);
   -webkit-transform: translateY(-25px);
   transform: translateY(-25px);
-}
+} */

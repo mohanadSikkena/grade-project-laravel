@@ -22,17 +22,16 @@ New Failure Work Order
         </select>
       </div>
       <div class="row">
-        <div class="col">
-          <label class="label">Machine</label>
-          <select class="form-select" aria-label="Default select example" name="machine_id">
-            @foreach ($machines AS $machine)
-            <option value="{{$machine->id}}">{{$machine->name}}</option>
-            @endforeach
-          </select>     
+        <div class="input">
+          <input type="text" class="input-field" value={{$workRequest->machine->name}} @disabled(true)>
+          <label class="label">Machine </label>
+          <input type="hidden" value="{{$workRequest->machine->id}}" class="input-field" placeholder="" id="floatingTextarea2"  name="machine_id"  required>
+
+            
         </div>   
         </div> 
         <div class="input">            
-          <input name="problem_description" class="input-field" placeholder="" id="floatingTextarea2" required>
+          <input name="problem_description" value="{{$workRequest->problem_description	}}" class="input-field" placeholder="" id="floatingTextarea2" required>
           <label class="input-label" for="floatingTextarea6">Description</label>
         </div>
         <div class="input"> 

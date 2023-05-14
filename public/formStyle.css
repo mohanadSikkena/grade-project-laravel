@@ -5,6 +5,7 @@ body {
   margin: 0;
 	line-height: 1.5;
   background-color: #1f1e2e;
+  color: #eee !important;
   background-attachment:fixed;
   background-size: cover;
 	padding: 0 2rem;

@@ -51,8 +51,8 @@ class WorkRequestsController extends Controller
     }
 
     public function show ($id) {
-        $workRequest = WorkRequest :: find('$id') ;
-        return view ('workRequests.list' , comapct('workRequest')) ;
+        $workRequest = WorkRequest :: find($id) ;
+        return view ('workRequests.report' , compact('workRequest')) ;
     }
 
     public function index_api()
