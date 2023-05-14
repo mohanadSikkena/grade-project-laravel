@@ -11,7 +11,7 @@ New Failure Work Order
 <div class="container">
   <div class="card">
     <h2>Failure Work Order</h2>
-    <form class="card-form" action={{Route('failure_workorder.save')}} method="post">
+    <form class="card-form" action={{Route('failure_workorder.save', $workRequest->id)}} method="post">
     @csrf
       <div class="col">
         <label class="label">Assign To</label>
@@ -39,7 +39,7 @@ New Failure Work Order
           <label class="input-label" for="floatingPassword">Requirements</label>
         </div>
         <div class="row">   
-          <button class="action-button">Add</button>
+          <button class="action-button" type="submit">Add</button>
         </div>
       </form>
   </div>

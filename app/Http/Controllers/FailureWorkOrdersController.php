@@ -26,13 +26,15 @@ class FailureWorkOrdersController extends Controller
         return view ('failure_workorder.new' , compact('users' , 'workRequest'));
     }
 
-    public function store () {
+    public function store ($id) {
         $fworkOrder = new WorkOrder ;
         $fworkOrder->problem_description = request('problem_description') ;
         $fworkOrder->machine_id =request('machine_id');
         $fworkOrder->assign_to=request('assign_to');
         $fworkOrder->requirements =request('requirements');
         $fworkOrder->save() ;
+        $workRequest = WorkRequest::find($id);
+        $workRequest->delete();
         $FcmToken = User::whereNotNull('device_key')
         ->where("id",$fworkOrder->assign_to)
         ->pluck('device_key');
@@ -69,6 +71,7 @@ class FailureWorkOrdersController extends Controller
         $fworkOrder->assign_to=request('assign_to');
         $fworkOrder->requirements =request('requirements');
         $fworkOrder->save() ;
+        
         return redirect()->route('failure_workorder.list') ;
 
     }
