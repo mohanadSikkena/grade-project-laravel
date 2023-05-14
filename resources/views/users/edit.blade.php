@@ -30,7 +30,7 @@ Edit User
           <label class="label" for="">Role</label>
           <select class="form-select" aria-label="Default select example" name="role_id">
             @foreach ($roles AS $role)
-              <option value="{{$role->id}}">{{$role->name}}</option>
+              <option {{ $role->id == $machine->role_id ? 'selected' : '' }} value="{{$role->id}}">{{$role->name}}</option>
             @endforeach
           </select>
         </div> 
@@ -38,7 +38,7 @@ Edit User
           <label class="label" for="">Department</label>
           <select class="form-select" aria-label="Default select example" name="department_id">
             @foreach ($departments AS $department)
-            <option value="{{$department->id}}">{{$department->name}}</option>
+            <option {{ $department->id == $machine->department_id ? 'selected' : '' }} value="{{$department->id}}">{{$department->name}}</option>
             @endforeach
           </select>              
         </div>
@@ -46,7 +46,7 @@ Edit User
           <label class="label" for="">Location</label>
           <select class="form-select" aria-label="Default select example" name="location_id">
             @foreach ($locations AS $location )
-            <option value="{{$location->id}}">{{$location->location_description}}</option>
+            <option {{ $location->id == $machine->location_id ? 'selected' : '' }} value="{{$location->id}}">{{$location->location_description}}</option>
             @endforeach
           </select>
       </div>

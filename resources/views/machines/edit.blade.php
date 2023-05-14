@@ -32,7 +32,7 @@ Edit Machine
           <label class="label">User </label>
           <select class="form-select" aria-label="Default select example" name="user_id">
             @foreach ($users as $user)
-            <option value="{{ $user->id }}">{{ $user->name }}</option>
+            <option {{ $user->id == $machine->user_id ? 'selected' : '' }} value="{{ $user->id }}">{{ $user->name }}</option>
             @endforeach
           </select>
         </div>
@@ -40,7 +40,7 @@ Edit Machine
           <label class="label">Department </label>
           <select class="form-select" aria-label="Default select example"name="department_id">
             @foreach ($departments as $department)
-            <option value="{{$department->id}}">{{$department->name}}</option>
+            <option {{ $department->id == $machine->department_id ? 'selected' : '' }}   value="{{$department->id}}">{{$department->name}}</option>
             @endforeach
           </select>
         </div>
@@ -48,7 +48,7 @@ Edit Machine
           <label class="label">Location </label>
           <select class="form-select" aria-label="Default select example"name="location_id">
             @foreach ($locations AS $location)
-            <option value="{{$location->id}}">{{$location->location_description}}</option>
+            <option {{ $location->id == $machine->location_id ? 'selected' : '' }}  value="{{$location->id}}">{{$location->location_description}}</option>
             @endforeach
           </select>
         </div>
@@ -66,7 +66,7 @@ Edit Machine
           <label class="label">Category </label>
           <select class="form-select" aria-label="Default select example"name="category_id">
             @foreach ($categories AS $category)
-            <option value="{{$category->id}}">{{$category->name}}</option>
+            <option {{ $category->id == $machine->category_id ? 'selected' : '' }} value="{{$category->id}}">{{$category->name}}</option>
             @endforeach
           </select>                      
         </div>
@@ -74,7 +74,7 @@ Edit Machine
           <label class="label">Critcality </label>
           <select class="form-select" aria-label="Default select example"name="criticality_id"> 
             @foreach ($criticals As $crtical) 
-            <option value="{{$crtical->id}}">{{$crtical->name}}</option>
+            <option {{ $crtical->id == $machine->criticality_id ? 'selected' : '' }} value="{{$crtical->id}}">{{$crtical->name}}</option>
             @endforeach
           </select>
         </div>
@@ -82,7 +82,7 @@ Edit Machine
           <label class="label">Assets Code</label>
           <select class="form-select" aria-label="Default select example"name="machine_code_id">
             @foreach ($machineCodes AS $machineCode)
-            <option value="{{$machineCode->id}}">{{$machineCode->code}}</option>
+            <option {{ $machineCode->id == $machine->machine_code_id ? 'selected' : '' }} value="{{$machineCode->id}}">{{$machineCode->code}}</option>
             @endforeach
           </select>                     
         </div>
