@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\WorkOrder;
 use App\Models\WorkRequest;
+use App\Models\WorkStatus;
 use App\Models\Department;
 use App\Models\Location;
 use App\Models\Category;
@@ -42,5 +43,8 @@ class Machine extends Model
     }
     public function user(){
         return $this->belongsTo(User::class);
+    }
+    public function workStatus(){
+        return $this->belongsTo(WorkStatus::class, "status_id" , "id");
     }
 }

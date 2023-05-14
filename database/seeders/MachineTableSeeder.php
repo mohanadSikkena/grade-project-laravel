@@ -16,6 +16,7 @@ class MachineTableSeeder extends Seeder
             [
                 'name' => 'machine name',
                 'machine_code_id' => '1',
+                'status_id' => 1 ,
                 'machine_model' => '1960',
                 'manfacturer' => 'Marlin Gerin',
                 'user_id' => 10,
@@ -36,6 +37,7 @@ class MachineTableSeeder extends Seeder
             [
                 'name' => 'machine name',
                 'machine_code_id' => '2',
+                'status_id' => 1 ,
                 'machine_model' => '1961',
                 'manfacturer' => 'Marlin Gerin',
                 'user_id' => 9,
@@ -56,6 +58,7 @@ class MachineTableSeeder extends Seeder
             [
                 'name' => 'machine name',
                 'machine_code_id' => '3',
+                'status_id' => 1 ,
                 'machine_model' => '1962',
                 'manfacturer' => 'Schnieder electric',
                 'user_id' => 8,
@@ -76,6 +79,7 @@ class MachineTableSeeder extends Seeder
             [
                 'name' => 'machine name',
                 'machine_code_id' => '4',
+                'status_id' => 1 ,
                 'machine_model' => '1963',
                 'manfacturer' => 'Schnieder electric',
                 'user_id' => 6,
@@ -96,6 +100,7 @@ class MachineTableSeeder extends Seeder
             [
                 'name' => 'machine name',
                 'machine_code_id' => '5',
+                'status_id' => 1 ,
                 'machine_model' => '1964',
                 'manufacturer' => 'Schnieder electric',
                 'user_id' => 2,
@@ -116,6 +121,7 @@ class MachineTableSeeder extends Seeder
             [
                 'name' => 'machine name',
                 'machine_code_id' => '6',
+                'status_id' => 1 ,
                 'machine_model' => '1965',
                 'manufacturer' => 'Schnieder electric',
                 'user_id' => 1,
@@ -136,6 +142,7 @@ class MachineTableSeeder extends Seeder
             [
                 'name' => 'machine name',
                 'machine_code_id' => '7',
+                'status_id' => 1 ,
                 'machine_model' => '1966',
                 'manfacturer' => 'Schnieder electric',
                 'user_id' => 4,
@@ -156,6 +163,7 @@ class MachineTableSeeder extends Seeder
             [
                 'name' => 'machine name',
                 'machine_code_id' => '8',
+                'status_id' => 1 ,
                 'machine_model' => '1967',
                 'manfacturer' => 'Schnieder electric',
                 'user_id' => 13,
@@ -176,6 +184,7 @@ class MachineTableSeeder extends Seeder
             [
                 'name' => 'machine name',
                 'machine_code_id' => '9',
+                'status_id' => 1 ,
                 'machine_model' => '1968',
                 'manfacturer' => 'Schnieder electric',
                 'user_id' => 5,
@@ -197,6 +206,7 @@ class MachineTableSeeder extends Seeder
             [
                 'name' => 'machine name',
                 'machine_code_id' => '10',
+                'status_id' => 1 ,
                 'machine_model' => '1969',
                 'manfacturer' => 'FCT DI FAVEROL',
                 'user_id' => 1,
@@ -217,6 +227,7 @@ class MachineTableSeeder extends Seeder
             [
                 'name' => 'machine name',
                 'machine_code_id' => '11',
+                'status_id' => 1 ,
                 'machine_model' => '1970',
                 'manfacturer' => 'FCT DI FAVEROL',
                 'user_id' => 12,
@@ -238,6 +249,7 @@ class MachineTableSeeder extends Seeder
             [
                 'name' => 'machine name',
                 'machine_code_id' => '12',
+                'status_id' => 1 ,
                 'machine_model' => '1971',
                 'manfacturer' => 'FCT DI FAVEROL',
                 'user_id' => 2,
@@ -258,6 +270,7 @@ class MachineTableSeeder extends Seeder
             [
                 'name' => 'machine name',
                 'machine_code_id' => '13',
+                'status_id' => 1 ,
                 'machine_model' => '1968',
                 'manfacturer' => 'Schnieder electric',
                 'user_id' => 5,
@@ -278,6 +291,7 @@ class MachineTableSeeder extends Seeder
             [
                 'name' => 'machine name',
                 'machine_code_id' => '14',
+                'status_id' => 1 ,
                 'machine_model' => '1969',
                 'manfacturer' => 'FCT DI FAVEROL',
                 'user_id' => 1,
@@ -298,6 +312,7 @@ class MachineTableSeeder extends Seeder
             [
                 'name' => 'machine name',
                 'machine_code_id' => '15',
+                'status_id' => 1 ,
                 'machine_model' => '1970',
                 'manfacturer' => 'FCT DI FAVEROL',
                 'user_id' => 12,
@@ -318,6 +333,7 @@ class MachineTableSeeder extends Seeder
             [
                 'name' => 'machine name',
                 'machine_code_id' => '16',
+                'status_id' => 1 ,
                 'machine_model' => '1971',
                 'manfacturer' => 'FCT DI FAVEROL',
                 'user_id' => 2,

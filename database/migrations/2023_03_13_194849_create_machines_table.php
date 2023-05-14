@@ -22,6 +22,7 @@ return new class extends Migration
             $table->foreignId('department_id');
             $table->foreignId('category_id');
             $table->string('contractor', 50);
+            $table->foreignId('status_id');
             $table->string('serial_number');
             $table->string('supplier', 50);
             $table->foreignId('criticality_id');
@@ -34,6 +35,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('RESTRICT');
             $table->foreign('department_id')->references('id')->on('departments')->onUpdate('CASCADE')->onDelete('RESTRICT');
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('CASCADE')->onDelete('RESTRICT');
+            $table->foreign('status_id')->references('id')->on('work_statuses')->onUpdate('CASCADE')->onDelete('RESTRICT');
             $table->foreign('criticality_id')->references('id')->on('criticalities')->onUpdate('CASCADE')->onDelete('RESTRICT');
             $table->foreign('machine_code_id')->references('id')->on('machine_codes')->onUpdate('CASCADE')->onDelete('RESTRICT');
             });

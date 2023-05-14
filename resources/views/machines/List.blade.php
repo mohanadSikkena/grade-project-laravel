@@ -59,7 +59,7 @@ Machines
                     <td>{{$machine->category->name}}</td>
                     <td>{{$machine->location->location_description}}</td>
                     <td>{{$machine->contractor}}</td>
-                    <td>{{$machine->machine_status_id}}</td>
+                    <td>{{$machine->workStatus->name}}</td>
                     <td>{{$machine->supplier}}</td>
                     <td>{{$machine->Criticality->name}}</td>
                     <td>{{$machine->machineCode->code}}</td>
