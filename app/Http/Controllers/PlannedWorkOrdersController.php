@@ -78,8 +78,8 @@ class plannedWorkOrdersController extends Controller
     }
 
     public function show ($id) {
-        $pworkOrder = WorkOrder :: find('$id') ; 
-        return view ('planned_workorder.list' , comapct('pworkOrder')) ;
+        $pworkOrder = WorkOrder :: find($id) ; 
+        return view ('planned_workorder.report' , compact('pworkOrder')) ;
     }
 
     

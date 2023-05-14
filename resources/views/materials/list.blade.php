@@ -50,7 +50,7 @@ Matarials
       @foreach ($materials as $material)
       <tr>
         <td>
-          <a class="btn btn-outline-success" id="report" href="">Report</a>
+          <a class="btn btn-outline-success" href="{{ route('materials.show', $material->id) }}">Report</a>
           <a class="btn btn-outline-primary" href="{{route('materials.edit', $material->id)}}">Edit</a>
           <form class="delete" action="{{ route('materials.delete', $material->id) }}" method="post" class="delete-btn">
             @method('DELETE')

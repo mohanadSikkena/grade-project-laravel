@@ -97,7 +97,7 @@ class MachinesController extends Controller
 
     public function show ($id) {
         $machine = Machine :: find($id);
-        return view ('machines.show' , compact('machines'));
+        return view ('machines.report' , compact('machine'));
     }
 
     public function index_api()

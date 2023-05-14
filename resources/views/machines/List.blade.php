@@ -19,16 +19,16 @@ Machines
                 <thead>
                   <tr>
                     <th>actions</th>
-                    <th>Asset ID</th>
-                    <th>Asset Name</th>
-                    <th>Asset Model</th>
+                    <th> ID</th>
+                    <th> Name</th>
+                    <th> Model</th>
                     <th>Manfcatturer</th>
                     <th>User</th>
                     <th>Department</th>
                     <th>Category</th>
                     <th>Location </th>
                     <th>Contractor</th>
-                    <th>Asset Status</th>
+                    <th> Status</th>
                     <th>Supplier</th>
                     <th>Critcality</th>
                     <th>Assets Code </th>
@@ -42,7 +42,7 @@ Machines
                   @foreach ($machines as $machine)
                   <tr>
                     <td>
-                      <a class="btn btn-outline-success" href="">Report</a>
+                      <a class="btn btn-outline-success" href="{{route('machines.show',$machine->id)}}">Report</a>
                       <a class="btn btn-outline-primary" href="{{route('machines.edit',$machine->id)}}">Edit</a>
                       <form class="delete" action="{{ route('machines.delete', $machine->id) }}" method="post" class="delete-btn">
                         @method('DELETE')

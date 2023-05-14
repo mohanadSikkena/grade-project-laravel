@@ -85,7 +85,7 @@ class FailureWorkOrdersController extends Controller
 
     public function show ($id) {
         $fworkOrder = WorkOrder :: find($id) ;
-        return view ('failure_workorders.list' , comapct('fworkOrder')) ;
+        return view ('failure_workorder.report' , compact('fworkOrder')) ;
     }
 
     public function show_work_order_api_worker($id)

@@ -17,7 +17,7 @@
             <h3 class="h2">Asset Name: <p>{{$workRequest->machine->name}}</p></h2>
               <h3>Description: <p>{{ $workRequest->problem_description}}</p></h2>
         </div>
-        <div class="footer">
+        <div class="footer" style="margin-top:200px">
             <div class="date-time">
               <h3>Submited By: <p> {{$workRequest->user->name}}</p></h3>
   

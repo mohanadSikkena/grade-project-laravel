@@ -60,15 +60,15 @@ class MatrialsController extends Controller
     }
 
     public function delete ($id) {
-        $material = Matrial :: find('$id') ;
+        $material = Matrial :: find($id) ;
         $material->delete() ;
         return redirect()->route('materials.list') ;
 
     }
 
     public function show ($id) {
-        $material = Matrial :: find('$id') ;
-        return view ('materials.list' , comapct('material')) ;
+        $material = Matrial :: find($id) ;
+        return view ('materials.report' , compact('material')) ;
     }
 
     public function search(){

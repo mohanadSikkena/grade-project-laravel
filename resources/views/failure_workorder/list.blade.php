@@ -31,14 +31,13 @@ Failure Work Order
       <th>Failure Cause</th>
       <th>resived date</th>
       <th>Requirements </th>
-      <th>Fault</th>
     </tr>
   <thead>
   <tbody>
     @foreach ($fworkOrders AS $fworkOrder)
     <tr>
       <td>
-        <a class="btn btn-outline-success" href="">Report</a>
+        <a class="btn btn-outline-success" href="{{route('failure_workorder.show',$fworkOrder->id)}}">Report</a>
         <a class="btn btn-outline-primary" href="{{route('failure_workorder.edit',$fworkOrder->id)}}">Edit</a>
         <form class="delete" action="{{ route('failure_workorder.delete', $fworkOrder->id) }}" method="post" class="delete-btn">
           @method('DELETE')
@@ -52,7 +51,7 @@ Failure Work Order
       <td>{{$fworkOrder->problem_description}}</td>
       <td>{{$fworkOrder->created_at}}</td>
       <td>{{$fworkOrder->requirements}}</td>
-      <td>{{$fworkOrder->fault}}</td>
+
       
     </tr>
     @endforeach
