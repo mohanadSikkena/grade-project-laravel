@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use app\Models\User;
+use app\Models\Matrial;
+use app\Models\Machine;
+use app\Models\WorkOrder;
+use app\Models\WorkRequest;
 
 class HomeController extends Controller
 {
@@ -26,7 +30,6 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        
         
 
         if (Gate::allows('view-all',$user)) {

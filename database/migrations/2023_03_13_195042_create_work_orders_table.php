@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('work_orders', function (Blueprint $table) {
             $table->id();
             $table->string('problem_description', 255)->nullable();
-            $table->foreignId('work_status_id')->nullable();
+            $table->foreignId('work_status_id')->default(1);
             $table->foreignId('work_type_id')->nullable();
             $table->foreignId('work_trade_id')->nullable();
             $table->foreignId('machine_id');
