@@ -9,6 +9,7 @@ use App\Models\Permission;
 
 class PermissionRole extends Model
 {
+    protected $table = 'permission_role';
     use HasFactory;
 
     public function role(){

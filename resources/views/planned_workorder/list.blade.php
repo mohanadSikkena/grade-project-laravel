@@ -26,7 +26,7 @@
       <th>Work Priority</th>
       <th>Requirements </th>
       <th>Received Date</th>
-      <th>Fault</th>
+      {{-- <th>Fault</th> --}}
 
     </tr>
   <thead>
@@ -48,7 +48,7 @@
       <td>{{$pworkOrder->workPriority->name}}</td>
       <td>{{$pworkOrder->requirements}}</td>
       <td>{{$pworkOrder->created_at}}</td>
-      <td>{{$pworkOrder->fault}}</td>
+      {{-- <td>{{$pworkOrder->fault}}</td> --}}
     </tr>
     @endforeach
   </tbody>

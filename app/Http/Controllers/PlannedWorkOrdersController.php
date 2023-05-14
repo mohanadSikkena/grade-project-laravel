@@ -71,7 +71,7 @@ class plannedWorkOrdersController extends Controller
     }
 
     public function delete ($id) {
-        $pworkOrder = WorkOrder :: find('$id') ;
+        $pworkOrder = WorkOrder :: find($id) ;
         $pworkOrder->delete() ;
         return redirect()->route('planned_workorder.list') ;
 
