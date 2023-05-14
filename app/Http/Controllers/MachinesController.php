@@ -139,6 +139,7 @@ class MachinesController extends Controller
     {
         $term = request('term');
             $machines = Machine::where('name', 'like','%' . $term . '%')->orWhere('description', 'LIKE', "%$term%")
+            ->orWhere('id', 'LIKE', "%$term%")
             ->orWhere('machine_model', 'LIKE', "%$term%")
             ->orWhere('manfacturer', 'LIKE', "%$term%")
             ->orWhere('contractor', 'LIKE', "%$term%")

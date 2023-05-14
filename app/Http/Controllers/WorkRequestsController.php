@@ -119,10 +119,12 @@ public function create_work_request_api()
     public function search(){
         $term = request('term');
             $workRequests = WorkRequest::where('problem_description', 'like','%' . $term . '%')
+            ->orWhere('id', 'LIKE', "%$term%")
             ->orWhereHas('machine', function ($machine) {
                 $term = request('term');
                 $machine->where('name', 'LIKE', "%$term%");
             })
+            
             ->orWhereHas('user', function ($user) {
                 $term = request('term');
                 $user->where('name', 'LIKE', "%$term%");

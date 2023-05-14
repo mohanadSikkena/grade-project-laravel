@@ -74,6 +74,7 @@ class MatrialsController extends Controller
     public function search(){
     $term = request('term');
         $materials = Matrial::where('name', 'like','%' . $term . '%')->orWhere('quantity', 'LIKE', "%$term%")
+        ->orWhere('id', 'LIKE', "%$term%")
         ->orWhereHas('sparePart', function ($spare_part) {
             $term = request('term');
             $spare_part->where('name', 'LIKE', "%$term%");

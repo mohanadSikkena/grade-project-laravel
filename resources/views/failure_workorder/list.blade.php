@@ -8,7 +8,7 @@ Failure Work Order
 @endsection
 @section('add')
 @section('add')
-<form class="search-form" role="search" action="{{ route('users.search') }}" method="GET">
+<form class="search-form" role="search" action="{{ route('failure_workorder.search') }}" method="GET">
   <input type="text" id="search" aria-label="Search" placeholder="Search" name="term">
   <button type="submit">Search</button>
   </form>

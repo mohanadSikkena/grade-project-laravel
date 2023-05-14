@@ -158,6 +158,24 @@ public function create_work_order_api()
 
     return response()->json(['data' => 'Added Succesfully'], 200);
 }
+public function search(){
+    $term = request('term');
+        $fworkOrders = WorkOrder::where('failure_cause', 'like','%' . $term . '%')
+        ->orWhere('id', 'LIKE', "%$term%")
+        ->orWhere('created_at', 'LIKE', "%$term%")
+        ->orWhere('requirements', 'LIKE', "%$term%")
+        ->orWhereHas('machine', function ($machine) {
+            $term = request('term');
+            $machine->where('name', 'LIKE', "%$term%");
+        })
+        
+        ->orWhereHas('assigendTo', function ($user) {
+            $term = request('term');
+            $user->where('name', 'LIKE', "%$term%");
+        })->get();
+         return view('failure_workorder.search', compact('fworkOrders'));
+}
+
 
 
 
