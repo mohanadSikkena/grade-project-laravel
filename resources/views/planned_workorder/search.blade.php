@@ -4,7 +4,7 @@
 @endsection
 
 @section('add')
-<form class="search-form" role="search" action="{{ route('users.search') }}" method="GET">
+<form class="search-form" role="search" action="{{ route('planned_workorder.search') }}" method="GET">
   <input type="text" id="search" aria-label="Search" placeholder="Search" name="term">
   <button type="submit">Search</button>
   </form>
@@ -53,6 +53,6 @@
     </tr>
     @endforeach
   </tbody>
-</table> 
-</div>    
+</table>
+</div>
 @endsection

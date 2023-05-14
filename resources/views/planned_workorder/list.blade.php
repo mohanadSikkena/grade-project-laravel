@@ -4,7 +4,7 @@
 @endsection
 
 @section('add')
-<form class="search-form" role="search" action="{{ route('users.search') }}" method="GET">
+<form class="search-form" role="search" action="{{ route('planned_workorder.search') }}" method="GET">
   <input type="text" id="search" aria-label="Search" placeholder="Search" name="term">
   <button type="submit">Search</button>
   </form>
@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="{{ asset('tableStyle.css') }}">
 @endsection
 @section('content')
-    
+
 
 @can('view-all')
 <h1>Planned Work Order</h1>
@@ -59,7 +59,7 @@
     </tr>
     @endforeach
   </tbody>
-</table> 
+</table>
 </div>
 @endcan
 @can('view-technician', [App\Models\WorkRequest::class])
@@ -101,7 +101,7 @@
     </tr>
     @endforeach
   </tbody>
-</table> 
+</table>
 </div>
 @endcan
 @can('view-engineer', [App\Models\WorkRequest::class, App\Models\WorkOrder::class])
@@ -143,7 +143,7 @@
     </tr>
     @endforeach
   </tbody>
-</table> 
+</table>
 </div>
 @endcan
 @endsection

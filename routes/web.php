@@ -92,13 +92,13 @@ Route::put('/planned_workorder/{id}/update' , [PlannedWorkOrdersController::clas
 Route::delete('/planned_workorder/{id}/delete' , [PlannedWorkOrdersController::class , 'delete'])->name('planned_workorder.delete')->middleWare("auth" ,"role_and_permission:manger,maneger_access");
 
 /*failure Work Orders Routes */
-Route::get('/failure_workorder' , [FailureWorkOrdersController::class , 'index'])->name('failure_workorder.list');
-Route::post('/failure_workorder/save/{id}' , [FailureWorkOrdersController::class , 'store'])->name('failure_workorder.save')->middleWare("auth");
-Route::get('/failure_workorder/{id}/new' , [FailureWorkOrdersController::class , 'create'])->name('failure_workorder.new')->middleWare("auth");
-Route::get('/failure_workorder/{id}/show' , [FailureWorkOrdersController::class , 'show'])->name('failure_workorder.show')->middleWare("auth");
-Route::get('/failure_workorder/{id}/edit' , [FailureWorkOrdersController::class , 'edit'])->name('failure_workorder.edit')->middleWare("auth");
-Route::put('/failure_workorder/{id}/update' , [FailureWorkOrdersController::class , 'update'])->name('failure_workorder.update')->middleWare("auth");
-Route::delete('/failure_workorder/{id}/delete' , [FailureWorkOrdersController::class , 'delete'])->name('failure_workorder.delete')->middleWare("auth");
+Route::get('/failure_workorder' , [FailureWorkOrdersController::class , 'index'])->name('failure_workorder.list')->middleWare("auth" ,"role_and_permission:manger|engineer|technician,user_work_orders");
+Route::post('/failure_workorder/save/{id}' , [FailureWorkOrdersController::class , 'store'])->name('failure_workorder.save')->middleWare("auth" ,"role_and_permission:manger|coordinator|engineer,create_work_orders");
+Route::get('/failure_workorder/{id}/new' , [FailureWorkOrdersController::class , 'create'])->name('failure_workorder.new')->middleWare("auth" ,"role_and_permission:manger|coordinator|engineer,create_work_orders");
+Route::get('/failure_workorder/{id}/show' , [FailureWorkOrdersController::class , 'show'])->name('failure_workorder.show')->middleWare("auth" ,"role_and_permission:manger|engineer|technician,user_work_orders");
+Route::get('/failure_workorder/{id}/edit' , [FailureWorkOrdersController::class , 'edit'])->name('failure_workorder.edit')->middleWare("auth" ,"role_and_permission:manger,maneger_access");
+Route::put('/failure_workorder/{id}/update' , [FailureWorkOrdersController::class , 'update'])->name('failure_workorder.update')->middleWare("auth","role_and_permission:manger,maneger_access");
+Route::delete('/failure_workorder/{id}/delete' , [FailureWorkOrdersController::class , 'delete'])->name('failure_workorder.delete')->middleWare("auth","role_and_permission:manger,maneger_access");
 
 
 /* Work Requests Routes */
@@ -181,11 +181,12 @@ Route::put('/users/{id}/update' , [UsersController::class , 'update'])->name('us
 Route::delete('/users/{id}/delete' , [UsersController::class , 'delete'])->name('users.delete')->middleWare("auth" ,"role_and_permission:manger,maneger_access");
 
 /*search*/
-Route::get('/users/search' , [UsersController::class , 'search'])->name('users.search')->middleWare("auth" ,"role_and_permission:manger,");
-Route::get('/materials/search' , [MatrialsController::class , 'search'])->name('materials.search')->middleWare("auth" ,"role_and_permission:manger,");
-Route::get('/workRequests/search' , [WorkRequestsController::class , 'search'])->name('workRequest.search')->middleWare("auth" ,"role_and_permission:manger,");
-Route::get('/machines/search' , [MachinesController::class , 'search'])->name('machines.search')->middleWare("auth" ,"role_and_permission:manger,");
-Route::get('/failure_workorder/search' , [FailureWorkOrdersController::class , 'search'])->name('failure_workorder.search')->middleWare("auth");
+Route::get('/users/search' , [UsersController::class , 'search'])->name('users.search')->middleWare("auth" ,"role_and_permission:manger,maneger_access");
+Route::get('/materials/search' , [MatrialsController::class , 'search'])->name('materials.search')->middleWare("auth" ,"role_and_permission:manger,maneger_access");
+Route::get('/workRequests/search' , [WorkRequestsController::class , 'search'])->name('workRequest.search')->middleWare("auth" ,"role_and_permission:manger|coordinator|engineer,all_work_requests");
+Route::get('/machines/search' , [MachinesController::class , 'search'])->name('machines.search')->middleWare("auth" ,"role_and_permission:manger,maneger_access");
+Route::get('/failure_workorder/search' , [FailureWorkOrdersController::class , 'search'])->name('failure_workorder.search')->middleWare("auth" ,"role_and_permission:manger|engineer|technician,user_work_orders");
+Route::get('/planned_workorder/search' , [PlannedWorkOrdersController::class , 'search'])->name('planned_workorder.search')->middleWare("auth" ,"role_and_permission:manger|engineer|technician,user_work_orders");
 
 
 

@@ -47,12 +47,12 @@ class plannedWorkOrdersController extends Controller
         $pworkOrder->fault = request('fault') ;
         $pworkOrder->save() ;
         return redirect()->route('planned_workorder.list') ;
-         
+
     }
 
     public function edit ($id) {
         $pworkOrder = WorkOrder :: find('$id') ;
-        return view ('planned_workorder.edit' , compact('workpworkOrderorder')) ; 
+        return view ('planned_workorder.edit' , compact('workpworkOrderorder')) ;
     }
 
     public function update ($id) {
@@ -78,11 +78,11 @@ class plannedWorkOrdersController extends Controller
     }
 
     public function show ($id) {
-        $pworkOrder = WorkOrder :: find($id) ; 
+        $pworkOrder = WorkOrder :: find($id) ;
         return view ('planned_workorder.report' , compact('pworkOrder')) ;
     }
 
-    
+
 
     public function show_work_order_api($id)
 {
@@ -136,5 +136,37 @@ public function delete_work_order_api($id)
     return response()->json(['data' => 'deleted'], 200);
 }
 
-   
+public function search(){
+    $term = request('term');
+        $pworkOrders = WorkOrder::where('requirements', 'like','%' . $term . '%')
+        ->orWhere('received_date', 'LIKE', "%$term%")
+        ->orWhere('id', 'LIKE', "%$term%")
+        ->orWhereHas('requester', function ($user) {
+            $term = request('term');
+            $user->where('name', 'LIKE', "%$term%");
+        })
+        ->orWhereHas('machine', function ($machine) {
+            $term = request('term');
+            $machine->where('machine_code_id', 'LIKE', "%$term%");
+        })
+        ->orWhereHas('workStatus', function ($workStatus) {
+            $term = request('term');
+            $workStatus->where('name', 'LIKE', "%$term%");
+        })
+        ->orWhereHas('workType', function ($workType) {
+            $term = request('term');
+            $workType->where('name', 'LIKE', "%$term%");
+        })
+        ->orWhereHas('workTrade', function ($workTrade) {
+            $term = request('term');
+            $workTrade->where('name', 'LIKE', "%$term%");
+        })
+        ->orWhereHas('workPriority', function ($criticality) {
+            $term = request('term');
+            $criticality->where('name', 'LIKE', "%$term%");
+        })->get();
+        return view('planned_workorder.search', compact('pworkOrders'));
+}
+
+
 }

@@ -283,7 +283,7 @@ class MachineTableSeeder extends Seeder
                 'category_id' => 1,
                 'notes_to_technection' => 'Ensure that conductors are clean and dry.',
                 'criticality_id' => 2,
-                'contract_expiry_date' => Carbon::now()->addYear(2),
+                'contract_expiry_date' => Carbon::createFromDate(2020, 3, 25),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
 
@@ -325,7 +325,7 @@ class MachineTableSeeder extends Seeder
                 'category_id' => 2,
                 'notes_to_technection' => 'Test every component such as conductor, overload, fuse, limit switch, sensor ...etc',
                 'criticality_id' => 2,
-                'contract_expiry_date' => Carbon::now()->addYear(2),
+                'contract_expiry_date' => Carbon::createFromDate(2019, 7, 25),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
 
