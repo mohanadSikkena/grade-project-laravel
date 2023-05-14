@@ -16,7 +16,11 @@ use App\Models\WorkPriority;
 class plannedWorkOrdersController extends Controller
 {
     public function index () {
-        $pworkOrders = WorkOrder :: all()->where('fault', 0) ;
+        if(Auth::user()->role->name=='manger'){
+            $fworkOrders = WorkOrder :: latest()->where('fault' , 1)->get();}
+            else{
+                $pworkOrders = WorkOrder :: all()->where('fault', 0)->where('assign_to' , Auth::user()->id)->get();
+            }
         return view ('planned_workorder.list' , compact ('pworkOrders')) ;
     }
 
