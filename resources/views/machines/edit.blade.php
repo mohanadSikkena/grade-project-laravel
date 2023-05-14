@@ -9,7 +9,7 @@ Edit Machine
 @section('content')
 <div class="container">
   <div class="card">
-      <h2>Edit Machines</h2>
+      <h2>Edit Assets</h2>
     <form class="card-form" action="{{ route('machines.update',$machine->id) }}" method="post">
     @method('PUT')
     @csrf        

@@ -13,25 +13,25 @@ Machines
 <link rel="stylesheet" href="{{ asset('tableStyle.css') }}">
 @endsection
 @section('content')
-<h1>Machines</h1>
+<h1>Assets</h1>
         <div class="table">
             <table>
                 <thead>
                   <tr>
                     <th>actions</th>
-                    <th>Machine ID</th>
-                    <th>Machine Name</th>
-                    <th>Machine Model</th>
+                    <th>Asset ID</th>
+                    <th>Asset Name</th>
+                    <th>Asset Model</th>
                     <th>Manfcatturer</th>
                     <th>User</th>
                     <th>Department</th>
                     <th>Category</th>
                     <th>Location </th>
                     <th>Contractor</th>
-                    <th>Machine Status</th>
+                    <th>Asset Status</th>
                     <th>Supplier</th>
                     <th>Critcality</th>
-                    <th>Machines Code </th>
+                    <th>Assets Code </th>
                     <th>Serial Number</th>
                     <th>Contract Expiry Date </th>
                     <th>Note To Technection</th>

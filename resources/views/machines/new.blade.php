@@ -9,7 +9,7 @@ New Machine
 @section('content')
 <div class="container">
   <div class="card">
-      <h2>Machines</h2>
+      <h2>Assets</h2>
     <form class="card-form"action="{{ route('machines.save') }}" method="post">
     @csrf        
       <div class="input2">

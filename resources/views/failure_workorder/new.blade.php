@@ -24,7 +24,7 @@ New Failure Work Order
       <div class="row">
         <div class="input">
           <input type="text" class="input-field" value={{$workRequest->machine->name}} @disabled(true)>
-          <label class="label">Machine </label>
+          <label class="label">Asset </label>
           <input type="hidden" value="{{$workRequest->machine->id}}" class="input-field" placeholder="" id="floatingTextarea2"  name="machine_id"  required>
 
             
