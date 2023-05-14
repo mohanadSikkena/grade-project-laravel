@@ -13,16 +13,16 @@ class CheckRoleAndPermission
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    
-    
+
+
 
     public function handle($request, Closure $next, $role, $permission)
     {
         if (! $request->user()->hasRole($role) || ! $request->user()->hasPermission($permission)) {
             abort(403, 'Unauthorized');
-           
+        // echo($request->user()->hasRole($role));
         }
-        
+
         return $next($request);
     }
 

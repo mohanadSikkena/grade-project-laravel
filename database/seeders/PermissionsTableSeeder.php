@@ -76,20 +76,26 @@ class PermissionsTableSeeder extends Seeder
         $permission->name='user_machine_details';
         $permission->save();
 
-        /* users */
+        /* maneger */
         $permission = new Permission;//16
+        $permission->name='maneger_access';
+        $permission->save();
+
+
+        /* users */
+        $permission = new Permission;//17
         $permission->name='all_users_details';
         $permission->save();
 
-        $permission = new Permission;//17
+        $permission = new Permission;//18
         $permission->name='create_users_details';
         $permission->save();
 
-        $permission = new Permission;//18
+        $permission = new Permission;//19
         $permission->name='delete_users_details';
         $permission->save();
 
-        $permission = new Permission;//19
+        $permission = new Permission;//20
         $permission->name='edit_users_details';
         $permission->save();
 
