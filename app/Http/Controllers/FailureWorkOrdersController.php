@@ -39,7 +39,7 @@ class FailureWorkOrdersController extends Controller
         ->where("id",$fworkOrder->assign_to)
         ->pluck('device_key');
         if(count($FcmToken)==0){
-            return redirect()->route('workRequests.list') ;
+            return redirect()->route('failure_workorder.list') ;
         }
         $data = [
         "registration_ids" => $FcmToken,
@@ -52,7 +52,7 @@ class FailureWorkOrdersController extends Controller
         $notificationController =new WebNotificationController;
         $notificationController->sendWebNotification($data);
 
-        return redirect()->route('failure_workorder.list') ;
+        return redirect()->route('workRequests.list') ;
 
     }
 
