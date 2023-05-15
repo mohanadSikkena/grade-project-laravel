@@ -46,7 +46,7 @@ Route::post('/work_order' , [FailureWorkOrdersController::class , 'create_work_o
 
 
 /* WR API Routes */
-Route::get('/work_requests' , [WorkRequestsController::class ,'index_api']);
+Route::get('/work_requests' , [WorkRequestsController::class ,'index_api'])->middleware('auth:sanctum');
 Route::get('/work_requests/{id}/show_details' , [WorkRequestsController::class , 'show_work_request_details'])->middleware('auth:sanctum');
 Route::post('/work_requests/create' , [WorkRequestsController::class , 'create_work_request_api'])->middleware('auth:sanctum');
 Route::delete('work_requests/{id}/delete' , [WorkRequestsController::class ,'delete_work_request_api'])->middleware('auth:sanctum');
