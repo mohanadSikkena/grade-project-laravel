@@ -23,7 +23,7 @@ use App\Http\Controllers\UsersController;
 */
 
 /* Login API Routes */
-Route::post('/login', [AuthController::class , 'login'])->middleware('auth:sanctum');
+Route::post('/login', [AuthController::class , 'login']);
 Route::post('/user/test', [AuthController::class , 'get_user'])->middleware('auth:sanctum');
 Route::get('/user/logout', [AuthController::class , 'logout'])->middleware('auth:sanctum');
 
