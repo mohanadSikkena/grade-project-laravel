@@ -26,6 +26,7 @@ Users
         <th>id</th>
         <th>Name</th>
         <th>Address</th>
+        <th>Role</th>
         <th>Phone Number</th>
         <th>House Number</th>
         <th>Hourly Salary</th>
@@ -47,6 +48,7 @@ Users
         <td>{{$user->id}}</td>
         <td>{{$user->name}}</td>
         <td>{{$user->address}}</td>
+        <td>{{$user->role->name}}</td>
         <td>{{$user->phone_no}}</td>
         <td>{{$user->house_no}}</td>
         <td>{{$user->hourly_salery}}</td>

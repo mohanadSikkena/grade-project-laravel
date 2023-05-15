@@ -44,6 +44,9 @@ class AuthServiceProvider extends ServiceProvider
     Gate::define('view-technician', function ($user) {
         return $user->role->name === 'technician';
     });
+    Gate::define('view-worker', function ($user) {
+        return $user->role->name === 'worker';
+    });
     
 }
 

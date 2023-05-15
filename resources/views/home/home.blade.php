@@ -80,6 +80,16 @@ Home
         </form></a>
         </div>
     @endcan
+    @can('view-worker', App\Models\WorkOrder::class)
+    <div class="row">
+        <a href=""><form id="logout-form" action="{{ route('logout') }}" method="POST" >
+            @method('POST')
+            @csrf
+            <button type="submit" class="home-button"><div class="fs1"><span class="icon-exit"></span><br>
+            </div>logout</button>
+        </form></a>
+        </div>
+    @endcan
         {{-- <div class="row">
             <a href={{ route('home.WorkOrder') }}> <button class="home-button">
                 <div class="fs1"><span class="icon-file-text2"></span><br>

@@ -43,7 +43,11 @@ class HomeController extends Controller
         } elseif (Gate::allows('view-technician',$user)) {
             $technician = Gate::allows('view-all');
             return view('home.home', ['technician' => $technician]);
-        }else {
+        }elseif (Gate::allows('view-worker',$user)) {
+            $worker = Gate::allows('view-all');
+            return view('home.home', ['worker' => $worker]);
+        }
+        else {
             // Unauthorized access
             abort(403);
         }

@@ -18,9 +18,10 @@
     <header>
 		<nav>
 			<ul>
-				<li><a class="a" href="{{ route('home') }}">Home</a></li>
-				<li><a class="a" href="#">About Us</a></li>
-				<li><a class="a" href="#">Contact Us</a></li>
+                
+				<li><a class="a" href="{{ route('home') }}"><img src="{{ asset('logo.png') }}" style="width:100px" alt=""></a></li>
+				<li><a class="link" href="#">About Us</a></li>
+				<li><a class="link" href="#">Contact Us</a></li>
 			</ul>
 			<div class="search">
                 @yield('add')
