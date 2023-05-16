@@ -11,7 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::table('users', function (Blueprint $table) {
+             //for authorization
+             $table->unsignedBigInteger('role_id')->nullable();
+             $table->foreign('role_id')->references('id')->on('roles');
+             //end
+        });
     }
 
     /**
@@ -19,6 +24,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 };
