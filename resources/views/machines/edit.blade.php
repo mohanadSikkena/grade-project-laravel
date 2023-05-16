@@ -89,9 +89,9 @@ Edit Machine
         <div class="input2">
         <div class="col">
           <label class="label">Assets Status</label>
-          <select class="form-select" aria-label="Default select example"name="machine_code_id">
-            @foreach ($machineStatu AS $machineStatus)
-            <option {{ $machineStatus->id == $machine->status_id ? 'selected' : '' }} value="{{$machineStatus->name}}">{{$machine->status_id}}</option>
+          <select class="form-select" aria-label="Default select example"name="status_id">
+            @foreach ($machineStatus AS $machineStatu)
+            <option {{ $machineStatu->id == $machine->status_id ? 'selected' : '' }} value="{{$machineStatu->id}}">{{$machineStatu->name}}</option>
             @endforeach
           </select>                     
         </div>
@@ -106,7 +106,7 @@ Edit Machine
         <label class="label" for="floatingPassword">Contract Expiry Date</label>
       </div>
       <div class="input">
-        <input name="note_to_technection" value="{{$machine->notes_to_technection}}" class="input-field"    id="floatingTextarea2"  required>
+        <input name="notes_to_technection" value="{{$machine->notes_to_technection}}" class="input-field"    id="floatingTextarea2"  required>
         <label class="input-label" for="floatingTextarea6">Note To Technection</label>
       </div>
       <div class="input">
