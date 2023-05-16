@@ -20,7 +20,7 @@ class WorkOrderTableSeeder extends Seeder
                 'problem_description' => 'Fix Fused lights along the Main Corridor',
                 'work_status_id' => 1,
                 'work_type_id' => 1,
-                'work_trade_id' => 3,
+                'work_trade_id' => 2,
                 'machine_id' => 2,
                 'requster_id' => 3,
                 'work_priority_id' => 1,

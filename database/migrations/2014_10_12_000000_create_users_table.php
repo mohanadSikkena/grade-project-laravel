@@ -22,8 +22,8 @@ return new class extends Migration
             //end
             $table->rememberToken();
             $table->string('address')->nullable();
-            $table->integer('phone_no')->nullable();
-            $table->integer('house_no')->nullable();
+            $table->string('phone_no')->nullable();
+            $table->string('house_no')->nullable();
             $table->float('hourly_salery')->nullable();
             $table->timestamps();
         });
