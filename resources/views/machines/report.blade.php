@@ -23,7 +23,7 @@
               <h3>Category: <p>{{ $machine->category->name}}</p></h2>
               <h3>Location: <p>{{ $machine->location->location_description}}</p></h2>
               <h3>Contractor: <p>{{ $machine->contractor}}</p></h2>
-              <h3>Status: <p>{{ $machine->machine_status_id}}</p></h2>
+              <h3>Status: <p>{{ $machine->Workstatus->name}}</p></h2>
               <h3>Supplier: <p>{{ $machine->supplier}}</p></h2>
               <h3>Critcality: <p>{{ $machine->Criticality->name}}</p></h2>
               <h3>Assets Code: <p>{{ $machine->machineCode->code}}</p></h2>
