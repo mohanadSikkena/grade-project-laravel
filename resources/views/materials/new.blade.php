@@ -58,5 +58,6 @@ New Matrial
             </form>
     </div>
 </div>
+<script src="{{Asset('materialsnew.js')}}"></script>
     
 @endsection

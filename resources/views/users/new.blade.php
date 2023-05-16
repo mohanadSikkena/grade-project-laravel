@@ -8,9 +8,10 @@ New User
 
 @section('content')
 <div class="container">
+
   <div class="card">
     <h2>Users</h2>
-    <form class="card-form" action="{{route('users.save')}}" method="post">
+    <form class="card-form" id="form" action="{{route('users.save')}}" method="post">
       @csrf
       <div class="input">
         <input type="text" class="input-field"  required name="name" >
@@ -72,4 +73,5 @@ New User
   </form>
   </div>
 </div>
+<script src="{{Asset('usersnew.js')}}"></script>
 @endsection

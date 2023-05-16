@@ -5,7 +5,6 @@ Edit User
 @section('style')
 <link rel="stylesheet" href="{{ asset('style3.css') }}">
 @endsection
-
 @section('content')
 <div class="container">
   <div class="card">
@@ -73,4 +72,5 @@ Edit User
   </form>
   </div>
 </div>
+<script src="{{Asset('useredit.js')}}"></script>
 @endsection
