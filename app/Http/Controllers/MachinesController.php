@@ -34,7 +34,7 @@ class MachinesController extends Controller
         $locations = Location :: all();
         $machineStatus = WorkStatus:: all();
 
-        return view('machines.new' , compact('pworkOredrs', 'locations' , 'fworkOredrs' , 'workRequests' , 'departments' , 'categories' , 'machineCodes' , 'criticals' , 'users','machineStatus' ));
+        return view('machines.new' , compact( 'pworkOredrs', 'locations' , 'fworkOredrs' , 'workRequests' , 'departments' , 'categories' , 'machineCodes' , 'criticals' , 'users','machineStatus' ));
     }
 
     public function store () {
@@ -49,7 +49,6 @@ class MachinesController extends Controller
         $machine->category_id = request('category_id');
         $machine->contractor = request('contractor');
         $machine->serial_number = request('serial_number');
-        $machine->status_id = request('status_id');
         $machine->supplier = request('supplier');
         $machine->criticality_id = request('criticality_id');
         $machine->notes_to_technection = request('notes_to_technection');

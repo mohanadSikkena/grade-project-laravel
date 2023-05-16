@@ -22,7 +22,7 @@ return new class extends Migration
             $table->foreignId('department_id');
             $table->foreignId('category_id');
             $table->string('contractor', 50);
-            $table->foreignId('status_id');
+            $table->foreignId('status_id')->default(1);
             $table->string('serial_number');
             $table->string('supplier', 50);
             $table->foreignId('criticality_id');
