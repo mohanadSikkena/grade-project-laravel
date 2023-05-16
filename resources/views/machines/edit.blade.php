@@ -86,11 +86,21 @@ Edit Machine
             @endforeach
           </select>                     
         </div>
+        <div class="input2">
+        <div class="col">
+          <label class="label">Assets Status</label>
+          <select class="form-select" aria-label="Default select example"name="machine_code_id">
+            @foreach ($machineStatu AS $machineStatus)
+            <option {{ $machineStatus->id == $machine->status_id ? 'selected' : '' }} value="{{$machineStatus->name}}">{{$machine->status_id}}</option>
+            @endforeach
+          </select>                     
+        </div>
       </div>
       <div class="input">
         <input type="text" value="{{$machine->serial_number}}" class="input-field"  name="serial_number" required>
         <label class="input-label">Serial Number</label>
       </div>
+    </div>
       <div class="input">
         <input type="date" value="{{$machine->contract_expiry_date}}" class="input-field"  name="contract_expiry_data" required>
         <label class="label" for="floatingPassword">Contract Expiry Date</label>

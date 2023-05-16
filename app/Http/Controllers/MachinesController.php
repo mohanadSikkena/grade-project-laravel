@@ -11,6 +11,7 @@ use App\Models\Location;
 use App\Models\Category;
 use App\Models\Criticality;
 use App\Models\MachineCode;
+use App\Models\WorkStatus;
 use App\Models\User;
 
 
@@ -61,10 +62,11 @@ class MachinesController extends Controller
         $departments = Department :: all();
         $categories = Category :: all();
         $machineCodes = MachineCode :: all();
+        $machineStatu = WorkStatus :: all();
         $criticals = Criticality :: all();
         $users = User :: all();
         $locations = Location :: all();
-        return view('machines.edit' , compact('machine', 'users','locations','criticals','departments','categories','machineCodes'));
+        return view('machines.edit' , compact('machine','machineStatu', 'users','locations','criticals','departments','categories','machineCodes'));
 
     }
     public function update ($id) {
