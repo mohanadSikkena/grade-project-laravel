@@ -81,11 +81,10 @@ class MachinesController extends Controller
         $machine->category_id = request('category_id');
         $machine->contractor = request('contractor');
         $machine->serial_number = request('serial_number');
-        $machine->machine_status = request('machine_status');
         $machine->supplier = request('supplier');
         $machine->criticality_id = request('criticality_id');
-        $machine->note_to_technection = request('note_to_technection');
-        $machine->contract_expiry_data = request('contract_expiry_data');
+        $machine->note_to_technection = request('notes_to_technection');
+        $machine->contract_expiry_data = request('contract_expiry_date');
         $machine->machine_code_id = request('machine_code_id');
         $machine->save();
         return redirect ()->route('machines.list');
