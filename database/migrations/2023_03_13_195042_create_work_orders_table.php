@@ -26,13 +26,13 @@ return new class extends Migration
             $table->string('requirements', 255)->nullable();
             $table->boolean('fault')->default(1);
             $table->timestamps();
-            $table->foreign('work_status_id')->references('id')->on('work_statuses')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('work_type_id')->references('id')->on('work_types')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('work_trade_id')->references('id')->on('work_trades')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('machine_id')->references('id')->on('machines')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('requster_id')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('work_priority_id')->references('id')->on('work_priorities')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('assign_to')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('RESTRICT');
+            $table->foreign('work_status_id')->references('id')->on('work_statuses')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('work_type_id')->references('id')->on('work_types')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('work_trade_id')->references('id')->on('work_trades')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('machine_id')->references('id')->on('machines')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('requster_id')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('work_priority_id')->references('id')->on('work_priorities')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('assign_to')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
             });
     }
 

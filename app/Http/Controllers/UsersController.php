@@ -7,6 +7,8 @@ use App\Models\Location;
 use App\Models\Role;
 use App\Models\Department;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class UsersController extends Controller
 {
@@ -23,20 +25,39 @@ class UsersController extends Controller
         return view ('users.new' ,compact('roles','departments' ,'locations')) ;
     }
 
-    public function store () {
-        $user = new User ;
-        $user->name = request('name') ;
-        $user->address = request('address') ;
-        $user->phone_no = request('phone_no') ;
-        $user->house_no = request('house_no') ;
-        $user->role_id = request('role_id') ;
-        $user->location_id = request('location_id') ;
-        $user->hourly_salery = request('hourly_salery') ;
-        $user->password = Hash::make( request('password'));
-        $user->email = request('email') ;
-        $user->department_id = request('department_id') ;
-        $user->save() ;
-        return redirect()->route('users.list') ;
+    public function store(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email|unique:users,email',
+            // Other validation rules for the rest of the fields
+        ]);
+    
+        try {
+            $user = new User;
+            $user->name = $request->input('name');
+            $user->address = $request->input('address');
+            $user->phone_no = $request->input('phone_no');
+            $user->house_no = $request->input('house_no');
+            $user->role_id = $request->input('role_id');
+            $user->location_id = $request->input('location_id');
+            $user->hourly_salery = $request->input('hourly_salery');
+            $user->password = Hash::make($request->input('password'));
+            $user->email = $request->input('email');
+            $user->department_id = $request->input('department_id');
+            $user->save();
+    
+            return redirect()->route('users.list');
+        } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Database\QueryException) {
+                $errorCode = $e->errorInfo[1];
+                if ($errorCode == 1062) {
+                    throw ValidationException::withMessages(['email' => 'This email is already taken.']);
+                }
+            }
+            
+            // Handle other exceptions or errors if needed
+        }
+    
 
     }
 

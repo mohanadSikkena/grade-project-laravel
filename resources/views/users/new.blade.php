@@ -18,6 +18,9 @@ New User
         <label class="input-label" for="floatingPassword">Name</label>
       </div>
       <div class="input">
+        @if($errors->has('email'))
+          <div class="alert alert-danger">{{ $errors->first('email') }}</div>
+        @endif
         <input type="text" class="input-field"  required name="email">
         <label class="input-label" for="floatingPassword">Email</label>
       </div>

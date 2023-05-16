@@ -89,13 +89,13 @@ New Machine
       <div class="input">
         <input type="text" class="input-field"  name="serial_number" required>
         <label class="input-label">Serial Number</label>
-      </div>
+    </div>
       <div class="input">
         <input type="date" class="input-field"  name="contract_expiry_data" required>
         <label class="label" for="floatingPassword">Contract Expiry Date</label>
       </div>
       <div class="input">
-        <input name="note_to_technection" class="input-field"    id="floatingTextarea2"  required>
+        <input name="notes_to_technection" class="input-field"    id="floatingTextarea2"  required>
         <label class="input-label" for="floatingTextarea6">Note To Technection</label>
       </div>
       <div class="input">

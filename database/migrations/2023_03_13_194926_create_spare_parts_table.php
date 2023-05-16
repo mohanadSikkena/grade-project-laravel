@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreignId('priority_id');
             $table->integer('quantity');
             $table->timestamps();
-            $table->foreign('location_id')->references('id')->on('locations')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('priority_id')->references('id')->on('work_priorities')->onUpdate('CASCADE')->onDelete('RESTRICT');
+            $table->foreign('location_id')->references('id')->on('locations')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('priority_id')->references('id')->on('work_priorities')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 

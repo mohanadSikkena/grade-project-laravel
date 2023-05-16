@@ -17,23 +17,14 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            //for authorization
-            $table->unsignedBigInteger('role_id')->nullable();
-            $table->foreign('role_id')->references('id')->on('roles');
-            //end
             //notifications
             $table->string('device_key')->nullable();
             //end
             $table->rememberToken();
             $table->string('address')->nullable();
-            $table->integer('phone_no')->nullable();
-            $table->integer('house_no')->nullable();
-            $table->foreignId('department_id')->nullable();
-            $table->foreignId('location_id')->nullable();
+            $table->string('phone_no')->nullable();
+            $table->string('house_no')->nullable();
             $table->float('hourly_salery')->nullable();
-            $table->foreign('location_id')->references('id')->on('locations')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('department_id')->references('id')->on('departments')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            
             $table->timestamps();
         });
     }

@@ -11,6 +11,7 @@ use App\Models\Location;
 use App\Models\Category;
 use App\Models\Criticality;
 use App\Models\MachineCode;
+use App\Models\WorkStatus;
 use App\Models\User;
 
 
@@ -31,8 +32,9 @@ class MachinesController extends Controller
         $criticals = Criticality :: all();
         $users = User :: all();
         $locations = Location :: all();
+        $machineStatus = WorkStatus:: all();
 
-        return view('machines.new' , compact('pworkOredrs', 'locations' , 'fworkOredrs' , 'workRequests' , 'departments' , 'categories' , 'machineCodes' , 'criticals' , 'users' ));
+        return view('machines.new' , compact( 'pworkOredrs', 'locations' , 'fworkOredrs' , 'workRequests' , 'departments' , 'categories' , 'machineCodes' , 'criticals' , 'users','machineStatus' ));
     }
 
     public function store () {
@@ -49,7 +51,7 @@ class MachinesController extends Controller
         $machine->serial_number = request('serial_number');
         $machine->supplier = request('supplier');
         $machine->criticality_id = request('criticality_id');
-        $machine->notes_to_technection = request('note_to_technection');
+        $machine->notes_to_technection = request('notes_to_technection');
         $machine->contract_expiry_date = request('contract_expiry_data');
         $machine->machine_code_id = request('machine_code_id');
         $machine->save();
@@ -61,10 +63,11 @@ class MachinesController extends Controller
         $departments = Department :: all();
         $categories = Category :: all();
         $machineCodes = MachineCode :: all();
+        $machineStatus = WorkStatus :: all();
         $criticals = Criticality :: all();
         $users = User :: all();
         $locations = Location :: all();
-        return view('machines.edit' , compact('machine', 'users','locations','criticals','departments','categories','machineCodes'));
+        return view('machines.edit' , compact('machine','machineStatus', 'users','locations','criticals','departments','categories','machineCodes'));
 
     }
     public function update ($id) {
@@ -79,11 +82,11 @@ class MachinesController extends Controller
         $machine->category_id = request('category_id');
         $machine->contractor = request('contractor');
         $machine->serial_number = request('serial_number');
-        $machine->machine_status = request('machine_status');
+        $machine->status_id = request('status_id');
         $machine->supplier = request('supplier');
         $machine->criticality_id = request('criticality_id');
-        $machine->note_to_technection = request('note_to_technection');
-        $machine->contract_expiry_data = request('contract_expiry_data');
+        $machine->notes_to_technection = request('notes_to_technection');
+        $machine->contract_expiry_date = request('contract_expiry_data');
         $machine->machine_code_id = request('machine_code_id');
         $machine->save();
         return redirect ()->route('machines.list');

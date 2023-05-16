@@ -100,7 +100,7 @@ class SparePartTableSeeder extends Seeder
         $sparePart = new SparePart;
         $sparePart-> name = 'Lower Blade';
         $sparePart-> location_id = '9';
-        $sparePart-> priority_id = '5';
+        $sparePart-> priority_id = '3';
         $sparePart-> quantity = '1000';
         $sparePart->save();
 

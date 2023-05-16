@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('problem_description', 255);
             $table->foreignId('machine_id');
             $table->foreignId('requster_id');
-            $table->foreign('machine_id')->references('id')->on('machines')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('requster_id')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('RESTRICT');
+            $table->foreign('machine_id')->references('id')->on('machines')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('requster_id')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
             $table->timestamps();
         });
     }
