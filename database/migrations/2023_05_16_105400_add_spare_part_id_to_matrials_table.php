@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('matrials', function (Blueprint $table) {
             $table->foreignId('spare_part_id');
-            $table->foreign('spare_part_id')->references('id')->on('spare_parts')->onUpdate('CASCADE')->onDelete('RESTRICT');
+            $table->foreign('spare_part_id')->references('id')->on('spare_parts')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 

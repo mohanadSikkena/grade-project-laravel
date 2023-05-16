@@ -20,9 +20,9 @@ return new class extends Migration
             $table->foreignId('category_id');
             $table->bigInteger('quantity');
             $table->timestamps();
-            $table->foreign('location_id')->references('id')->on('locations')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('criticality_id')->references('id')->on('criticalities')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('CASCADE')->onDelete('RESTRICT');
+            $table->foreign('location_id')->references('id')->on('locations')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('criticality_id')->references('id')->on('criticalities')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 

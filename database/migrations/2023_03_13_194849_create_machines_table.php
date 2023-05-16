@@ -31,13 +31,13 @@ return new class extends Migration
             $table->foreignId('machine_code_id');
             $table->string('requirements', 255)->nullable();
             $table->timestamps();
-            $table->foreign('location_id')->references('id')->on('locations')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('department_id')->references('id')->on('departments')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('status_id')->references('id')->on('work_statuses')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('criticality_id')->references('id')->on('criticalities')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            $table->foreign('machine_code_id')->references('id')->on('machine_codes')->onUpdate('CASCADE')->onDelete('RESTRICT');
+            $table->foreign('location_id')->references('id')->on('locations')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('department_id')->references('id')->on('departments')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('status_id')->references('id')->on('work_statuses')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('criticality_id')->references('id')->on('criticalities')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('machine_code_id')->references('id')->on('machine_codes')->onUpdate('CASCADE')->onDelete('CASCADE');
             });
     }
 
