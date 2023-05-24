@@ -46,7 +46,7 @@ class FailureWorkOrdersController extends Controller
         "notification" => [
             "title" => "Work Order Recieved",
             // title =>workrequest =>
-            "body" => "الفرعون العاشق جاهز للاحتفال",
+            "body" => "You Recevied a Wrok Order   ",
         ]
     ];
         $notificationController =new WebNotificationController;
@@ -149,7 +149,7 @@ public function create_work_order_api()
         "registration_ids" => $FcmToken,
         "notification" => [
             "title" => "Work Order Recieved",
-            "body" => "الفرعون العاشق جاهز للاحتفال",
+            "body" => "  You Recevied a Wrok Order ",
         ]
     ];
 

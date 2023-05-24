@@ -19,8 +19,8 @@
 		<nav>
 			<ul>
                 
-				<li><a class="a" href="{{ route('home') }}"><img src="{{ asset('logo.png') }}" style="width:100px" alt=""></a></li>
-				<li><a class="link" href="#">About Us</a></li>
+				<li><a class="a" href="{{ route('home') }}"><img src="{{ asset('web logo.png') }}" style="width:100px" alt=""></a></li>
+				<li><a class="link" href="{{ route('Aboutus') }}">About Us</a></li>
 				<li><a class="link" href="#">Contact Us</a></li>
 			</ul>
 			<div class="search">
@@ -31,6 +31,6 @@
 	</header>
 
 
-   <section> @yield('content')</section>  
+   <section style="background-color: #1f1e2e"> @yield('content')</section>  
 </body>
 </html>

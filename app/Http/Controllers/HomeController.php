@@ -59,6 +59,11 @@ class HomeController extends Controller
         return view('home.WorkOrder');
     }
 
+    public function aboutus()
+    {
+        return view('aboutUs');
+    }
+
 
     
 }

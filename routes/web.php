@@ -43,6 +43,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleWare("auth" );
 Route::get('/homeworkorder', [App\Http\Controllers\HomeController::class, 'workorder'])->name('home.WorkOrder')->middleWare("auth");
+Route::get('/aboutus', [App\Http\Controllers\HomeController::class, 'aboutus'])->name('Aboutus')->middleWare("auth" );
+
 
 
 

@@ -29,6 +29,8 @@ Failure Work Order
       <th>id</th>
       <th>Assign To</th>
       <th>Asset</th>
+      <th>Asset Location</th>
+      <th>Work Status</th>
       <th>Failure Cause</th>
       <th>resived date</th>
       <th>Requirements </th>
@@ -49,6 +51,8 @@ Failure Work Order
       <td>{{$fworkOrder->id}}</td>
       <td>{{$fworkOrder->assigendTo->name}}</td>
       <td>{{$fworkOrder->machine->name}}</td>
+      <td>{{$fworkOrder->machine->location->location_description}}</td>
+      <td>{{$fworkOrder->workStatus->name}}</td>
       <td>{{$fworkOrder->problem_description}}</td>
       <td>{{$fworkOrder->created_at}}</td>
       <td>{{$fworkOrder->requirements}}</td>
@@ -71,6 +75,7 @@ Failure Work Order
       <th>id</th>
       <th>Assign To</th>
       <th>Asset</th>
+      <th>Asset Location</th>
       <th>Failure Cause</th>
       <th>resived date</th>
       <th>Requirements </th>
@@ -85,6 +90,7 @@ Failure Work Order
       <td>{{$fworkOrder->id}}</td>
       <td>{{$fworkOrder->assigendTo->name}}</td>
       <td>{{$fworkOrder->machine->name}}</td>
+      <td>{{$fworkOrder->machine->location_id}}</td>
       <td>{{$fworkOrder->problem_description}}</td>
       <td>{{$fworkOrder->created_at}}</td>
       <td>{{$fworkOrder->requirements}}</td>  
@@ -105,6 +111,7 @@ Failure Work Order
       <th>id</th>
       <th>Assign To</th>
       <th>Asset</th>
+      <th>Asset Location</th>
       <th>Failure Cause</th>
       <th>resived date</th>
       <th>Requirements </th>
@@ -118,6 +125,7 @@ Failure Work Order
       <td>{{$fworkOrder->id}}</td>
       <td>{{$fworkOrder->assigendTo->name}}</td>
       <td>{{$fworkOrder->machine->name}}</td>
+      <td>{{$fworkOrder->machine->location_id}}</td>
       <td>{{$fworkOrder->problem_description}}</td>
       <td>{{$fworkOrder->created_at}}</td>
       <td>{{$fworkOrder->requirements}}</td>

@@ -106,7 +106,7 @@ public function create_work_request_api()
         "registration_ids" => $FcmToken,
         "notification" => [
             "title" => "Work Request Received",
-            "body" => "الفرعون العاشق جاهز للاحتفال",
+            "body" => " You Recevied a Wrok Request",
         ]
     ];
 
