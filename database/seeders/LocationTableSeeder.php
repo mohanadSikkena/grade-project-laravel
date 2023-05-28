@@ -22,11 +22,19 @@ class LocationTableSeeder extends Seeder
         $location->save();
 
         $location = new Location;
+        $location->location_description ='B3';
+        $location->save();
+
+        $location = new Location;
         $location->location_description ='A1';
         $location->save();
 
         $location = new Location;
         $location->location_description ='A2';
+        $location->save();
+
+        $location = new Location;
+        $location->location_description ='A3';
         $location->save();
 
     }
